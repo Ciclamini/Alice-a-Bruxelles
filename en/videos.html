@@ -1,306 +1,792 @@
 <!doctype html>
 <html lang="en" data-bs-theme="light">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="theme-color" content="#20c997">
-        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-        <meta name="msapplication-navbutton-color" content="#20c997">
-        <link href="../css/theme.css" rel="stylesheet">
-        <link href="../css/pages/videos.css" rel="stylesheet">
-        <title>Videos | Alice a Bruxelles</title>
-    </head>
-    <body>
-        <!-- Navbar Section -->
-        <div class="nav container-fluid fixed-top">
-            <div class="container">
-                <nav class="navbar navbar-expand-lg">
-                    <a class="navbar-brand" href="#">
-                        <img src="../assets/img/italy.svg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
-                        Alice a Bruxelles
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#20c997">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="msapplication-navbutton-color" content="#20c997">
+    <link href="../css/theme.css" rel="stylesheet">
+    <link href="../css/pages/videos.css" rel="stylesheet">
+    <title>Videos | Alice a Bruxelles</title>
+  </head>
+  <body>
+    <!-- Navbar Section -->
+    <div class="nav container-fluid fixed-top">
+      <div class="container">
+        <nav class="navbar navbar-expand-lg">
+          <a class="navbar-brand" href="#">
+            <img
+              src="../assets/img/italy.svg"
+              alt="Logo"
+              width="30"
+              height="24"
+              class="d-inline-block align-text-top"
+            />
+            Alice a Bruxelles
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbar"
+            aria-controls="navbarText"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbar">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="./index.html#hero" id="navhome"
+                  >Home</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./index.html#about" id="navabout"
+                  >About</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./index.html#contact" id="navcontact"
+                  >Contact Us</a
+                >
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  id="more"
+                >
+                  More
+                </a>
+                <ul class="dropdown-menu">
+                  <li class="nav-item">
+                    <a
+                      class="dropdown-item active"
+                      aria-current="page"
+                      href="./videos.html"
+                      >Videos</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a class="dropdown-item" href="#" onclick="openPDF()"
+                      >Documents</a
+                    >
+                  </li>
+                  <li><hr class="dropdown-divider" /></li>
+                  <li>
+                    <a class="dropdown-item" href="./credits.html">Credits</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  id="languageDropdown"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <img src="../assets/img/en.svg" alt="English" width="20" />
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="languageDropdown">
+                  <li>
+                    <a class="dropdown-item" href="#" onclick="setLanguage('en')"
+                      >
+                      <img
+                        src="../assets/img/en.svg"
+                        alt="English"
+                        width="20"
+                      />
+                      - English
                     </a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbar">
-                        <ul class="navbar-nav ms-auto">
-                            <li class="nav-item"><a class="nav-link" href="./index.html#hero" id="navhome">Home</a></li>
-                            <li class="nav-item"><a class="nav-link" href="./index.html#about" id="navabout">About</a></li>
-                            <li class="nav-item"><a class="nav-link" href="./index.html#contact" id="navcontact">Contact Us</a></li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="more">
-                                    More
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li class="nav-item"><a class="dropdown-item active" aria-current="page" href="./videos.html">Videos</a></li>
-                                    <li class="nav-item"><a class="dropdown-item" href="#" onclick="openPDF()">Documents</a></li>
-                                    <li><hr class="dropdown-divider"></li>
-                                    <li><a class="dropdown-item" href="./credits.html">Credits</a></li>
-                                </ul>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" id="languageDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <img src="../assets/img/en.svg" alt="English" width="20">
-                                </a>
-                                <ul class="dropdown-menu" aria-labelledby="languageDropdown">
-                                    <li><a class="dropdown-item" href="#" onclick="setLanguage('en')">
-                                        <img src="../assets/img/en.svg" alt="English" width="20"> - English
-                                    </a></li>
-                                    <li><a class="dropdown-item" href="#" onclick="setLanguage('it')">
-                                        <img src="../assets/img/it.svg" alt="Italian" width="20"> - Italiano
-                                    </a></li>
-                                </ul>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <i class="fa fa-gear"></i>
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li class="dropdown-item d-flex justify-content-between align-items-center" id="darkmode">
-                                        <span class="me-auto">Theme</span>
-                                        <div class="form-check form-switch">
-                                            <input class="form-check-input" type="checkbox" role="switch" id="switchTheme">
-                                            <label class="form-check-label" for="switchTheme"></label>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#" onclick="setLanguage('it')"
+                      >
+                      <img
+                        src="../assets/img/it.svg"
+                        alt="Italian"
+                        width="20"
+                      />
+                      - Italiano
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <i class="fa fa-gear"></i>
+                </a>
+                <ul class="dropdown-menu">
+                  <li
+                    class="dropdown-item d-flex justify-content-between align-items-center"
+                    id="darkmode"
+                  >
+                    <span class="me-auto">Theme</span>
+                    <div class="form-check form-switch">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        role="switch"
+                        id="switchTheme"
+                      />
+                      <label
+                        class="form-check-label"
+                        for="switchTheme"
+                      ></label>
                     </div>
-                </nav>
-            </div>
-        </div>
-        <!-- Carousel Section -->
-        <div class="container floating-alert">
-            <div class="alert alert-info alert-dismissible fade show" role="alert">
-                Click on highlighted objects to learn more.
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-        </div>
-        <div id="carousel" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            </div>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="../assets/img/carousel-1.png" class="d-block" alt="..." usemap="#carousel-1-map">
-                </div>
-                <div class="carousel-item">
-                    <img src="../assets/img/carousel-2.png" class="d-block" alt="..." usemap="#carousel-2-map">
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-            <!-- Map Section -->
-            <map name="carousel-1-map">
-                <area target="" alt="woman1" title="woman1" href="#image-accordion" coords="260,967,245,955,248,935,271,923,297,915,306,886,305,851,263,851,247,824,239,725,245,638,256,542,233,516,224,482,225,436,253,381,288,363,291,342,301,331,314,333,315,322,298,301,298,284,317,246,330,238,341,238,364,239,381,258,393,282,392,319,372,333,388,342,392,354,408,360,440,377,460,401,454,418,466,474,462,514,448,529,460,618,462,662,460,741,453,805,451,839,442,850,398,844,396,874,401,892,414,908,434,908,454,912,465,923,459,938,433,950,396,966,343,972,301,973" shape="poly">
-                <area target="" alt="woman2" title="woman2" href="#image-accordion" coords="1350,1078,1358,927,1385,769,1381,747,1390,715,1394,702,1385,688,1391,664,1390,638,1396,610,1399,567,1399,497,1419,439,1434,403,1454,386,1478,378,1497,375,1509,355,1480,331,1477,308,1478,296,1469,273,1469,256,1472,243,1481,217,1504,203,1527,189,1575,200,1616,241,1611,279,1608,297,1581,316,1579,328,1575,345,1582,357,1655,383,1666,409,1671,484,1671,557,1660,618,1654,648,1651,680,1663,703,1660,720,1649,717,1642,734,1631,731,1620,740,1633,769,1623,789,1628,1078" shape="poly">
-                <area target="" alt="woman3" title="woman3" href="#image-accordion" coords="704,497,704,467,711,441,701,427,703,362,723,343,740,340,738,331,732,317,729,305,740,290,759,288,772,299,775,314,773,328,764,333,775,348,795,358,808,426,790,447,793,500" shape="poly">
-                <area target="" alt="woman4" title="woman4" href="#image-accordion" coords="1242,703,1246,693,1249,571,1260,505,1257,468,1266,435,1263,398,1269,371,1285,363,1300,354,1295,342,1288,326,1286,313,1289,301,1300,288,1318,285,1330,297,1340,314,1333,333,1333,348,1356,354,1364,362,1384,413,1385,441,1388,458,1376,508,1370,523,1372,630,1367,685,1367,711,1365,722,1297,718" shape="poly">
-            </map>
-            <map name="carousel-2-map">
-                <area target="" alt="" title="" href="" coords="599,538,588,812,926,816,929,540" shape="poly">
-                <area target="" alt="" title="" href="" coords="442,325,437,506,660,508,665,325" shape="poly">
-                <area target="" alt="" title="" href="" coords="674,262,663,514,863,516,869,265" shape="poly">
-                <area target="" alt="" title="" href="" coords="872,329,866,525,1049,526,1053,328" shape="poly">
-                <area target="" alt="" title="" href="" coords="1356,264,1692,262,1695,610,1355,607" shape="poly">
-                <area target="" alt="" title="" href="" coords="1356,625,1695,628,1706,999,1373,995,1353,889" shape="poly">
-                <area target="" alt="" title="" href="" coords="1178,895,1185,1013,1373,1014,1353,892" shape="poly">
-                <area target="" alt="" title="" href="" coords="643,886,630,946,631,995,680,995,712,1010,764,1010,767,993,787,985,799,982,801,886" shape="poly">
-            </map>
-        </div>
-        <!-- Video Section -->
-        <div class="container-fluid" id="video">
-            <div class="container">
-                <div class="spacer"></div>
-                <div class="video-container" id="video1">
-                    <video controls>
-                        <source src="../assets/videos/Video%201%20Baronessa%20translated%20to%20english%201.0.mp4" type="video/mp4">
-                    </video>
-                </div>
-                <div class="spacer"></div>
-                <div class="video2-container" id="video2">
-                    <video controls>
-                        <source src="../assets/videos/Video%202%20World%20Fair%20Translated%20To%20English.mp4" type="video/mp4">
-                    </video>
-                </div>
-                <div class="spacer"></div>
-            </div>
-        </div>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </div>
 
-        <!-- Image Accordion Section -->
-        <div class="container-fluid" id="image-accordion">
-            <div class="container accordion">
-                <div class="panel active"><img src="../assets/img/silhouette-only-1.png" alt=""></div>
-                <div class="panel"><img src="../assets/img/silhouette-only-2.png" alt=""></div>
-                <div class="panel"><img src="../assets/img/silhouette-only-3.png" alt=""></div>
-                <div class="panel"><img src="../assets/img/silhouette-only-4.png" alt=""></div>
-                <div class="panel"><img src="../assets/img/silhouette-only-5.png" alt=""></div>
-                <div class="panel"><img src="../assets/img/silhouette-only-6.png" alt=""></div>
-                <div class="panel"><img src="../assets/img/silhouette-only-7.png" alt=""></div>
-            </div>
-        </div>
+    <!-- Carousel Section -->
+    <div class="container floating-alert">
+      <div class="alert alert-info alert-dismissible fade show" role="alert">
+        Click on highlighted objects to learn more.
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="alert"
+          aria-label="Close"
+        ></button>
+      </div>
+    </div>
 
-        <!-- Silhouettes Section -->
-        <div class="container-fluid" id="silhouettes">
-            <div class="container-fluid silhouette-container" id="silhouette-1" style="background: linear-gradient(315deg, #F7E6A5, var(--bs-secondary-bg))">
-                <div class="container">
-                    <img class="silhouette" src="../assets/img/silhouette-1.png" alt="">
-                </div>
-            </div>
-            <div class="container-fluid silhouette-container" id="silhouette-2" style="background: linear-gradient(45deg, #A3C1D4, var(--bs-secondary-bg));">
-                <div class="container">
-                    <img class="silhouette" src="../assets/img/silhouette-2.png" alt="">
-                </div>
-            </div>
-            <div class="container-fluid silhouette-container" id="silhouette-3" style="background: linear-gradient(315deg, #FFB3C1, var(--bs-secondary-bg))">
-                <div class="container">
-                    <img class="silhouette" src="../assets/img/silhouette-3.png" alt="">
-                </div>
-            </div>
-            <div class="container-fluid silhouette-container" id="silhouette-4" style="background: linear-gradient(45deg, #FFDAB9, var(--bs-secondary-bg))">
-                <div class="container">
-                    <img class="silhouette" src="../assets/img/silhouette-4.png" alt="">
-                </div>
-            </div>
-            <div class="container-fluid silhouette-container" id="silhouette-5" style="background: linear-gradient(315deg, #B2E2D7, var(--bs-secondary-bg))">
-                <div class="container">
-                    <img class="silhouette" src="../assets/img/silhouette-5.png" alt="">
-                </div>
-            </div>
-            <div class="container-fluid silhouette-container" id="silhouette-6" style="background: linear-gradient(45deg, #E6C5E5, var(--bs-secondary-bg))">
-                <div class="container">
-                    <img class="silhouette" src="../assets/img/silhouette-6.png" alt="">
-                </div>
-            </div>
-            <div class="container-fluid silhouette-container" id="silhouette-7" style="background: linear-gradient(45deg, #D9E7D9, var(--bs-secondary-bg));">
-                <div class="container"> 
-                    <img class="silhouette" src="../assets/img/silhouette-7.png" alt="">
-                </div>
-            </div>
+    <div id="carousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button
+          type="button"
+          data-bs-target="#carousel"
+          data-bs-slide-to="0"
+          class="active"
+          aria-current="true"
+          aria-label="Slide 1"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carousel"
+          data-bs-slide-to="1"
+          aria-label="Slide 2"
+        ></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img
+            src="../assets/img/carousel-1.png"
+            class="d-block"
+            alt="..."
+            usemap="#carousel-1-map"
+          />
         </div>
+        <div class="carousel-item">
+          <img
+            src="../assets/img/carousel-2.png"
+            class="d-block"
+            alt="..."
+            usemap="#carousel-2-map"
+          />
+        </div>
+      </div>
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carousel"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carousel"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
 
+      <!-- Map Section -->
+      <map name="carousel-1-map">
+        <area
+          target=""
+          alt="woman1"
+          title="woman1"
+          href="#image-accordion"
+          coords="260,967,245,955,248,935,271,923,297,915,306,886,305,851,263,851,247,824,239,725,245,638,256,542,233,516,224,482,225,436,253,381,288,363,291,342,301,331,314,333,315,322,298,301,298,284,317,246,330,238,341,238,364,239,381,258,393,282,392,319,372,333,388,342,392,354,408,360,440,377,460,401,454,418,466,474,462,514,448,529,460,618,462,662,460,741,453,805,451,839,442,850,398,844,396,874,401,892,414,908,434,908,454,912,465,923,459,938,433,950,396,966,343,972,301,973"
+          shape="poly"
+        />
+        <area
+          target=""
+          alt="woman2"
+          title="woman2"
+          href="#image-accordion"
+          coords="1350,1078,1358,927,1385,769,1381,747,1390,715,1394,702,1385,688,1391,664,1390,638,1396,610,1399,567,1399,497,1419,439,1434,403,1454,386,1478,378,1497,375,1509,355,1480,331,1477,308,1478,296,1469,273,1469,256,1472,243,1481,217,1504,203,1527,189,1575,200,1616,241,1611,279,1608,297,1581,316,1579,328,1575,345,1582,357,1655,383,1666,409,1671,484,1671,557,1660,618,1654,648,1651,680,1663,703,1660,720,1649,717,1642,734,1631,731,1620,740,1633,769,1623,789,1628,1078"
+          shape="poly"
+        />
+        <area
+          target=""
+          alt="woman3"
+          title="woman3"
+          href="#image-accordion"
+          coords="704,497,704,467,711,441,701,427,703,362,723,343,740,340,738,331,732,317,729,305,740,290,759,288,772,299,775,314,773,328,764,333,775,348,795,358,808,426,790,447,793,500"
+          shape="poly"
+        />
+        <area
+          target=""
+          alt="woman4"
+          title="woman4"
+          href="#image-accordion"
+          coords="1242,703,1246,693,1249,571,1260,505,1257,468,1266,435,1263,398,1269,371,1285,363,1300,354,1295,342,1288,326,1286,313,1289,301,1300,288,1318,285,1330,297,1340,314,1333,333,1333,348,1356,354,1364,362,1384,413,1385,441,1388,458,1376,508,1370,523,1372,630,1367,685,1367,711,1365,722,1297,718"
+          shape="poly"
+        />
+      </map>
+      <map name="carousel-2-map">
+        <area
+          target=""
+          alt=""
+          title=""
+          href=""
+          coords="599,538,588,812,926,816,929,540"
+          shape="poly"
+        />
+        <area
+          target=""
+          alt=""
+          title=""
+          href=""
+          coords="442,325,437,506,660,508,665,325"
+          shape="poly"
+        />
+        <area
+          target=""
+          alt=""
+          title=""
+          href=""
+          coords="674,262,663,514,863,516,869,265"
+          shape="poly"
+        />
+        <area
+          target=""
+          alt=""
+          title=""
+          href=""
+          coords="872,329,866,525,1049,526,1053,328"
+          shape="poly"
+        />
+        <area
+          target=""
+          alt=""
+          title=""
+          href=""
+          coords="1356,264,1692,262,1695,610,1355,607"
+          shape="poly"
+        />
+        <area
+          target=""
+          alt=""
+          title=""
+          href=""
+          coords="1356,625,1695,628,1706,999,1373,995,1353,889"
+          shape="poly"
+        />
+        <area
+          target=""
+          alt=""
+          title=""
+          href=""
+          coords="1178,895,1185,1013,1373,1014,1353,892"
+          shape="poly"
+        />
+        <area
+          target=""
+          alt=""
+          title=""
+          href=""
+          coords="643,886,630,946,631,995,680,995,712,1010,764,1010,767,993,787,985,799,982,801,886"
+          shape="poly"
+        />
+      </map>
+    </div>
 
-        <!-- Footer Section -->
-        <div class="container" id="footer">
-            <footer class="py-5">
-                <div class="row">
-                    <div class="col-6 col-md-2 mb-3">
-                        <h5>Section</h5>
-                        <ul class="nav flex-column">
-                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
-                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
-                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
-                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
-                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-6 col-md-2 mb-3">
-                        <h5>Section</h5>
-                        <ul class="nav flex-column">
-                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
-                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
-                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
-                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
-                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-6 col-md-2 mb-3">
-                        <h5>Section</h5>
-                        <ul class="nav flex-column">
-                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
-                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
-                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
-                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
-                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-md-5 offset-md-1 mb-3">
-                        <form>
-                            <h5>Subscribe to our newsletter</h5>
-                            <p>Monthly digest of what's new and exciting from us.</p>
-                            <div class="d-flex flex-column flex-sm-row w-100 gap-2">
-                                <label for="newsletter1" class="visually-hidden">Email address</label>
-                                <input id="newsletter1" type="text" class="form-control" placeholder="Email address">
-                                <button class="btn btn-primary" type="button">Subscribe</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-                <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
-                    <p>&copy; 2024 Company, Inc. All rights reserved.</p>
-                    <ul class="list-unstyled d-flex">
-                        <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"/></svg></a></li>
-                        <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"/></svg></a></li>
-                        <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"/></svg></a></li>
-                    </ul>
-                </div>
-            </footer>
+    <!-- Section Selection Dropdown -->
+    <div class="container text-center mt-4">
+      <label for="component">Choose a component:</label>
+      <select
+        name="component"
+        id="component"
+        class="form-select w-auto d-inline-block"
+      >
+        <option value="silhouettes">Silhouettes</option>
+        <option value="video">Videos</option>
+        <option value="ceiling">Ceiling Panels</option>
+      </select>
+    </div>
+
+    <!-- Video Section -->
+    <div class="container-fluid component-section" id="video">
+      <div class="container">
+        <div class="spacer"></div>
+        <div class="video-container" id="video1">
+          <video controls>
+            <source
+              src="../assets/videos/Video%201%20Baronessa%20translated%20to%20english%201.0.mp4"
+              type="video/mp4"
+            />
+          </video>
         </div>
-        <!-- Back to Top Button -->
-        <div id="back-to-top" class="back-to-top">
-            &#8679;
+        <div class="spacer"></div>
+        <div class="video2-container" id="video2">
+          <video controls>
+            <source
+              src="../assets/videos/Video%202%20World%20Fair%20Translated%20To%20English.mp4"
+              type="video/mp4"
+            />
+          </video>
         </div>
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script src="../js/bootstrap.bundle.min.js"></script>
-        <script src="../js/script.js"></script>
-        <script src="../js/theme.js"></script>
-        <script src="../js/imageMapResizer.min.js"></script>
-        <script>
-            $(window).on('load', function () {
-                setTimeout(function () {
-                    $('map').imageMapResize();
-                }, 500);
+        <div class="spacer"></div>
+      </div>
+    </div>
+
+    <!-- Image Accordion Section -->
+    <div class="container-fluid component-section" id="image-accordion">
+      <div class="container accordion">
+        <div class="panel active">
+          <img src="../assets/img/silhouette-only-1.png" alt="" />
+        </div>
+        <div class="panel">
+          <img src="../assets/img/silhouette-only-2.png" alt="" />
+        </div>
+        <div class="panel">
+          <img src="../assets/img/silhouette-only-3.png" alt="" />
+        </div>
+        <div class="panel">
+          <img src="../assets/img/silhouette-only-4.png" alt="" />
+        </div>
+        <div class="panel">
+          <img src="../assets/img/silhouette-only-5.png" alt="" />
+        </div>
+        <div class="panel">
+          <img src="../assets/img/silhouette-only-6.png" alt="" />
+        </div>
+        <div class="panel">
+          <img src="../assets/img/silhouette-only-7.png" alt="" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Silhouettes Section -->
+    <div class="container-fluid component-section" id="silhouettes">
+      <div
+        class="container-fluid silhouette-container"
+        id="silhouette-1"
+        style="background: linear-gradient(315deg, #F7E6A5, var(--bs-secondary-bg))"
+      >
+        <div class="container">
+          <img class="silhouette" src="../assets/img/silhouette-1.png" alt="" />
+        </div>
+      </div>
+      <div
+        class="container-fluid silhouette-container"
+        id="silhouette-2"
+        style="background: linear-gradient(45deg, #A3C1D4, var(--bs-secondary-bg));"
+      >
+        <div class="container">
+          <img class="silhouette" src="../assets/img/silhouette-2.png" alt="" />
+        </div>
+      </div>
+      <div
+        class="container-fluid silhouette-container"
+        id="silhouette-3"
+        style="background: linear-gradient(315deg, #FFB3C1, var(--bs-secondary-bg))"
+      >
+        <div class="container">
+          <img class="silhouette" src="../assets/img/silhouette-3.png" alt="" />
+        </div>
+      </div>
+      <div
+        class="container-fluid silhouette-container"
+        id="silhouette-4"
+        style="background: linear-gradient(45deg, #FFDAB9, var(--bs-secondary-bg))"
+      >
+        <div class="container">
+          <img class="silhouette" src="../assets/img/silhouette-4.png" alt="" />
+        </div>
+      </div>
+      <div
+        class="container-fluid silhouette-container"
+        id="silhouette-5"
+        style="background: linear-gradient(315deg, #B2E2D7, var(--bs-secondary-bg))"
+      >
+        <div class="container">
+          <img class="silhouette" src="../assets/img/silhouette-5.png" alt="" />
+        </div>
+      </div>
+      <div
+        class="container-fluid silhouette-container"
+        id="silhouette-6"
+        style="background: linear-gradient(45deg, #E6C5E5, var(--bs-secondary-bg))"
+      >
+        <div class="container">
+          <img class="silhouette" src="../assets/img/silhouette-6.png" alt="" />
+        </div>
+      </div>
+      <div
+        class="container-fluid silhouette-container"
+        id="silhouette-7"
+        style="background: linear-gradient(45deg, #D9E7D9, var(--bs-secondary-bg));"
+      >
+        <div class="container">
+          <img class="silhouette" src="../assets/img/silhouette-7.png" alt="" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Ceiling Panels Section -->
+    <div class="container-fluid component-section" id="ceiling" style="display: none;">
+      <div class="container">
+        <div class="ceiling-grid">
+          <!-- Row 1 -->
+          <div class="ceiling-row top-row">
+            <div class="ceiling-panel tall" data-panel="4">
+              <!-- Zoom icon (for enlarging) -->
+              <div class="zoom-icon">
+                <img src="../assets/img/zoom.png" alt="Zoom" />
+              </div>
+              <!-- Flip text overlay on hover -->
+              <div class="hover-flip-text">Click to flip</div>
+              <div class="panel-inner">
+                <img
+                  src="../assets/img/ceiling-4f.png"
+                  class="panel-front"
+                  alt="Panel 4 Front"
+                />
+                <img
+                  src="../assets/img/ceiling-4r.png"
+                  class="panel-back"
+                  alt="Panel 4 Back"
+                />
+              </div>
+            </div>
+            <div class="ceiling-panel short" data-panel="1">
+              <div class="zoom-icon">
+                <img src="../assets/img/zoom.png" alt="Zoom" />
+              </div>
+              <div class="hover-flip-text">Click to flip</div>
+              <div class="panel-inner">
+                <img
+                  src="../assets/img/ceiling-1f.png"
+                  class="panel-front"
+                  alt="Panel 1 Front"
+                />
+                <img
+                  src="../assets/img/ceiling-1r.png"
+                  class="panel-back"
+                  alt="Panel 1 Back"
+                />
+              </div>
+            </div>
+            <div class="ceiling-panel tall" data-panel="5">
+              <div class="zoom-icon">
+                <img src="../assets/img/zoom.png" alt="Zoom" />
+              </div>
+              <div class="hover-flip-text">Click to flip</div>
+              <div class="panel-inner">
+                <img
+                  src="../assets/img/ceiling-5f.png"
+                  class="panel-front"
+                  alt="Panel 5 Front"
+                />
+                <img
+                  src="../assets/img/ceiling-5r.png"
+                  class="panel-back"
+                  alt="Panel 5 Back"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Row 2 -->
+          <div class="ceiling-row bottom-row">
+            <div class="ceiling-panel short" data-panel="2">
+              <div class="zoom-icon">
+                <img src="../assets/img/zoom.png" alt="Zoom" />
+              </div>
+              <div class="hover-flip-text">Click to flip</div>
+              <div class="panel-inner">
+                <img
+                  src="../assets/img/ceiling-2f.png"
+                  class="panel-front"
+                  alt="Panel 2 Front"
+                />
+                <img
+                  src="../assets/img/ceiling-2r.png"
+                  class="panel-back"
+                  alt="Panel 2 Back"
+                />
+              </div>
+            </div>
+            <div class="ceiling-panel tall" data-panel="6">
+              <div class="zoom-icon">
+                <img src="../assets/img/zoom.png" alt="Zoom" />
+              </div>
+              <div class="hover-flip-text">Click to flip</div>
+              <div class="panel-inner">
+                <img
+                  src="../assets/img/ceiling-6f.png"
+                  class="panel-front"
+                  alt="Panel 6 Front"
+                />
+                <img
+                  src="../assets/img/ceiling-6r.png"
+                  class="panel-back"
+                  alt="Panel 6 Back"
+                />
+              </div>
+            </div>
+            <div class="ceiling-panel short" data-panel="3">
+              <div class="zoom-icon">
+                <img src="../assets/img/zoom.png" alt="Zoom" />
+              </div>
+              <div class="hover-flip-text">Click to flip</div>
+              <div class="panel-inner">
+                <img
+                  src="../assets/img/ceiling-3f.png"
+                  class="panel-front"
+                  alt="Panel 3 Front"
+                />
+                <img
+                  src="../assets/img/ceiling-3r.png"
+                  class="panel-back"
+                  alt="Panel 3 Back"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Overlay (Enlarged View) -->
+    <div id="ceiling-modal" class="ceiling-modal">
+      <div class="ceiling-modal-content">
+        <!-- Close button -->
+        <span class="ceiling-modal-close" id="ceiling-modal-close">&times;</span>
+
+        <!-- Left/Right arrows -->
+        <div id="ceiling-modal-prev" class="ceiling-modal-nav ceiling-modal-nav-left">&#10094;</div>
+        <div id="ceiling-modal-next" class="ceiling-modal-nav ceiling-modal-nav-right">&#10095;</div>
+
+        <!-- Flip container -->
+        <div id="modal-flip-container" class="flip-container">
+          <div class="flip-inner">
+            <img
+              id="ceiling-modal-image-front"
+              class="flip-front"
+              src=""
+              alt="Ceiling Panel Front"
+            />
+            <img
+              id="ceiling-modal-image-back"
+              class="flip-back"
+              src=""
+              alt="Ceiling Panel Back"
+            />
+          </div>
+        </div>
+      </div>
+      <!-- Flip button in modal -->
+      <button id="ceiling-modal-flip-btn" class="modal-flip-btn">Flip</button>
+    </div>
+    <!-- End Modal -->
+
+    <!-- Footer Section -->
+    <div class="container" id="footer">
+      <footer class="py-5">
+        <div class="row">
+          <div class="col-6 col-md-2 mb-3">
+            <h5>Section</h5>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2">
+                <a href="#" class="nav-link p-0 text-body-secondary">Home</a>
+              </li>
+              <li class="nav-item mb-2">
+                <a href="#" class="nav-link p-0 text-body-secondary">Features</a>
+              </li>
+              <li class="nav-item mb-2">
+                <a href="#" class="nav-link p-0 text-body-secondary">Pricing</a>
+              </li>
+              <li class="nav-item mb-2">
+                <a href="#" class="nav-link p-0 text-body-secondary">FAQs</a>
+              </li>
+              <li class="nav-item mb-2">  
+                <a href="#" class="nav-link p-0 text-body-secondary">About</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-6 col-md-2 mb-3">
+            <h5>Section</h5>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2">
+                <a href="#" class="nav-link p-0 text-body-secondary">Home</a>
+              </li>
+              <li class="nav-item mb-2">
+                <a href="#" class="nav-link p-0 text-body-secondary">Features</a>
+              </li>
+              <li class="nav-item mb-2">
+                <a href="#" class="nav-link p-0 text-body-secondary">Pricing</a>
+              </li>
+              <li class="nav-item mb-2">
+                <a href="#" class="nav-link p-0 text-body-secondary">FAQs</a>
+              </li>
+              <li class="nav-item mb-2">
+                <a href="#" class="nav-link p-0 text-body-secondary">About</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-6 col-md-2 mb-3">
+            <h5>Section</h5>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2">
+                <a href="#" class="nav-link p-0 text-body-secondary">Home</a>
+              </li>
+              <li class="nav-item mb-2">
+                <a href="#" class="nav-link p-0 text-body-secondary">Features</a>
+              </li>
+              <li class="nav-item mb-2">
+                <a href="#" class="nav-link p-0 text-body-secondary">Pricing</a>
+              </li>
+              <li class="nav-item mb-2">
+                <a href="#" class="nav-link p-0 text-body-secondary">FAQs</a>
+              </li>
+              <li class="nav-item mb-2">
+                <a href="#" class="nav-link p-0 text-body-secondary">About</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-5 offset-md-1 mb-3">
+            <form>
+              <h5>Subscribe to our newsletter</h5>
+              <p>Monthly digest of what's new and exciting from us.</p>
+              <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+                <label for="newsletter1" class="visually-hidden"
+                  >Email address</label
+                >
+                <input
+                  id="newsletter1"
+                  type="text"
+                  class="form-control"
+                  placeholder="Email address"
+                />
+                <button class="btn btn-primary" type="button">Subscribe</button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div
+          class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top"
+        >
+          <p>&copy; 2024 Company, Inc. All rights reserved.</p>
+          <ul class="list-unstyled d-flex">
+            <li class="ms-3">
+              <a class="link-body-emphasis" href="#"
+                ><svg class="bi" width="24" height="24"
+                  ><use xlink:href="#twitter" /></svg
+              ></a>
+            </li>
+            <li class="ms-3">
+              <a class="link-body-emphasis" href="#"
+                ><svg class="bi" width="24" height="24"
+                  ><use xlink:href="#instagram" /></svg
+              ></a>
+            </li>
+            <li class="ms-3">
+              <a class="link-body-emphasis" href="#"
+                ><svg class="bi" width="24" height="24"
+                  ><use xlink:href="#facebook" /></svg
+              ></a>
+            </li>
+          </ul>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Back to Top Button -->
+    <div id="back-to-top" class="back-to-top">&#8679;</div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/script.js"></script>
+    <script src="../js/theme.js"></script>
+    <script src="../js/imageMapResizer.min.js"></script>
+    <script>
+      $(window).on("load", function () {
+        setTimeout(function () {
+          $("map").imageMapResize();
+        }, 500);
+      });
+
+      $("#carousel").on("slid.bs.carousel", function () {
+        $("map").imageMapResize();
+      });
+
+      document.addEventListener("DOMContentLoaded", function () {
+        var carousel = document.querySelector("#carousel");
+
+        if (carousel) {
+          function updateBackground() {
+            var activeItem = carousel.querySelector(".carousel-item.active img");
+            if (activeItem) {
+              var imageUrl = activeItem.getAttribute("src");
+              console.log(imageUrl);
+              carousel.style.setProperty("--carousel-bg", `url(${imageUrl})`);
+            }
+          }
+
+          updateBackground();
+          carousel.addEventListener("slid.bs.carousel", updateBackground);
+        }
+      });
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const silhouettes = document.querySelectorAll(".silhouette");
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("show");
+                observer.unobserve(entry.target);
+              }
             });
+          },
+          { threshold: 0.3 }
+        );
 
-            $('#carousel').on('slid.bs.carousel', function () {
-                $('map').imageMapResize();
-            });
+        silhouettes.forEach((silhouette) => {
+          observer.observe(silhouette);
+        });
 
-            document.addEventListener('DOMContentLoaded', function () {
-                var carousel = document.querySelector('#carousel');
-
-                if (carousel) {
-                    function updateBackground() {
-                        var activeItem = carousel.querySelector('.carousel-item.active img');
-                        if (activeItem) {
-                            var imageUrl = activeItem.getAttribute('src');
-                            console.log(imageUrl);
-                            carousel.style.setProperty('--carousel-bg', `url(${imageUrl})`);
-                        }
-                    }
-
-                    updateBackground();
-
-                    carousel.addEventListener('slid.bs.carousel', updateBackground);
-                }
-            });
-
-            document.addEventListener("DOMContentLoaded", function () {
-                const silhouettes = document.querySelectorAll(".silhouette");
-
-                const observer = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            entry.target.classList.add("show");
-                            observer.unobserve(entry.target); // Prevent repeated triggers
-                        }
-                    });
-                }, { threshold: 0.3 }); // Trigger animation when 30% of element is visible
-
-                silhouettes.forEach(silhouette => {
-                    observer.observe(silhouette);
-                });
-
-                console.log("Scroll animation script loaded."); // Debugging
-            });
-        </script>
-    </body>
+        console.log("Scroll animation script loaded.");
+      });
+    </script>
+  </body>
 </html>
