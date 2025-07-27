@@ -189,21 +189,22 @@
                 </ul>
               </li>
               <li class="nav-item"><a class="nav-link" href="catalogues.html">CATALOGUES</a></li>
-              <li class="nav-item"><a class="nav-link" href="../en/about-us.html">ABOUT US</a></li>
-              <!-- Language -->
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
-                  <img id="currentLanguageFlag" src="../assets/img/en.svg" width="20" alt="English">
-                </a>
-                <ul class="dropdown-menu dropdown-menu-end">
-                  <li><a class="dropdown-item" href="#" onclick="setLanguage('en')">
-                    <img src="../assets/img/en.svg" width="20" class="me-2">English
-                  </a></li>
-                  <li><a class="dropdown-item" href="#" onclick="setLanguage('it')">
-                    <img src="../assets/img/it.svg" width="20" class="me-2">Italiano
-                  </a></li>
-                </ul>
-              </li>
+              <li class="nav-item"><a class="nav-link" href="about-us.html">ABOUT US</a></li>
+
+                <!-- Language -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+                        <img id="currentLanguageFlag" src="../assets/img/en.svg" width="20" alt="">
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="#" onclick="setLanguage('en')">
+                            <img src="/Alice-a-Bruxelles/assets/img/en.svg" width="20" class="me-2">English
+                        </a></li>
+                        <li><a class="dropdown-item" href="#" onclick="setLanguage('it')">
+                            <img src="/Alice-a-Bruxelles/assets/img/it.svg" width="20" class="me-2">Italiano
+                        </a></li>
+                    </ul>
+                </li>
             </ul>
           </div>
         </nav>
@@ -343,17 +344,19 @@
                 $('html, body').animate({scrollTop : 0}, 800);
                 return false;
             });
-            
-            // Language switching function
+
             function setLanguage(lang) {
-                const flagElement = document.getElementById('currentLanguageFlag');
-                if (lang === 'it') {
-                    window.location.href = '../it/about-us.html'; // Italian version
-                    flagElement.src = '../assets/img/it.svg';
-                } else {
-                    window.location.href = '../en/about-us.html'; // English version
-                    flagElement.src = '../assets/img/en.svg';
+                const currentPath = window.location.pathname;
+                let filename = currentPath.substring(currentPath.lastIndexOf('/') + 1);
+                if (filename === '' || filename === 'en' || filename === 'it') {
+                    filename = 'landingPage.html';
                 }
+
+                const newPath = lang === 'it'
+                    ? `/Alice-a-Bruxelles/it/${filename}`
+                    : `/Alice-a-Bruxelles/en/${filename}`;
+
+                window.location.href = newPath;
             }
             // Modal logic for exhibit poster
             function openPosterModal() {

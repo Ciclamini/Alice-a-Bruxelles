@@ -54,14 +54,14 @@
             <!-- Language -->
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
-                <img id="currentLanguageFlag" src="../assets/img/en.svg" width="20" alt="English">
+                <img id="currentLanguageFlag" src="../assets/img/en.svg" width="20" alt="">
               </a>
               <ul class="dropdown-menu dropdown-menu-end">
                 <li><a class="dropdown-item" href="#" onclick="setLanguage('en')">
-                  <img src="../assets/img/en.svg" width="20" class="me-2">English
+                  <img src="/Alice-a-Bruxelles/assets/img/en.svg" width="20" class="me-2">English
                 </a></li>
                 <li><a class="dropdown-item" href="#" onclick="setLanguage('it')">
-                  <img src="../assets/img/it.svg" width="20" class="me-2">Italiano
+                  <img src="/Alice-a-Bruxelles/assets/img/it.svg" width="20" class="me-2">Italiano
                 </a></li>
               </ul>
             </li>
@@ -237,12 +237,27 @@
   <script>
     // Language switcher
     function setLanguage(lang) {
+      const currentPath = window.location.pathname;
+
+      // Get the filename, default to landingPage.html if empty
+      let filename = currentPath.substring(currentPath.lastIndexOf('/') + 1);
+      if (filename === '' || filename === 'en' || filename === 'it') {
+        filename = 'landingPage.html';
+      }
+
+      // Build new path
+      const newPath = lang === 'it'
+              ? `../it/${filename}`
+              : `../en/${filename}`;
+
+      // Update flag
       document.getElementById('currentLanguageFlag').src =
-        lang === 'it' ? '../assets/img/it.svg' : '../assets/img/en.svg';
-      window.location.href = lang === 'it'
-        ? '../it/index1.html'
-        : '../en/landingPage.html';
+              lang === 'it' ? '/Alice-a-Bruxelles/assets/img/it.svg' : '/Alice-a-Bruxelles/assets/img/en.svg';
+
+      // Redirect
+      window.location.href = newPath;
     }
+
 
     // Open PDF in new tab
     function openPDF() {

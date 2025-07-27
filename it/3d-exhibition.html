@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-bs-theme="light">
+<html lang="it" data-bs-theme="light">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -53,7 +53,7 @@
             <!-- Language -->
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
-                <img id="currentLanguageFlag" src="/Alice-a-Bruxelles/assets/img/en.svg" width="20" alt="Language Flag">
+                <img id="currentLanguageFlag" src="/Alice-a-Bruxelles/assets/img/it.svg" width="20" alt="Language Flag">
               </a>
               <ul class="dropdown-menu dropdown-menu-end">
                 <li>
@@ -145,26 +145,27 @@
         window.scrollTo({ top: 0, behavior: 'smooth' });
       });
     });
-  
-    // Language switcher
-    function setLanguage(lang) {
+
+      // Language switcher
+      function setLanguage(lang) {
       const currentPath = window.location.pathname;
 
       // Extract current file name
       let filename = currentPath.substring(currentPath.lastIndexOf('/') + 1);
       if (filename === '' || filename === 'en' || filename === 'it') {
-        filename = 'landingPage.html';
-      }
+      filename = 'landingPage.html';
+    }
 
       // Build new path
       const newPath = lang === 'it'
-              ? `../it/${filename}`
-              : `../en/${filename}`;
+      ? `../it/${filename}`
+      : `../en/${filename}`;
 
       window.location.href = newPath;
     }
-  
-    // Unity toggle
+
+
+  // Unity toggle
     function showUnity() {
       document.getElementById('env-preview').style.display = 'none';
       document.getElementById('unityContainer').style.display = 'block';

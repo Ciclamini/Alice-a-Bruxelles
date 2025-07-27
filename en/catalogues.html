@@ -53,15 +53,19 @@
             <!-- Language -->
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
-                <img id="currentLanguageFlag" src="../assets/img/en.svg" width="20" alt="English">
+                <img id="currentLanguageFlag" src="/Alice-a-Bruxelles/assets/img/en.svg" width="20" alt="Language Flag">
               </a>
               <ul class="dropdown-menu dropdown-menu-end">
-                <li><a class="dropdown-item" href="#" onclick="setLanguage('en')">
-                  <img src="../assets/img/en.svg" width="20" class="me-2">English
-                </a></li>
-                <li><a class="dropdown-item" href="#" onclick="setLanguage('it')">
-                  <img src="../assets/img/it.svg" width="20" class="me-2">Italiano
-                </a></li>
+                <li>
+                  <a class="dropdown-item" href="#" onclick="setLanguage('en')">
+                    <img src="/Alice-a-Bruxelles/assets/img/en.svg" width="20" class="me-2">English
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#" onclick="setLanguage('it')">
+                    <img src="/Alice-a-Bruxelles/assets/img/it.svg" width="20" class="me-2">Italiano
+                  </a>
+                </li>
               </ul>
             </li>
           </ul>
@@ -159,12 +163,19 @@
         window.scrollTo({ top: 0, behavior: 'smooth' });
       });
     });
-  
-    // Language switcher
+
     function setLanguage(lang) {
-      const flag = document.getElementById('currentLanguageFlag');
-      flag.src = lang === 'it' ? '../assets/img/it.svg' : '../assets/img/en.svg';
-      window.location.href = lang === 'it' ? '../it/index1.html' : '../en/index.html';
+      const currentPath = window.location.pathname;
+      let filename = currentPath.substring(currentPath.lastIndexOf('/') + 1);
+      if (filename === '' || filename === 'en' || filename === 'it') {
+        filename = 'landingPage.html';
+      }
+
+      const newPath = lang === 'it'
+              ? `../it/${filename}`
+              : `../en/${filename}`;
+
+      window.location.href = newPath;
     }
   
     // Unity toggle
