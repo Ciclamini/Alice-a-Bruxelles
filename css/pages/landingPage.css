@@ -164,85 +164,153 @@
 
 
 /*───────────────────────────────────────────────────────────────────────────────
-    3. “CHOOSE YOUR VIEW” CARDS
+    CHOOSE YOUR VIEW CARDS - UNIFORM SIZING & HOVER EFFECTS
 ───────────────────────────────────────────────────────────────────────────────*/
+
 #choose-view {
   scroll-margin-top: 3rem;
 }
+
+/* Make all cards flex containers with equal height */
+#choose-view .col-sm-4 {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Base card styling */
 .view-card {
   position: relative;
   overflow: hidden;
   border-radius: 8px;
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: transparent;
+  border: 3px solid white;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
+
+/* Hover effect - slightly enlarge the entire card */
 .view-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
 }
-.view-card img {
+
+/* Container for the image area - uniform height for all cards */
+.view-card .image-container {
+  position: relative;
   width: 100%;
-  height: auto;
-  display: block;
-}
-/* 3D Exhibition image */
-.view-card .card-img-top {
   height: 450px;
-  object-fit: cover;
-}
-
-/*───────────────────────────────────────────────────────────────────────────────
-   Static “By Components” card image + overlaid thumbs
-───────────────────────────────────────────────────────────────────────────────*/
-
-.view-card {
-  position: relative;
-}
-
-/* stack context for image+thumbs */
-.view-card .image-stack {
-  position: relative;
-  width: 100%;
-  height: 450px;      /* match your other cards' image height */
   overflow: hidden;
+  flex-shrink: 0; /* Prevents the image area from shrinking */
 }
 
-/* the big image */
-.view-card .main-image {
+/* All card images - uniform sizing */
+.view-card .card-img-top,
+.view-card .main-image,
+.view-card img:first-child {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
+  transition: transform 0.3s ease;
 }
 
-/* thumbnail strip, overlaid */
-.view-card .static-thumbs {
-  position: absolute;
-  bottom: 8px;        /* how far up from the bottom edge */
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 0.5rem;
-  padding: 0.25rem;
-  background: rgba(0,0,0,0.4);
-  border-radius: 4px;
+/* Image hover effect - subtle zoom */
+.view-card:hover .card-img-top,
+.view-card:hover .main-image,
+.view-card:hover img:first-child {
+  transform: scale(1.05);
 }
 
-/* each little thumb */
-.view-card .static-thumbs .thumb {
+/*───────────────────────────────────────────────────────────────────────────────
+   SPECIAL STYLING FOR "BY COMPONENTS" CARD WITH THUMBNAIL OVERLAY
+───────────────────────────────────────────────────────────────────────────────*/
+
+/* Thumbnail strip overlay for the components card */
+.view-card .position-absolute.bottom-0 {
+  z-index: 10;
+  transition: opacity 0.3s ease;
+}
+
+/* Make thumbnails slightly more prominent on hover */
+.view-card:hover .position-absolute.bottom-0 {
+  opacity: 1;
+}
+
+/* Individual thumbnail styling */
+.thumbnail-img,
+.view-card .d-flex.gap-1 img {
   width: 60px;
-  height: 45px;        /* keeps same aspect ratio block */
+  height: 45px;
   object-fit: cover;
   border: 2px solid white;
-  border-radius: 2px;
-  cursor: pointer;
-  transition: transform 0.2s, opacity 0.2s;
-}
-.view-card .static-thumbs .thumb:hover {
+  border-radius: 3px;
   opacity: 0.9;
-  transform: scale(1.1);
+  transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
+.thumbnail-img:hover,
+.view-card .d-flex.gap-1 img:hover {
+  opacity: 1;
+  transform: scale(1.05);
+}
 
+/*───────────────────────────────────────────────────────────────────────────────
+   CARD BODY AND TEXT STYLING
+───────────────────────────────────────────────────────────────────────────────*/
+
+/* Card body - consistent spacing */
+.view-card .card-body {
+  padding: 1.5rem 1rem;
+  background: transparent !important;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Title styling */
+.view-card .card-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.25rem;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  transition: transform 0.3s ease;
+}
+
+/* Title hover effect */
+.view-card:hover .card-title {
+  transform: translateY(-2px);
+}
+
+/* Remove Bootstrap card backgrounds */
+.view-card.card {
+  background-color: transparent !important;
+}
+
+/*───────────────────────────────────────────────────────────────────────────────
+   RESPONSIVE ADJUSTMENTS
+───────────────────────────────────────────────────────────────────────────────*/
+
+@media (max-width: 768px) {
+  .view-card .image-container {
+    height: 300px; /* Smaller on mobile */
+  }
+  
+  .view-card:hover {
+    transform: translateY(-4px) scale(1.01); /* Less dramatic on mobile */
+  }
+  
+  .thumbnail-img,
+  .view-card .d-flex.gap-1 img {
+    width: 45px;
+    height: 34px;
+  }
+}
 /*───────────────────────────────────────────────────────────────────────────────
     4. FOOTER
 ───────────────────────────────────────────────────────────────────────────────*/
@@ -273,3 +341,4 @@
     z-index: 1000;
     color: #20c997;
 }
+

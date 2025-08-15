@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Alice in Brussels</title>
   <link href="../css/theme.css" rel="stylesheet">
-  <link href="../css/pages/index.css" rel="stylesheet">
+  <link href="../css/pages/landingPage.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
   <style>
     .fade-in {
@@ -180,36 +180,32 @@ who introduced several innovations developed in Alice’s schools into elementar
     <div class="row g-4">
 
       <!-- By Components Static Card -->
-      <div class="col-sm-4">
-        <a href="by-components.html"
-          class="card view-card h-100 p-0 overflow-hidden text-decoration-none">
-
-          <!-- image container -->
-          <div class="image-stack">
-            <!-- Main image, full 450px tall -->
-            <img 
-              src="../assets/img/slider-7.jpeg" 
-              class="main-image" 
-              alt="Explore the Components"
-            >
-
-            <!-- Thumbnails overlaid on bottom of the main image -->
-            <div class="static-thumbs">
-              <img src="../assets/img/slider-7.jpeg" class="thumb" alt="">
-              <img src="../assets/img/slider-1.jpeg" class="thumb" alt="">
-              <img src="../assets/img/ceiling.jpg" class="thumb" alt="">
-              <img src="../assets/img/display.jpg"   class="thumb" alt="">
+        <div class="col-sm-4">
+        <a href="by-components.html" class="card view-card h-100 text-decoration-none position-relative overflow-hidden">
+        <!-- Image container with relative positioning -->
+        <div class="position-relative" style="height: 450px; overflow: hidden;">
+          <img src="../assets/img/slider-7.jpeg" 
+              class="w-100 h-100" 
+              
+              alt="Explore the Components">
+          
+          <!-- Thumbnail strip overlay - positioned inside the image container -->
+          <div class="position-absolute bottom-0 start-50 translate-middle-x" style="margin-bottom: 10px;">
+            <div class="d-flex gap-1 p-1 bg-dark bg-opacity-50 rounded">
+              <img src="../assets/img/slider-7.jpeg" style="width: 60px; height: 45px; object-fit: cover; border: 2px solid white; border-radius: 3px;" alt="">
+              <img src="../assets/img/slider-1.jpeg" style="width: 60px; height: 45px; object-fit: cover; border: 2px solid white; border-radius: 3px;" alt="">
+              <img src="../assets/img/ceiling.jpg" style="width: 60px; height: 45px; object-fit: cover; border: 2px solid white; border-radius: 3px;" alt="">
+              <img src="../assets/img/display.jpg" style="width: 60px; height: 45px; object-fit: cover; border: 2px solid white; border-radius: 3px;" alt="">
             </div>
           </div>
-
-          <!-- Caption -->
-          <div class="card-body bg-transparent text-center">
-            <h5 class="card-title text-white">EXPLORE</h5>
-            <h5 class="card-title text-white">THE COMPONENTS</h5>
-          </div>
-
-        </a>
-      </div>
+        </div>
+      
+        <div class="card-body bg-transparent text-center">
+          <h5 class="card-title text-white mb-0">EXPLORE</h5>
+          <h5 class="card-title text-white">THE COMPONENTS</h5>
+        </div>
+      </a>
+    </div>
 
       <!-- 3D Exhibition -->
       <div class="col-sm-4">
@@ -217,6 +213,7 @@ who introduced several innovations developed in Alice’s schools into elementar
           class="card view-card h-100 text-decoration-none position-relative overflow-hidden">
           <img src="../assets/img/slider-1.jpeg"
               class="card-img-top"
+              style="object-fit: cover;"
               alt="3D Exhibition Thumbnail">
           <div class="card-body bg-transparent text-center">
             <h5 class="card-title text-white">STEP INSIDE</h5>
@@ -232,6 +229,7 @@ who introduced several innovations developed in Alice’s schools into elementar
         >
           <img src="../assets/img/catalogue.jpg"
               class="card-img-top"
+              style="object-fit: cover;"
               alt="3D Exhibition Thumbnail">
           <div class="card-body bg-transparent text-center">
             <h5 class="card-title text-white">BROWSE</h5>
