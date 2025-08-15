@@ -1,12 +1,23 @@
 <!doctype html>
-<html lang="en" data-bs-theme="dark">
+<html lang="en" data-bs-theme="light">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Alice in Brussels</title>
   <link href="../css/theme.css" rel="stylesheet">
-  <link href="../css/pages/landingPage.css" rel="stylesheet">
+  <link href="../css/pages/index.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: none;
+    }
+  </style>
 </head>
 <body>
 
@@ -14,47 +25,44 @@
   <div class="nav container-fluid fixed-top">
     <div class="container">
       <nav class="navbar navbar-expand-lg">
-        <a class="navbar-brand" href="landingPage.html">
+        <a class="navbar-brand" href="#">
           <img src="../assets/img/website-icon.png" alt="Logo" width="30" height="24">
           ALICE IN BRUSSELS
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar"
-                aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbar">
           <ul class="navbar-nav ms-auto">
-            <li class="nav-item"><a class="nav-link" href="landingPage.html#landing-section">HOME</a></li>
+            <li class="nav-item"><a class="nav-link" href="#landing-section">HOME</a></li>
             <li class="nav-item"><a class="nav-link" href="3d-exhibition.html">EXHIBITION IN 3D</a></li>
-            <!-- Exhibition by Components dropdown -->
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">EXHIBITION BY COMPONENTS</a>
-              <ul class="dropdown-menu dropdown-menu-end">
-                <li><a class="dropdown-item" href="by-components.html?panel=0">The History of the Schools in 2 Videos</a></li>
-                <li><a class="dropdown-item" href="by-components.html?panel=1">La Montesca School: A Story of Women</a></li>
-                <li><a class="dropdown-item" href="by-components.html?panel=2">Photos and Alice’s Letters to Maria Pasqui</a></li>
-                <li><a class="dropdown-item" href="by-components.html?panel=3">Montessori and International Teaching Materials</a></li>
-                <li><a class="dropdown-item" href="by-components.html?panel=4">The 1910 World Fair Exhibition</a></li>
-                <li><a class="dropdown-item" href="by-components.html?panel=5">The Reconstruction of the Schools’ Stand</a></li>
-                <li><a class="dropdown-item" href="by-components.html?panel=6">Exhibition Project; Visitors’ Guide, Credits</a></li>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#" data-panel-index="0">The History of the Schools in 2 Videos</a></li>
+                <li><a class="dropdown-item" href="#" data-panel-index="1">La Montesca School: A Story of Women</a></li>
+                <li><a class="dropdown-item" href="#" data-panel-index="2">Photos and Alice’s Letters to Maria Pasqui</a></li>
+                <li><a class="dropdown-item" href="#" data-panel-index="3">Montessori and International Teaching Materials</a></li>
+                <li><a class="dropdown-item" href="#" data-panel-index="4">The 1910 World Fair Exhibition</a></li>
+                <li><a class="dropdown-item" href="#" data-panel-index="5">The Reconstruction of the Schools’ Stand</a></li>
+                <li><a class="dropdown-item" href="#" data-panel-index="6">Exhibition Project; Visitors’ Guide, Credits</a></li>
               </ul>
             </li>
-            <!-- Videos dropdown -->
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">VIDEOS</a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="landingPage.html?autoplayVideo=1">Alice in Brussels: An Introduction to the Exhibit</a></li>
-                <li><a class="dropdown-item" href="by-components.html?panel=0#video">The Baroness and the Barefoot Children</a></li>
-                <li><a class="dropdown-item" href="by-components.html?panel=0#video">The Montesca Schools at the 1910 World Fair</a></li>
+                <li><a class="dropdown-item" href="#landing-section">Alice in Brussels: Intro</a></li>
+                <li><a class="dropdown-item" href="#">The Baroness…</a></li>
+                <li><a class="dropdown-item" href="#">Montesca Schools…</a></li>
                 <li><a class="dropdown-item" href="#">Symposium – Excerpts</a></li>
               </ul>
             </li>
-            <li class="nav-item"><a class="nav-link" href="catalogues.html">CATALOGUES</a></li>
-            <li class="nav-item"><a class="nav-link" href="../en/about-us.html">ABOUT US</a></li>
-            <!-- Language -->
+            <li class="nav-item"><a class="nav-link" href="#" onclick="openPDF()">CATALOGUE</a></li>
+            <li class="nav-item"><a class="nav-link" href="../en/about-us.html">CREDITS</a></li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
-                <img id="currentLanguageFlag" src="../assets/img/en.svg" width="20" alt="">
+                <img id="currentLanguageFlag" src="../assets/img/en.svg" width="20" alt="English">
               </a>
               <ul class="dropdown-menu dropdown-menu-end">
                 <li><a class="dropdown-item" href="#" onclick="setLanguage('en')">
@@ -71,82 +79,101 @@
     </div>
   </div>
 
-  <!-- ===== Landing Section ===== -->
-  <section id="landing" class="landing">
-    <!-- 1) Banner with centered overlay title -->    
-    <div class="landing__banner">
-      <img
-        src="../assets/img/AB2_2.jpg"
-        alt="Alice in Brussels Banner"
-        class="landing__banner-img"
-      >
-      <h1 class="landing__banner-title">
-        The Schools of Montesca and Rovigliano<br>
-        at the Universal Exposition of 1910
-      </h1>
-    </div>
-
-    <!-- 2) Two-column layout: description on the left, YouTube video on the right -->
-    <div class="landing__content container my-4">
-      <div class="row g-4 h-100">
-
-        <!-- Description card -->
-        <div class="col-md-6">
-          <div class="landing__card shadow-sm p-4">
-            <p class="mb-3">
-              In 1910, the rural schools of Montesca and Rovigliano, founded by Alice Hallgarten-Franchetti,
-              presented their innovative educational work at the Universal and International Exposition in Brussels.
-            </p>
-            <p class="mb-0">
-              The 2024 exhibition “Alice in Brussels” celebrates their award-winning, progressive model of rural education.
-            </p>
+ <!-- ===== Landing Section ===== -->
+<div class="container-fluid position-relative fade-in" id="landing-section" style="padding-top: 0; padding-bottom: 0; background-color: #222; height: 500px; min-height: unset;">
+  <!-- Overlay image with low opacity -->
+  <div style="
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 500px;
+    z-index: 1;
+    background: url('../assets/img/AB2_2.jpg') center center / cover no-repeat;
+    opacity: 0.20;
+    pointer-events: none;">
+  </div>
+  <div class="container position-relative h-100" style="z-index: 2;">
+    <div class="row align-items-center h-100" style="min-height: 0;">
+      <!-- LEFT -->
+      <div class="col-lg-6 text-center" style="padding: 8px 0;">
+        <h1 class="landing-title" style="color: #fff; font-weight: 535; font-size: 32px; line-height: 1.1; margin-bottom: 8px;">
+          MONTESCA & ROVIGLIANO SCHOOLS EXHIBITIONS
+        </h1>
+        <p class="landing-subtitle" style="color: #fff; font-size: 18px; margin-bottom: 12px;">
+          Brussels 1910 — Città di Castello 2024
+        </p>
+        <div class="landing-buttons d-flex flex-column align-items-center" style="gap: 10px; font-weight: 60;">
+          <a href="#explore-by-subject" class="btn btn-success btn-explore">EXPLORE THE EXHIBITION</a>
+          <div class="landing-buttons-row d-flex" style="gap: 8px;">
+            <a href="#" class="btn btn-outline-secondary">WATCH THE VIDEOS</a>
+            <a href="#" class="btn btn-dark">ACCESS THE CATALOGUE</a>
           </div>
         </div>
-
-        <!-- YouTube embed with thumbnail -->
-
-        <!-- Anchor for scroll target -->
-        <div id="intro-video" class="col-md-6">
-          <div class="landing__video-wrapper">
-            <!-- Thumbnail overlay -->
-            <div id="video-thumbnail" class="video-thumbnail-overlay">
-              <img 
-                src="../assets/img/LandingPageThumbnail.jpeg" 
-                alt="Alice in Brussels: Introduction to the Exhibition"
-                class="video-thumbnail-img"
-              >
-              <div class="video-thumbnail-overlay-content">
-                <div class="play-button">
-                  <i class="bi bi-play-circle-fill"></i>
-                </div>
-                <h3 class="video-title">Alice in Brussels: Introduction to the Exhibition</h3>
-              </div>
-            </div>
-            <!-- YouTube iframe (hidden initially) -->
-            <iframe
-              id="video-iframe"
-              src="https://www.youtube.com/embed/bvgiVHAeGOc?autoplay=1&mute=1"
-              title="Alice in Brussels: Introduction to the Exhibition"
-              allow="autoplay; encrypted-media; picture-in-picture"
-              allowfullscreen
-              class="landing__video-iframe"
-              style="display: none;"
-            ></iframe>
-          </div>
-        </div>
-
       </div>
-      
-      <!-- 3) Scroll-down cue -->
-      <div class="scroll-down">
-        <span class="chevron">⌄</span>
+      <!-- RIGHT: Centered Video -->
+      <div class="col-md-6">
+        <div class="landing__video-wrapper" style="margin-top: 102px;">
+          <iframe
+            width="550px"
+            height="300px"
+            src="https://www.youtube.com/embed/bvgiVHAeGOc?autoplay=1&mute=1"
+            title="Alice in Brussels Video"
+            allow="autoplay; encrypted-media; picture-in-picture"
+            allowfullscreen
+            style="border-radius: 16px; border: none;"
+          ></iframe>
+        </div>
       </div>
     </div>
-  </section>
+  </div>
+</div>
+
+<!-- ===== Mid White Section ===== -->
+<div class="container-fluid py-5 position-relative fade-in" id="about-section" style="background-color: white;">
+  <!-- Overlay image with low opacity -->
+  <div style="
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    z-index: 1;
+    background: url('../assets/img/ceiling-4f.png') center center / cover no-repeat;
+    opacity: 0.11;
+    pointer-events: none;">
+  </div>
+  <div class="container position-relative" style="z-index: 2; ">
+    <h2 class="mb-4 text-center" style="color: #222; font-weight: 700; font-size: 40px; padding-bottom: 30px;">About the Exhibition</h2>
+    <div class="row justify-content-center align-items-center g-0" style="padding-bottom: 40px;">
+      <div class="col-md-6 d-flex flex-column justify-content-center">
+        <p class="mb-3 text-center" style="color: #000; font-size: 1.15rem;">
+          In 1910, the schools of Montesca and Rovigliano participated in the Universal and International Exposition in Brussels, showcasing their innovative educational approach to a global audience. This initiative, born from the pioneering vision of Alice Hallgarten Franchetti, 
+          aimed to spark international interest in a complex and forward-thinking educational project designed for the children of mostly illiterate Umbrian farmers.
+        </p>
+      </div>
+      <div class="col-md-6 d-flex align-items-center justify-content-center">
+        <img src="../assets/img/Alice.jpeg" alt="Exhibition Overview" class="img-fluid rounded-3"
+             style="width: 400px; max-width: 100%; height: auto; margin-left: 1rem;">
+      </div>
+    </div>
+
+    <!-- ===== Second Text Section ===== -->
+    <div class="row justify-content-center align-items-center g-0 mt-5">
+      <div class="col-md-6 d-flex align-items-center justify-content-center flex-column">
+        <img src="../assets/img/1910-exibition.jpg" alt="Exhibition Introduction" class="img-fluid rounded-3"
+             style="width: 600px; max-width: 100%; height: auto; margin-right: 1rem;">
+        <span style="font-size: 0.85rem; color: #000; margin-top: 6px; display: block; text-align: center; width: 600px; max-width: 100%;">
+          Exhibition stands set up by the Italian schools at the 1910 international and Universal exposition in Brussels. (Cr. Biblioteca Ariostea, FE)
+        </span>
+      </div>
+      <div class="col-md-6 d-flex flex-column justify-content-center">
+        <p class="mb-3 text-center" style="color: #000; font-size: 1.15rem;">
+          The 2024 exhibition Alice in Brussels celebrates this award-winning model of progressive rural education, which captured the attention of leading figures in the
+ field — including Maria Montessori, who conducted her first teacher training course at Montesca in 1909, and Giuseppe Lombardo Radice, 
+who introduced several innovations developed in Alice’s schools into elementary education across the Kingdom of Italy.
+              </p>
+      </div>
+    </div>
+  </div>
+</div>
 
 
-
-  <!-- ===== Choose Your View ===== -->
+   <!-- ===== Choose Your View ===== -->
   <div id="choose-view" class="container text-center my-5">
     
     <h1 class="mb-5 text-white">Visit the Exhibition</h1>
@@ -216,117 +243,68 @@
     </div>
   </div>
 
-  <!-- ===== Footer ===== -->
-  <div id="footer" class="container text-center my-5">
-    <footer class="py-5 border-top">
-      <div class="d-flex flex-column flex-sm-row justify-content-between">
-        <p>&copy; 2024 Company, Inc. All rights reserved.</p>
-      </div>
-    </footer>
-  </div>
+<!-- ===== Footer ===== -->
+<div id="footer" class="container text-center my-5 fade-in">
+  <footer class="py-5 border-top">
+    <div class="d-flex flex-column flex-sm-row justify-content-between">
+      <p>&copy; 2024 Company, Inc. All rights reserved.</p>
+    </div>
+  </footer>
+</div>
 
-  <!-- ===== Back to Top ===== -->
-  <div id="back-to-top" class="back-to-top">&#8679;</div>
+<!-- ===== Back to Top ===== -->
+<div id="back-to-top" class="back-to-top">&#8679;</div>
 
-  <!-- ===== Scripts ===== -->
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="../js/bootstrap.bundle.min.js"></script>
-  <script src="../js/imageMapResizer.min.js"></script>
-  <!-- <script src="../js/theme.js"></script> -->
-
-  <script>
-    // Language switcher
-    function setLanguage(lang) {
-      const currentPath = window.location.pathname;
-
-      // Get the filename, default to landingPage.html if empty
-      let filename = currentPath.substring(currentPath.lastIndexOf('/') + 1);
-      if (filename === '' || filename === 'en' || filename === 'it') {
-        filename = 'landingPage.html';
-      }
-
-      // Build new path
-      const newPath = lang === 'it'
-              ? `../it/${filename}`
-              : `../en/${filename}`;
-
-      // Update flag
-      document.getElementById('currentLanguageFlag').src =
-              lang === 'it' ? '/Alice-a-Bruxelles/assets/img/it.svg' : '/Alice-a-Bruxelles/assets/img/en.svg';
-
-      // Redirect
-      window.location.href = newPath;
-    }
-
-
-    // Open PDF in new tab
-    function openPDF() {
-      window.open('../assets/document/CATALOGUE.pdf', '_blank');
-    }
-
-    // Back-to-top smooth scroll
-    document.getElementById('back-to-top')?.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-
-    // Smooth scroll for in-page anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', e => {
-        const target = document.querySelector(anchor.getAttribute('href'));
-        if (target) {
-          e.preventDefault();
-          target.scrollIntoView({ behavior: 'smooth' });
-        }
-      });
-    });
-
-    // Video thumbnail click handler (manual interaction)
-    const videoThumbnail = document.getElementById('video-thumbnail');
-    const videoIframe = document.getElementById('video-iframe');
-
-    if (videoThumbnail && videoIframe) {
-      videoThumbnail.addEventListener('click', function () {
-        videoThumbnail.style.display = 'none';
-        videoIframe.style.display = 'block';
-
-        // Add autoplay if not already there
-        if (!videoIframe.src.includes('autoplay=1')) {
-          videoIframe.src += '&autoplay=1';
-        }
-      });
-    }
-
-    // Hide landing text when video plays (optional elements)
-    const vid = document.getElementById('landing-video');
-    const txt = document.getElementById('landing-text');
-    if (vid && txt) {
-      vid.addEventListener('play', () => txt.style.display = 'none');
-      vid.addEventListener('pause', () => txt.style.display = '');
-      vid.addEventListener('ended', () => txt.style.display = '');
-    }
-
-    // Handle autoplay if ?autoplayVideo=1 in URL
-    document.addEventListener('DOMContentLoaded', () => {
-      const params = new URLSearchParams(window.location.search);
-      const autoplay = params.get('autoplayVideo');
-      if (autoplay === '1' && videoThumbnail && videoIframe) {
-        const videoSection = document.getElementById('intro-video');
-        if (videoSection) {
-          videoSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-
-          // Delay for scroll animation before autoplay trigger
-          setTimeout(() => {
-            videoThumbnail.style.display = 'none';
-            videoIframe.style.display = 'block';
-
-            if (!videoIframe.src.includes('autoplay=1')) {
-              videoIframe.src += '&autoplay=1';
-            }
-          }, 600);
-        }
+<!-- ===== Scripts ===== -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="../js/bootstrap.bundle.min.js"></script>
+<script src="../js/imageMapResizer.min.js"></script>
+<script src="../js/theme.js"></script>
+<script>
+  function setLanguage(lang) {
+    document.getElementById('currentLanguageFlag').src = lang==='it'
+      ? '../assets/img/it.svg'
+      : '../assets/img/en.svg';
+    window.location.href = lang==='it' ? '../it/index1.html' : '../en/index.html';
+  }
+  function openPDF() {
+    window.open('../assets/document/CATALOGUE.pdf','_blank');
+  }
+  document.getElementById('back-to-top').addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth' });
       }
     });
-  </script>
+  });
 
+  // Fade-in animation on scroll (show when in viewport, hide when out)
+  function revealOnScroll() {
+    document.querySelectorAll('.fade-in').forEach(function(el) {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 60 && rect.bottom > 60) {
+        el.classList.add('visible');
+      } else {
+        el.classList.remove('visible');
+      }
+    });
+  }
+  window.addEventListener('scroll', revealOnScroll);
+  window.addEventListener('DOMContentLoaded', revealOnScroll);
+
+  // Fade out the intro overlay after 1.5 seconds
+  window.addEventListener('DOMContentLoaded', function() {
+    setTimeout(function() {
+      const overlay = document.getElementById('intro-overlay');
+      overlay.style.opacity = '0';
+      setTimeout(() => overlay.style.display = 'none', 600); // changed from 1200
+    }, 1500);
+  });
+</script>
 </body>
 </html>
