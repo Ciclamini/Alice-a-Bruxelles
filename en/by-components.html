@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-bs-theme="light">
+<html lang="en" data-bs-theme="dark">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,9 +17,9 @@
     }
     
     /* Ensure content sections have proper spacing */
-    .content-start {
+    /* .content-start {
       margin-bottom: 2rem;
-    }
+    } */
   </style>
 </head>
 <body>
@@ -38,18 +38,18 @@
         </button>
         <div class="collapse navbar-collapse" id="navbar">
           <ul class="navbar-nav ms-auto">
-            <li class="nav-item"><a class="nav-link" href="landingPage.html#landing-section">HOME</a></li>
+            <li class="nav-item"><a class="nav-link" href="landingPage.html#choose-view">HOME</a></li>
             <li class="nav-item"><a class="nav-link" href="3d-exhibition.html">EXHIBITION IN 3D</a></li>
             <!-- Exhibition by Components dropdown -->
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">EXHIBITION BY COMPONENTS</a>
+              <a class="nav-link" href="by-components.html">EXHIBITION BY COMPONENTS<span class="dropdown-toggle ms-1" data-bs-toggle="dropdown" aria-expanded="false"></span></a>
               <ul class="dropdown-menu dropdown-menu-end">
                 <li><a class="dropdown-item" href="by-components.html?panel=0">The History of the Schools in 2 Videos</a></li>
                 <li><a class="dropdown-item" href="by-components.html?panel=1">La Montesca School: A Story of Women</a></li>
                 <li><a class="dropdown-item" href="by-components.html?panel=2">Photos and Alice’s Letters to Maria Pasqui</a></li>
                 <li><a class="dropdown-item" href="by-components.html?panel=3">Montessori and International Teaching Materials</a></li>
                 <li><a class="dropdown-item" href="by-components.html?panel=4">The 1910 World Fair Exhibition</a></li>
-                <li><a class="dropdown-item" href="by-components.html?panel=5">The Reconstruction of the Schools’ Stand</a></li>
+                <li><a class="dropdown-item" href="by-components.html?panel=5">Reconstruction of the Schools’ Stand</a></li>
                 <li><a class="dropdown-item" href="by-components.html?panel=6">Exhibition Project; Visitors’ Guide, Credits</a></li>
               </ul>
             </li>
@@ -65,22 +65,19 @@
             </li>
             <li class="nav-item"><a class="nav-link" href="catalogues.html">CATALOGUES</a></li>
             <li class="nav-item"><a class="nav-link" href="../en/about-us.html">ABOUT US</a></li>
+
             <!-- Language -->
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
-                <img id="currentLanguageFlag" src="/Alice-a-Bruxelles/assets/img/en.svg" width="20" alt="Language Flag">
+                <img id="currentLanguageFlag" src="../assets/img/en.svg" width="20" alt="">
               </a>
               <ul class="dropdown-menu dropdown-menu-end">
-                <li>
-                  <a class="dropdown-item" href="#" onclick="setLanguage('en')">
-                    <img src="/Alice-a-Bruxelles/assets/img/en.svg" width="20" class="me-2">English
-                  </a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="#" onclick="setLanguage('it')">
-                    <img src="/Alice-a-Bruxelles/assets/img/it.svg" width="20" class="me-2">Italiano
-                  </a>
-                </li>
+                <li><a class="dropdown-item" href="#" onclick="setLanguage('en')">
+                  <img src="../assets/img/en.svg" width="20" class="me-2">English
+                </a></li>
+                <li><a class="dropdown-item" href="#" onclick="setLanguage('it')">
+                  <img src="../assets/img/it.svg" width="20" class="me-2">Italiano
+                </a></li>
               </ul>
             </li>
           </ul>
@@ -88,19 +85,66 @@
       </nav>
     </div>
   </div>
-  
-  <!-- ===== 3) Explore By Components (Slider) ===== -->
+    
+      <!-- ===== 3) Explore By Components (Slider) ===== -->
   <div id="explore-by-components" style="padding-top:6rem;">
     <div class="container text-center mb-4">
       <div class="slider-header mx-auto">
         <h1>Explore the Exhibition by Components</h1>
-        <h5>CLICK ON AN IMAGE TO VIEW THE CORRESPONDING SECTION</h5>
+        <h5>CLICK ON ANY IMAGE TO VIEW THE CORRESPONDING SECTION</h5>
       </div>
     </div>
 
     <div id="slider-section" class="container-fluid">
       <div class="accordion">
         <div id="videos-panel" class="panel">
+          <img src="../assets/img/slider-7.jpeg" alt="Videos">
+            <div class="panel-caption"><h6>The History of the Schools in two Videos</h6></div>
+        </div>
+        <div class="panel">
+          <img src="../assets/img/slider-1.jpeg" alt="Silhouettes">
+            <div class="panel-caption"><h6>La Montesca School: A Story of Women</h6></div>
+        </div>
+        <div class="panel">
+          <img src="../assets/img/ceiling.jpg" alt="Photos & Letters">
+            <div class="panel-caption"><h6>Photos of the Pupils and Alice's Letters to Maria Pasqui</h6></div>
+        </div>
+        <div class="panel">
+          <img src="../assets/img/display.jpg" alt="Montessori Materials">
+            <div class="panel-caption"><h6>Montessori and International Teaching Materials</h6></div>
+        </div>
+        <div class="panel">
+          <img src="../assets/img/slider-3.jpeg" alt="Front Wall">
+            <div class="panel-caption"><h6>The 1910 World Fair Exhibition</h6></div>
+        </div>
+        <div class="panel">
+          <img src="../assets/img/edited_title_stand.png" alt="Back Wall">
+            <div class="panel-caption"><h6>Reconstruction of the Schools' Stand</h6></div>
+        </div>
+        <div class="panel">
+          <img src="../assets/img/slider-5.jpeg" alt="Visitors' Guide">
+            <div class="panel-caption"><h6>Exhibition Project; Visitors' Guide; Credits</h6></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer for slider (visible only when no panel is selected) -->
+    <div id="slider-footer" class="footer-placeholder"></div>
+  </div>
+  
+  <!-- ===== 3) Explore By Components (Slider) ===== -->
+<!--
+  <div id="explore-by-components" style="padding-top:6rem;">
+    <div class="container text-center mb-4">
+      <div class="slider-header mx-auto" Style="color: #ffffff;">
+        <h1>Explore the Exhibition by Components</h1>
+        <h5>CLICK ON ANY IMAGE TO VIEW THE CORRESPONDING SECTION</h5>
+      </div>
+    </div>
+
+    <div id="slider-section" class="container-fluid">
+      <div class="accordion">
+        <div id="videos-panel" class="panel" >
           <img src="../assets/img/slider-7.jpeg" alt="Videos">
           <div class="panel-caption">The History of the Schools in 2 Videos</div>
         </div>
@@ -118,11 +162,11 @@
         </div>
         <div class="panel">
           <img src="../assets/img/slider-3.jpeg" alt="Front Wall">
-          <div class="panel-caption">The 1910 World Fair Exhibition & Catalogue Raisonné</div>
+          <div class="panel-caption">The 1910 World Fair Exhibition</div>
         </div>
         <div class="panel">
           <img src="../assets/img/edited_title_stand.png" alt="Back Wall">
-          <div class="panel-caption">The Reconstructed Schools' Stand</div>
+          <div class="panel-caption">Reconstruction of the Schools' Stand</div>
         </div>
         <div class="panel">
           <img src="../assets/img/slider-5.jpeg" alt="Visitors' Guide">
@@ -130,84 +174,151 @@
         </div>
       </div>
     </div>
+-->
 
-    <!-- Footer for slider (visible only when no panel is selected) -->
+<!--     Footer for slider (visible only when no panel is selected) -->
+<!--
     <div id="slider-footer" class="footer-placeholder"></div>
   </div>
+-->
 
-  <!-- ===== 4) Video Section ("The History of the Schools in 2 Videos") ===== -->
-  <div id="video" class="container-fluid content-start" style="display: none;">
-    <div class="container">
-      <h2 class="text-center mb-4">The History of the Schools in 2 Videos</h2>
-      <div class="row">
-        <!-- Titles Row -->
-        <div class="col-md-6 mb-0 d-flex flex-column align-items-center">
-          <div class="text-center mb-2" style="min-height: 4.5em; display: flex; flex-direction: column; justify-content: flex-end;">
-            <span style="font-size:1.4em;font-weight:bold;margin-bottom:2px;display:inline-block;">The Baroness and the Barefoot Children</span>
-            <em><span style="font-size:1em;">Philanthropy, Women and Rural Schools. From the Origins to Maria Montessori</span></em>
-          </div>
-        </div>
-        <div class="col-md-6 mb-0 d-flex flex-column align-items-center">
-          <div class="text-center mb-2" style="min-height: 4.5em; display: flex; flex-direction: column; justify-content: flex-end;">
-            <span style="font-size:1.4em;font-weight:bold;margin-bottom:2px;display:inline-block;">The Montesca Schools at the 1910 World Fair</span>
-            <em><span style="font-size:1em;">Alice Hallgarten Franchetti between Maria Montessori and Giuseppe Lombardo Radice</span></em>
+<!-- ===== 4) Video Section ("The History of the Schools in 2 Videos") ===== -->
+<div id="video" class="container-fluid content-start" style="display: none;">
+  <div class="container">
+    <h2 class="text-center mb-5">The History of the Schools in 2 Videos</h2>
+    <div class="row g-4" style="align-items: stretch;">
+      <!-- 4.1) Video Card: The Baroness and the Barefoot Children -->
+      <div class="col-md-6 d-flex">
+        <div class="card shadow-sm border-0 w-100" style="background-color: #f8f9fa; min-height: 800px;">
+          <div class="card-body p-4 d-flex flex-column h-100">
+            <!-- Video Title -->
+            <div class="text-center mb-3" style="min-height: 120px; display: flex; flex-direction: column; justify-content: center;">
+              <h4 class="card-title fw-bold mb-2" style="color: #2c3e50;">
+                The Baroness and the Barefoot Children
+              </h4>
+              <h5 class="card-subtitle mb-3" style="font-style: italic; font-weight: 500; color: #282b2e;">
+                Alice Hallgarten Franchetti: Philanthropy, Women, Schools
+              </h5>
+            </div>
+            
+            <!-- Video Container -->
+            <div id="video2-container" class="mb-3">
+              <div class="ratio ratio-16x9 position-relative w-100 rounded overflow-hidden" style="background: #000;">
+                <img id="baroness-poster-thumb" 
+                     src="../assets/img/ceiling-3f.png" 
+                     alt="Baroness Video Thumbnail" 
+                     class="expo-poster-thumb" 
+                     onclick="this.style.display='none';document.getElementById('baroness-play-overlay').style.display='none';document.getElementById('baroness-iframe').style.display='block';">
+                <div id="baroness-play-overlay" class="play-overlay">
+                  <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="40" cy="40" r="38" fill="rgba(0,0,0,0.5)" stroke="white" stroke-width="4"/>
+                    <polygon points="32,25 60,40 32,55" fill="white"/>
+                  </svg>
+                </div>
+                <iframe
+                  id="baroness-iframe"
+                  src="https://www.youtube.com/embed/8Q7N5qP0Yc4?si=J1uHctloucfDXAEp"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                  style="width:100%;height:100%;position:absolute;top:0;left:0;z-index:1;display:none;">
+                </iframe>
+              </div>
+            </div>
+            
+            <!-- Video Description -->
+            <div class="card-text flex-grow-1">
+              <p style="font-size: 1rem; line-height: 1.6; color: #2a2f33; text-align: justify;">
+                Alice Hallgarten—a New Yorker by birth who married Baron Leopoldo Franchetti—divided her years in Italy between Rome and Città di Castello, 
+                dedicating herself to improving the living conditions of underserved rural and urban communities. 
+                Her practical feminism, combined with visionary philanthropy, left a lasting legacy both locally and internationally. 
+                In Rome, she took part in the activities of the <em>Unione di San Lorenzo</em>, 
+                engaging in social initiatives in the same neighborhood where Maria Montessori then opened her first <em>Casa dei Bambini</em>. 
+                In Città di Castello, she founded the <em>Montesca</em> and <em>Rovigliano</em> Rural Schools, established in 1901 and 1902, 
+                to provide education for the children of her farmers. Furthermore, she opened <em>Tela Umbra</em>, 
+                a weaving workshop still active today, complete with a daycare center where women could have their children taken care of, 
+                while at work.
+              </p>
+            </div>
           </div>
         </div>
       </div>
-      <div class="row align-items-start" style="margin-top: 2rem;">
-        <!-- 4.1) Video: The Baroness and the Barefoot Children -->
-        <div id="video2-container" class="col-md-6 mb-4 d-flex flex-column align-items-center" style="height:100%;">
-          <div class="ratio ratio-16x9 position-relative w-100" style="background: #000;">
-            <img id="baroness-poster-thumb" src="../assets/img/ceiling-3f.png" alt="Baroness Video Thumbnail" class="expo-poster-thumb" onclick="this.style.display='none';document.getElementById('baroness-play-overlay').style.display='none';document.getElementById('baroness-iframe').style.display='block';">
-            <div id="baroness-play-overlay" class="play-overlay">
-              <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="40" cy="40" r="38" fill="rgba(0,0,0,0.5)" stroke="white" stroke-width="4"/>
-                <polygon points="32,25 60,40 32,55" fill="white"/>
-              </svg>
-            </div>
-            <iframe
-              id="baroness-iframe"
-              src="https://www.youtube.com/embed/8Q7N5qP0Yc4?si=J1uHctloucfDXAEp"
-              title="YouTube video player"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-              style="width:100%;height:100%;position:absolute;top:0;left:0;z-index:1;display:none;">
-            </iframe>
-          </div>
-        </div>
 
-        <!-- 4.2) Video: The Montesca Schools at the 1910 World Fair -->
-        <div id="video3-container" class="col-md-6 mb-4 d-flex flex-column align-items-center" style="height:100%;">
-          <div class="ratio ratio-16x9 position-relative w-100" style="background: #000;">
-            <img id="expo-poster-thumb" src="../assets/img/expo_poster.jpg" alt="Expo Poster Thumbnail" class="expo-poster-thumb" onclick="this.style.display='none';document.getElementById('expo-play-overlay').style.display='none';document.getElementById('expo-iframe').style.display='block';">
-            <div id="expo-play-overlay" class="play-overlay">
-              <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="40" cy="40" r="38" fill="rgba(0,0,0,0.5)" stroke="white" stroke-width="4"/>
-                <polygon points="32,25 60,40 32,55" fill="white"/>
-              </svg>
+      <!-- 4.2) Video Card: The Montesca Schools at the 1910 World Fair -->
+      <div class="col-md-6 d-flex">
+        <div class="card shadow-sm border-0 w-100" style="background-color: #f8f9fa; min-height: 800px;">
+          <div class="card-body p-4 d-flex flex-column h-100">
+            <!-- Video Title -->
+            <div class="text-center mb-3" style="min-height: 120px; display: flex; flex-direction: column; justify-content: center;">
+              <h4 class="card-title fw-bold mb-2" style="color: #2c3e50;">
+                The Montesca School at the 1910 Brussels World Fair
+              </h4>
+              <h5 class="card-subtitle mb-3" style="font-style: italic; font-weight: 500; color: #282b2e;">
+                Alice Hallgarten Franchetti between Maria Montessori and Giuseppe Lombardo Radice
+              </h5>
             </div>
-            <iframe
-              id="expo-iframe"
-              src="https://www.youtube.com/embed/OnbyfdafI-k?si=iIsB9aQI8DR8CALN"
-              title="YouTube video player"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-              style="width:100%;height:100%;position:absolute;top:0;left:0;z-index:1;display:none;">
-            </iframe>
+            
+            <!-- Video Container -->
+            <div id="video3-container" class="mb-3">
+              <div class="ratio ratio-16x9 position-relative w-100 rounded overflow-hidden" style="background: #000;">
+                <img id="expo-poster-thumb" 
+                     src="../assets/img/expo_poster.jpg" 
+                     alt="Expo Poster Thumbnail" 
+                     class="expo-poster-thumb" 
+                     onclick="this.style.display='none';document.getElementById('expo-play-overlay').style.display='none';document.getElementById('expo-iframe').style.display='block';">
+                <div id="expo-play-overlay" class="play-overlay">
+                  <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="40" cy="40" r="38" fill="rgba(0,0,0,0.5)" stroke="white" stroke-width="4"/>
+                    <polygon points="32,25 60,40 32,55" fill="white"/>
+                  </svg>
+                </div>
+                <iframe
+                  id="expo-iframe"
+                  src="https://www.youtube.com/embed/OnbyfdafI-k?si=iIsB9aQI8DR8CALN"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                  style="width:100%;height:100%;position:absolute;top:0;left:0;z-index:1;display:none;">
+                </iframe>
+              </div>
+            </div>
+            
+            <!-- Video Description -->
+            <div class="card-text flex-grow-1">
+              <p style="font-size: 1rem; line-height: 1.6; color: #2a2f33; text-align: justify;">
+                Giuseppe Lombardo Radice wrote of Alice Hallgarten Franchetti that "she worked on her school as if she were responsible 
+                for solving the educational problem of every school." 
+                In her rural institutions at Montesca and Rovigliano, 
+                she gave farmers' children access to globally sourced teaching materials and to the most innovative pedagogical 
+                methods of the time. From these schools, educational theorist Giuseppe Lombardo Radice derived the model for the
+                "Calendario della Montesca" and incorporated it into Italy's national curriculum. 
+                The Franchettis also inspired Maria Montessori to put her Scientific Pedagogy Method to paper. 
+                In 1909, she was their guest at Villa Montesca where they hosted the inauguration of the 
+                first course for training teachers in the <em>Montessori Method</em>—led by the Dottoressa herself 
+                and held in one of their properties in the nearby town.<br><br> In 1910, the schools were awarded a 
+                <em>Diplôme d'honneur</em> and a gold medal at the Brussels International and 
+                Universal Exposition—a formal testament to Baroness Alice Hallgarten Franchetti's tireless dedication.
+              </p>
+            </div>
           </div>
         </div>
       </div>
     </div>
-
+  </div>
+  
     <!-- Footer will be inserted here by JavaScript -->
     <div class="footer-placeholder"></div>
   </div>
+</div>
+
+
 
   <div id="back-wall-panels" class="panel-section content-start" style="display: none;">
     <div class="container-fluid">
       <div class="container">
+        <h2 class="text-center mb-4">Photos of the Pupils and Alice's Letters to Marietta</h2>
         <div class="ceiling-grid">
           <div class="ceiling-row top-row">
             <div class="ceiling-panel tall" data-panel="4">
@@ -274,12 +385,24 @@
             </div>
           </div>
         </div>
+        
+<!--
+         Back to Top Button for this section 
+        <div class="text-center mt-4">
+          <div class="back-to-top" style="display: block; position: static; margin: 0 auto;">&#8679;</div>
+        </div>
+-->
       </div>
+         
     </div>
 
     <!-- Footer will be inserted here by JavaScript -->
     <div class="footer-placeholder"></div>
+       <!-- ===== 16) Back to Top Button ===== -->
+
   </div>
+     <!-- ===== 16) Back to Top Button ===== -->
+  <div id="back-to-top" class="back-to-top">&#8679;</div>
 
   <div id="ceiling-modal" class="ceiling-modal">
     <div class="ceiling-modal-content">
@@ -296,30 +419,35 @@
     <button id="ceiling-modal-flip-btn" class="modal-flip-btn">Flip</button>
   </div>
 
-    <!-- ===== 6) Back Wall Section with Interactive Hotspots ===== -->
-  <div id="back-wall" class="container-fluid content-start" style="display: none;">
-    <div class="container">
-      <div class="row justify-content-center mb-5">
-        <div class="col-12" style="max-width: 80%; margin: 0 auto;">
-          <!-- Enhanced container for interactive hotspots -->
-          <div class="card shadow image-map-container" style="position: relative; pointer-events: auto; overflow: visible;">
-            <img id="back-wall-image"
-                 usemap="#back-wall-map"
-                 src="../assets/img/edited_half_title_stand.jpg"
-                 class="d-block w-100 rounded"
-                 alt="Back Wall"
-                 loading="eager">
-            <div class="card-body text-center">
-              <p class="card-text">
-                Click on the frame to enlarge the image
-              </p>
-            </div>
+<!-- ===== 6) Back Wall Section with Interactive Hotspots ===== -->
+<div id="back-wall" class="container-fluid content-start" style="display: none;">
+  <div class="container">
+    <h2 class="text-center mb-4">Reconstruction of the Schools' Stand</h2>
+    <div class="row justify-content-center mb-5">
+      <div class="col-12" style="max-width: 80%; margin: 0 auto;">
+        <!-- Enhanced container for interactive hotspots -->
+        <div class="card shadow image-map-container" style="position: relative; pointer-events: auto; overflow: visible;">
+          <div class="card-body text-center">
+            <p class="card-text mb-2">
+              Click on framed works to enlarge available images.
+            </p>
+            <p class="card-text">
+              Read more about the material on display in the 
+              <a href="../assets/document/CATALOGUE.pdf" target="_blank" class="text-decoration-none fw-bold">"Alice a Bruxelles" catalogue</a>.
+            </p>
           </div>
+          <img id="back-wall-image"
+               usemap="#back-wall-map"
+               src="../assets/img/edited_half_title_stand.jpg"
+               class="d-block w-100 rounded"
+               alt="Back Wall"
+               loading="eager">
         </div>
       </div>
     </div>
-    <div class="footer-placeholder"></div>
   </div>
+  <div class="footer-placeholder"></div>
+</div>
 
   <!-- ===== Image Map with Corrected Coordinates ===== -->
   <map name="back-wall-map">
@@ -405,87 +533,252 @@
     >
   </map>
 
-  <div id="popup-frame1" class="popup">
-    <div class="popup-content">
-      <img src="../assets/img/enlarged-frame-1.png" class="popup-image" alt="Frame 1">
-      <button class="close" onclick="closePopup('popup-frame1')">✖</button>
+<!-- Frame 1 - Simple popup without flip functionality -->
+<div id="popup-frame1" class="popup">
+  <div class="popup-content">
+    <img src="../assets/img/enlarged-frame-1.png" class="popup-image" alt="Frame 1">
+    <button class="close" onclick="closePopup('popup-frame1')">✖</button>
+  </div>
+</div>
+
+<!-- Frame 2 - Simple popup without flip functionality -->
+<div id="popup-frame2" class="popup">
+  <div class="popup-content">
+    <img src="../assets/img/enlarged-frame-2.png" class="popup-image" alt="Frame 2">
+    <button class="close" onclick="closePopup('popup-frame2')">✖</button>
+  </div>
+</div>
+
+<!-- Frame 3 - Simple popup without flip functionality -->
+<div id="popup-frame3" class="popup">
+  <div class="popup-content">
+    <img src="../assets/img/enlarged-frame-3.png" class="popup-image" alt="Frame 3">
+    <button class="close" onclick="closePopup('popup-frame3')">✖</button>
+  </div>
+</div>
+
+<!-- Frame 4 - Simple popup without flip functionality -->
+<div id="popup-frame4" class="popup">
+  <div class="popup-content">
+    <img src="../assets/img/enlarged-frame-4.png" class="popup-image" alt="Frame 4">
+    <button class="close" onclick="closePopup('popup-frame4')">✖</button>
+  </div>
+</div>
+
+<!-- Frame 5 - Simple popup without flip functionality -->
+<div id="popup-frame5" class="popup">
+  <div class="popup-content">
+    <img src="../assets/img/enlarged-frame-5.png" class="popup-image" alt="Frame 5">
+    <button class="close" onclick="closePopup('popup-frame5')">✖</button>
+  </div>
+</div>
+
+<!-- Updated Frame 6 - Now with flip functionality -->
+<div id="popup-frame6" class="popup">
+  <div class="popup-content">
+    <div class="popup-flip-container">
+      <div class="popup-flip-inner">
+        <div class="popup-flip-front">
+          <img src="../assets/img/enlarged-frame-6.jpeg" alt="Frame 6">
+        </div>
+        <div class="popup-flip-back">
+          <div class="popup-description">
+            <h3>Historical Reproduction</h3>
+            <p>Display case containing 'Seeds dispersed by animals'. This carefully crafted reproduction captures the essence of the original display, preserving the educational and historical significance of the collection for contemporary viewers.</p>
+            <div class="artwork-details">
+              <h4>Reproduction Details</h4>
+              <ul>
+                <li>Based on: 1910 photograph</li>
+                <li>Realized by: Giuseppina Benedetti</li>
+                <li>Year: 2024</li>
+                <li>Type: Historical reconstruction</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="popup-controls">
+      <button class="popup-flip-btn" onclick="togglePopupFlip('popup-frame6')">Show Info</button>
+      <button class="popup-close" onclick="closePopup('popup-frame6')">Close</button>
     </div>
   </div>
-  <div id="popup-frame2" class="popup">
-    <div class="popup-content">
-      <img src="../assets/img/enlarged-frame-2.png" class="popup-image" alt="Frame 2">
-      <button class="close" onclick="closePopup('popup-frame2')">✖</button>
+</div>
+
+<!-- Updated Frame 7 - Fixed title and added proper content -->
+<div id="popup-frame7" class="popup">
+  <div class="popup-content">
+    <div class="popup-flip-container">
+      <div class="popup-flip-inner">
+        <div class="popup-flip-front">
+          <img src="../assets/img/enlarged-frame-7.jpeg" alt="Frame 7">
+        </div>
+        <div class="popup-flip-back">
+          <div class="popup-description">
+            <h3>Evergreen Leaves Collection</h3>
+            <p>Display case containing a collection of 'Evergreen leaves'. This piece presents the botanical studies conducted at the school, showcasing the diversity of local flora through carefully preserved specimens.</p>
+            <div class="artwork-details">
+              <h4>Collection Details</h4>
+              <ul>
+                <li>Institution: Tela Umbra Museum</li>
+                <li>Created: 1948–1949</li>
+                <li>Type: Botanical specimen collection</li>
+                <li>Note: Probably a copy of the 1910 original</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="popup-controls">
+      <button class="popup-flip-btn" onclick="togglePopupFlip('popup-frame7')">Show Info</button>
+      <button class="popup-close" onclick="closePopup('popup-frame7')">Close</button>
     </div>
   </div>
-  <div id="popup-frame3" class="popup">
-    <div class="popup-content">
-      <img src="../assets/img/enlarged-frame-3.png" class="popup-image" alt="Frame 3">
-      <button class="close" onclick="closePopup('popup-frame3')">✖</button>
+</div>
+
+<!-- Updated Frame 8-->
+<div id="popup-frame8" class="popup">
+  <div class="popup-content">
+    <div class="popup-flip-container">
+      <div class="popup-flip-inner">
+        <div class="popup-flip-front">
+          <img src="../assets/img/enlarged-frame-8.png" alt="Frame 8">
+        </div>
+        <div class="popup-flip-back">
+          <div class="popup-description">
+            <h3>The Cedar</h3>
+            <p>Display case titled 'The Cedar'. This collection focuses on cedar specimens, showcasing the characteristics and features of this significant tree species in Italian flora.  </p>
+            <div class="artwork-details">
+              <h4>Collection Details</h4>
+              <ul>
+                <li>Holding Institution: Tela Umbra Museum </li>
+                <li>Collection Details Created: 1924–25 </li>
+                <li>Type: Botanical specimen display</li>
+                <li>Note: Copy of the original</li>
+                <li>Focus: Cedar tree specimens and parts</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="popup-controls">
+      <button class="popup-flip-btn" onclick="togglePopupFlip('popup-frame8')">Show Info</button>
+      <button class="popup-close" onclick="closePopup('popup-frame8')">Close</button>
     </div>
   </div>
-  <div id="popup-frame4" class="popup">
-    <div class="popup-content">
-      <img src="../assets/img/enlarged-frame-4.png" class="popup-image" alt="Frame 4">
-      <button class="close" onclick="closePopup('popup-frame4')">✖</button>
+</div>
+
+<!-- Updated Frame 9-->
+<div id="popup-frame9" class="popup">
+  <div class="popup-content">
+    <div class="popup-flip-container">
+      <div class="popup-flip-inner">
+        <div class="popup-flip-front">
+          <img src="../assets/img/enlarged-frame-9.JPG" alt="Frame 9">
+        </div>
+        <div class="popup-flip-back">
+          <div class="popup-description">
+            <h3>Collection of Various Dispersed seeds</h3>
+            <p>Seeds dispersed in various ways. Display case containing a collection of seeds dispersed in various ways. Reworked or created in 1919. Tela Umbra Museum.</p>
+            <div class="artwork-details">
+              <h4>Holding Institution: Tela Umbra Museum</h4>
+              <ul>
+                <li>Created: 1919</li>
+                <li>Type: Local botanical specimen collection</li>
+                <li>Note: Copy of the 1910 original</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="popup-controls">
+      <button class="popup-flip-btn" onclick="togglePopupFlip('popup-frame9')">Show Info</button>
+      <button class="popup-close" onclick="closePopup('popup-frame9')">Close</button>
     </div>
   </div>
-  <div id="popup-frame5" class="popup">
-    <div class="popup-content">
-      <img src="../assets/img/enlarged-frame-5.png" class="popup-image" alt="Frame 5">
-      <button class="close" onclick="closePopup('popup-frame5')">✖</button>
+</div>
+
+<!-- Updated Frame 10 - Map of Umbria -->
+<div id="popup-frame10" class="popup">
+  <div class="popup-content">
+    <div class="popup-flip-container">
+      <div class="popup-flip-inner">
+        <div class="popup-flip-front">
+          <img src="../assets/img/enlarged-frame-10.png" alt="Frame 10">
+        </div>
+        <div class="popup-flip-back">
+          <div class="popup-description">
+            <h3>Map of Umbria</h3>
+            <p>A handcrafted geographical map of the Umbria region, created at school as part of the school's educational curriculum. This three-dimensional relief map shows the topographical features of the local region.</p>
+            <div class="artwork-details">
+              <h4>Artwork Details</h4>
+              <ul>
+                <li>Collection Details Institution: Tela Umbra Museum</li>
+                <li>Medium: Papier-mâché on wooden backing</li>
+                <li>Date: 1909. Original.</li>
+                <li>Type: School geography project</li>
+                <li>Subject: Umbria region topography</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="popup-controls">
+      <button class="popup-flip-btn" onclick="togglePopupFlip('popup-frame10')">Show Info</button>
+      <button class="popup-close" onclick="closePopup('popup-frame10')">Close</button>
     </div>
   </div>
-  <div id="popup-frame6" class="popup">
-    <div class="popup-content">
-      <img src="../assets/img/enlarged-frame-6.jpeg" class="popup-image" alt="Frame 6">
-      <button class="close" onclick="closePopup('popup-frame6')">✖</button>
+</div>
+
+<!-- Updated Frame 11 - Monte Santa Maria Excursion Map -->
+<div id="popup-frame11" class="popup">
+  <div class="popup-content">
+    <div class="popup-flip-container">
+      <div class="popup-flip-inner">
+        <div class="popup-flip-front">
+          <img src="../assets/img/enlarged-frame-11.png" alt="Frame 11">
+        </div>
+        <div class="popup-flip-back">
+          <div class="popup-description">
+            <h3>Annual Ascension Excursion Map</h3>
+            <p>Map of the Monte Santa Maria school trip entitled 'The Annual Excursion for the Feast of the Ascension'. This student work documents a yearly activity held on the occasion of a religious festivity.</p>
+            <div class="artwork-details">
+              <h4>Artwork Details</h4>
+              <ul>
+                <li>Holding Institution: Fondazione Opera Pia, fondo Hallgarten Franchetti. </li>
+                <li>Student Artist: Vincenzo Pieggi</li>
+                <li>Grade: Class VI (Grade 6)</li>
+                <li>Year Created: 1909</li>
+                <li>Type: Student cartographic work</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="popup-controls">
+      <button class="popup-flip-btn" onclick="togglePopupFlip('popup-frame11')">Show Info</button>
+      <button class="popup-close" onclick="closePopup('popup-frame11')">Close</button>
     </div>
   </div>
-  <div id="popup-frame7" class="popup">
-    <div class="popup-content">
-      <img src="../assets/img/enlarged-frame-7.jpeg" class="popup-image" alt="Frame 7">
-      <button class="close" onclick="closePopup('popup-frame7')">✖</button>
-    </div>
-  </div>
-  <div id="popup-frame8" class="popup">
-    <div class="popup-content">
-      <img src="../assets/img/enlarged-frame-8.png" class="popup-image" alt="Frame 8">
-      <button class="close" onclick="closePopup('popup-frame8')">✖</button>
-    </div>
-  </div>
-  <div id="popup-frame9" class="popup">
-    <div class="popup-content">
-      <img src="../assets/img/enlarged-frame-9.JPG" class="popup-image" alt="Frame 9">
-      <button class="close" onclick="closePopup('popup-frame9')">✖</button>
-    </div>
-  </div>
-  <div id="popup-frame10" class="popup">
-    <div class="popup-content">
-      <img src="../assets/img/enlarged-frame-10.png" class="popup-image" alt="Frame 10">
-      <button class="close" onclick="closePopup('popup-frame10')">✖</button>
-    </div>
-  </div>
-  <div id="popup-frame11" class="popup">
-    <div class="popup-content">
-      <img src="../assets/img/enlarged-frame-11.png" class="popup-image" alt="Frame 11">
-      <button class="close" onclick="closePopup('popup-frame11')">✖</button>
-    </div>
-  </div>
+</div>
 
   <div id="front-wall" class="container-fluid content-start" style="display: none;">
     <div class="row justify-content-center">
       <div class="col-12" style="max-width: 60%; margin: 0 auto;">
         <h1 class="text-center front-title">The 1910 Exhibition</h1>
+        <p class="text-center front-caption mb-5">
+          Original photo of the stand of the Private Rural Schools of Montesca and Rovigliano, Città di Castello — Italy at the 1910 Brussels'  World Fair. (Private Collection, R. Bance – Mary Hamilton's Heirs)
+        </p>
         <img
           src="../assets/img/front-wall.png"
           class="d-block w-100 rounded shadow front-media"
           alt="Front Wall"
         >
-        <p class="text-center front-caption mb-5">
-          Original photo of the stand installed by the Private Rural Schools of Montesca and Rovigliano, 
-          Città di Castello — Italy at the 1910 Brussels's World Fair all'Esposizione Universale e Internazionale 
-          di Bruxelles del 1910. (Private Collection, Rosamund Bance – Mary Hamilton's Heirs)
-        </p>
         <!--
         <div class="mb-0">
           <h1 class="text-center mb-4">1910 Catalogue</h1>
@@ -511,7 +804,7 @@
       <h1 class="text-center mb-4 stand-title">
         Montessori Material, Multilingual Learning Resources, World Fair Documents
       </h1>
-      <h5 class="text-center mb-4"><em>The Display</em></h5>
+      <h5 class="text-center mb-4"><em>Click to See The Display</em></h5>
 
       <div style="max-width: 900px; margin: 0 auto; border-radius: 10px; overflow: hidden;">
         <div style="position: relative; padding-bottom: 56.25%; height: 0;">
@@ -573,7 +866,7 @@
       </div>
       <div class="col-md-4 text-center">
         <div class="img-wrapper position-relative d-inline-block">
-          <img src="../assets/img/panel-2-en.png" class="img-fluid rounded" alt="Visitor Guide Panel" />
+          <img src="../assets/img/Panel-2-EngRev.jpg" class="img-fluid rounded" alt="Visitor Guide Panel" />
           <div class="zoom-icon" onclick="showPopup('popup-right-2')">
             <img src="../assets/img/zoom.png" alt="Zoom" />
           </div>
@@ -595,7 +888,7 @@
   
   <div id="popup-right-2" class="popup">
     <div class="popup-content">
-      <img src="../assets/img/panel-2-en.png" class="popup-image" alt="Visitor Guide Panel Enlarged" />
+      <img src="../assets/img/Panel-2-EngRev.jpg" class="popup-image" alt="Visitor Guide Panel Enlarged" />
       <button class="close" onclick="closePopup('popup-right-2')">✖</button>
     </div>
   </div>
@@ -603,7 +896,7 @@
   <!-- ===== 13) Image Accordion Section ("La Montesca School: A Story of Women") ===== -->
   <div id="image-accordion" class="container-fluid content-start">
     <div class="container">
-      <h1 class="text-center mb-4"> - A Story of Women - </h1>
+      <h1 class="text-center mb-4">A Story of Women</h1>
       <h5 class="text-center mb-4">CLICK TO READ MORE</h5>
       <div class="row">
       <div class="accordion">
@@ -672,7 +965,6 @@
   <script src="../js/bootstrap.bundle.min.js"></script>
   <script src="../js/imageMapResizer.min.js"></script>
   <script src="../js/script.js"></script>
-  <script src="../js/theme.js"></script>
 
   <script>
     function setLanguage(lang) {
@@ -691,7 +983,7 @@
 
     function createFooter() {
       return `
-        <div class="container panel-footer">
+        <div class="container panel-footer" style="background: transparent;">
           <footer class="d-flex flex-column flex-sm-row justify-content-between">
             <p>&copy; 2024 Alice in Brussels Exhibition. All rights reserved.</p>
           </footer>
@@ -865,6 +1157,17 @@
       if (targetPanel) targetPanel.click();
     }
   });
+      
+      // for back to top button
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll(".back-to-top").forEach(button => {
+    button.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  });
+});
+
+
 
   </script>
 

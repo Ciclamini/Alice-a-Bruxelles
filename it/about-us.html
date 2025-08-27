@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="it" data-bs-theme="light">
+<html lang="it" data-bs-theme="dark">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,8 +8,26 @@
     <meta name="msapplication-navbutton-color" content="#20c997">
     <link href="../css/theme.css" rel="stylesheet">
     <link href="../css/pages/about.css" rel="stylesheet">
-    <title>About Us | Alice a Bruxelles</title>
+    <title>CHI SIAMO | ALICE A BRUXELLES</title>
     <style>
+          :root {
+              --bottle-green-primary: #093624;
+              --bottle-green-dark: #051D13;
+              --bottle-green-medium: #0F4B2E;
+              --bottle-green-light: #226248;
+              --bottle-green-accent: #35785D;
+          }
+
+          body {
+              background: linear-gradient(135deg,
+                var(--bottle-green-dark) 80%,
+                var(--bottle-green-primary) 30%,
+                var(--bottle-green-primary) 30%,
+                var(--bottle-green-medium) 30%,
+                var(--bottle-green-primary) 30%) !important;
+              min-height: 100vh;
+              background-attachment: fixed;
+          }
         /******************************************************
         * CARD CONTAINER
         * Everything sits inside this narrower "card" with
@@ -92,7 +110,7 @@
         * TEXT STYLING
         ******************************************************/
         .about-text {
-            /* This part is left-justified but inside the card */
+        /* This part is left-justified but inside the card */
             text-align: left;
             line-height: 1.6;
             margin-bottom: 2rem;
@@ -145,82 +163,169 @@
             width: 400px; /* or use 100% for full width, or adjust to your liking */
             text-align: center;
         }
+
+        /******************************************************
+        * CREDITS IMAGE
+        ******************************************************/
+        .credits-image-container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 20px;
+        }
+        .credits-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        @media (max-width: 768px) {
+            .credits-image-container {
+                margin-top: 20px;
+            }
+        }
+
+        /******************************************************
+        * ZOOM ICON AND MODAL
+        ******************************************************/
+        .zoom-icon {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            z-index: 2;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+        }
+        .zoom-icon:hover {
+            opacity: 1;
+        }
+        .zoom-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        /* Credits Modal */
+        .credits-modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+        .credits-modal-content {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            padding: 20px;
+        }
+        .credits-modal-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 3rem;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 10001;
+            transition: color 0.3s ease;
+        }
+        .credits-modal-close:hover {
+            color: #ccc;
+        }
+        .credits-modal-image {
+            max-width: 90vw;
+            max-height: 90vh;
+            object-fit: contain;
+            border-radius: 10px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.7);
+        }
     </style>
 </head>
 <body>
 
 <!-- ===== Navbar ===== -->
 <div class="nav container-fluid fixed-top">
-    <div class="container">
-        <nav class="navbar navbar-expand-lg">
-            <a class="navbar-brand" href="landingPage.html">
-                <img src="../assets/img/website-icon.png" alt="Logo" width="30" height="24">
-                ALICE IN BRUSSELS
+  <div class="container">
+    <nav class="navbar navbar-expand-lg">
+      <a class="navbar-brand" href="landingPage.html">
+        <img src="../assets/img/website-icon.png" alt="Logo" width="30" height="24">
+        ALICE A BRUXELLES
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar"
+              aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="landingPage.html#choose-view">HOME</a></li>
+          <li class="nav-item"><a class="nav-link" href="3d-exhibition.html">MOSTRA IN 3D</a></li>
+          <!-- Exhibition by Components dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link" href="by-components.html">MOSTRA PER SEZIONI<span class="dropdown-toggle ms-1" data-bs-toggle="dropdown" aria-expanded="false"></span></a>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li><a class="dropdown-item" href="by-components.html?panel=0">La storia delle scuole in due video</a></li>
+              <li><a class="dropdown-item" href="by-components.html?panel=1">La scuola della Montesca: una storia di donne</a></li>
+              <li><a class="dropdown-item" href="by-components.html?panel=2">Foto e lettere di Alice a Maria Pasqui</a></li>
+              <li><a class="dropdown-item" href="by-components.html?panel=3">Materiale Montessori e materiale didattico Internazionale</a></li>
+              <li><a class="dropdown-item" href="by-components.html?panel=4">L’Esposizione Universale del 1910</a></li>
+              <li><a class="dropdown-item" href="by-components.html?panel=5">Ricostruzione dello stand delle scuole</a></li>
+              <li><a class="dropdown-item" href="by-components.html?panel=6">Progetto della mostra; Guida per i visitatori; Crediti</a></li>
+            </ul>
+          </li>
+          <!-- Videos dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">VIDEO</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="landingPage.html?autoplayVideo=1">Alice a Bruxelles: un’introduzione alla mostra</a></li>
+              <li><a class="dropdown-item" href="by-components.html?panel=0#video">Una baronessa tra i bambini scalz</a></li>
+              <li><a class="dropdown-item" href="by-components.html?panel=0#video">Le scuole della Montesca all’Esposizione Universale del 1910</a></li>
+              <li><a class="dropdown-item" href="#">Simposio – Estratti</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="catalogues.html">CATALOGHI</a></li>
+          <li class="nav-item"><a class="nav-link" href="../it/about-us.html">CHI SIAMO</a></li>
+          <!-- Language -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+              <img id="currentLanguageFlag" src="../assets/img/it.svg" width="20" alt="">
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar"
-                    aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbar">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="landingPage.html#landing-section">HOME</a></li>
-                    <li class="nav-item"><a class="nav-link" href="3d-exhibition.html">EXHIBITION IN 3D</a></li>
-                    <!-- Exhibition by Components dropdown -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">EXHIBITION BY COMPONENTS</a>
-                        <ul class="dropdown-menu dropdown-menu-end">
-                            <li><a class="dropdown-item" href="by-components.html?panel=0">The History of the Schools in 2 Videos</a></li>
-                            <li><a class="dropdown-item" href="by-components.html?panel=1">La Montesca School: A Story of Women</a></li>
-                            <li><a class="dropdown-item" href="by-components.html?panel=2">Photos and Alice’s Letters to Maria Pasqui</a></li>
-                            <li><a class="dropdown-item" href="by-components.html?panel=3">Montessori and International Teaching Materials</a></li>
-                            <li><a class="dropdown-item" href="by-components.html?panel=4">The 1910 World Fair Exhibition</a></li>
-                            <li><a class="dropdown-item" href="by-components.html?panel=5">The Reconstruction of the Schools’ Stand</a></li>
-                            <li><a class="dropdown-item" href="by-components.html?panel=6">Exhibition Project; Visitors’ Guide, Credits</a></li>
-                        </ul>
-                    </li>
-                    <!-- Videos dropdown -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">VIDEOS</a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="landingPage.html?autoplayVideo=1">Alice in Brussels: An Introduction to the Exhibit</a></li>
-                            <li><a class="dropdown-item" href="by-components.html?panel=0#video">The Baroness and the Barefoot Children</a></li>
-                            <li><a class="dropdown-item" href="by-components.html?panel=0#video">The Montesca Schools at the 1910 World Fair</a></li>
-                            <li><a class="dropdown-item" href="#">Symposium – Excerpts</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="catalogues.html">CATALOGUES</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about-us.html">ABOUT US</a></li>
-
-                    <!-- Language -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
-                            <img id="currentLanguageFlag" src="../assets/img/it.svg" width="20" alt="">
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-end">
-                            <li><a class="dropdown-item" href="#" onclick="setLanguage('en')">
-                                <img src="/Alice-a-Bruxelles/assets/img/en.svg" width="20" class="me-2">English
-                            </a></li>
-                            <li><a class="dropdown-item" href="#" onclick="setLanguage('it')">
-                                <img src="/Alice-a-Bruxelles/assets/img/it.svg" width="20" class="me-2">Italiano
-                            </a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </div>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li><a class="dropdown-item" href="#" onclick="setLanguage('en')">
+                <img src="../assets/img/en.svg" width="20" class="me-2">English
+              </a></li>
+              <li><a class="dropdown-item" href="#" onclick="setLanguage('it')">
+                <img src="../assets/img/it.svg" width="20" class="me-2">Italiano
+              </a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
 </div>
 
 <!-- ALL CONTENT INSIDE THE CARD -->
 <div class="about-card">
     <!-- Title & Subtitle (centered) -->
-    <h1 class="about-title">Website of the Documentary Exhibition</h1>
+    <h1 class="about-title">Sito della Mostra Documentaria</h1>
     <h2 class="about-subtitle">
-        Alice in Brussels
+        Alice a Bruxelles
     </h2>
     <p class="about-description">
-        The Rural Schools of Montesca and Rovigliano at the 1910 Universal Exposition.<br>
-        From the Origins to Maria Montessori.
+        Le scuole rurali di Montesca e Rovigliano all'Esposizione Universale del 1910.
+        Dalle origini a Maria Montessori.
     </p>
 
     <!-- 3 images row, center image truly in the center -->
@@ -267,13 +372,13 @@
 
     <!-- About text, left-justified -->
     <div class="about-text">
-        <p><strong>Curator and Project Coordinator:</strong><br />
+        <p><strong>Curatrice e Coordinatrice del Progetto:</strong><br />
             Cristina Caracchini</p>
-        <p><strong>Art Director:</strong><br />
+        <p><strong>Consulenza Artistica:</strong><br />
             Giacomo Pirazzoli</p>
-        <p><strong>Website Developers:</strong><br />
-            Mohammed Ali Shah, Shahed Bitar, Akshita B, Sarah Chiang, Riad Chahla, Gayitha Dammiya, Maanya Joshi,
-            Ali Mohamed, Sabina Radhi, Yuting Pan, Karim Youssef
+        <p><strong>Sviluppatori del Sito Web:</strong><br />
+            Ali Mohamed, Akshita B, Mohammed Ali Shah, Riad Chahla, Gayitha Dammiya, Maanya Joshi,
+            Sabina Radhi, Sarah Chiang, Shahed Bitar, Yuting Pan, Karim Youssef
         </p>
     </div>
     <!-- Logos row (bigger spacing above, separate classes for each logo size) -->
@@ -292,39 +397,62 @@
 </div><!-- 1st about-card -->
 
 <div class="second-about-card">
-    <div class="about-text">
-        <p><strong>Organization of the Documentary Exhibition:</strong><br />
-            Hallgarten–Franchetti Foundation, Villa Montesca
-        </p>
-        <p><strong>Installation Project:</strong><br />
-            Giacomo Pirazzoli (Architect and Professor of Architectural and Urban
-            Design, <br />Department of Architecture (DiDA), University of Florence),<br />
-            with the collaboration of Gaia Bartoli
-        </p>
-        <p><strong>Curator and Project Coordinator:</strong><br />
-            Cristina Caracchini (University of Western Ontario),<br />
-            with the collaboration of Lisa Viviani and Kaja Jovanovic,<br />
-            and with the support of the Social Sciences and Humanities Research Council of Canada (SSHRC)
-        </p>
-        <div class="credits-logos">
-            <img src="../assets/img/sshrc-logo.png" alt="SSHRC Logo" class="logo-sshrc">
-            <img src="../assets/img/montesca-logo.jpg" alt="Montesca Logo" class="logo-montesca">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="about-text">
+                <p><strong>Organizzazione della Mostra Documentaria:</strong><br />
+                    Fondazione Hallgarten–Franchetti, Villa Montesca
+                </p>
+                <p><strong>Allestimento:</strong><br />
+                    Giacomo Pirazzoli (Architetto e Professore di Progettazione Architettonica e Urbana,<br />Dipartimento di Architettura (DiDA), Università di Firenze),<br />
+                    con la collaborazione di Gaia Bartoli
+                </p>
+                <p><strong>Curatrice e Coordinatrice del Progetto:</strong><br />
+                    Cristina Caracchini (University of Western Ontario),<br />
+                    e con il sostegno del Social Sciences and Humanities Research Council of Canada (SSHRC)
+                </p>
+                <div class="credits-logos">
+                    <img src="../assets/img/sshrc-logo.png" alt="SSHRC Logo" class="logo-sshrc">
+                    <img src="../assets/img/montesca-logo.jpg" alt="Montesca Logo" class="logo-montesca">
+                </div>
+                <a href="../assets/document/credits.pdf"
+                   target="_blank"
+                   class="btn btn-outline-success credits-button">
+                    ELENCO COMPLETO DEI CREDITI
+                </a>
+            </div>
         </div>
-        <a href="../assets/document/credits.pdf"
-           target="_blank"
-           class="btn btn-outline-success credits-button">
-            Complete Credits List
-        </a>
+        <div class="col-md-4">
+            <div class="credits-image-container">
+                <div class="img-wrapper position-relative d-inline-block">
+                    <img
+                        src="../assets/img/STpannellicredits.png"
+                        alt="Credits Panel"
+                        class="credits-image"
+                        style="cursor: pointer;"
+                        onclick="showCreditsModal()"
+                    >
+                    <div class="zoom-icon" onclick="showCreditsModal()">
+                        <img src="../assets/img/zoom.png" alt="Zoom" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- If you want a back-to-top or not -->
+    <!-- <div id="back-to-top" class="back-to-top">&#8679;</div>   -->
+
+    <!-- Modal for Credits Image -->
+    <div id="credits-modal" style="display:none; position:fixed; z-index:9999; left:0; top:0; width:100vw; height:100vh; background:rgba(0,0,0,0.8); justify-content:center; align-items:center;">
+        <span onclick="closeCreditsModal()" style="position:absolute; top:30px; right:50px; color:white; font-size:3rem; cursor:pointer; z-index:10001;">&times;</span>
+        <img src="../assets/img/STpannellicredits.png" alt="Credits Panel Enlarged" style="max-width:90vw; max-height:90vh; border-radius:12px; box-shadow:0 8px 32px rgba(0,0,0,0.7); z-index:10000;" />
     </div>
 </div><!-- 2nd about-card -->
-
-<!-- If you want a back-to-top or not -->
-<div id="back-to-top" class="back-to-top">&#8679;</div>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="../js/bootstrap.bundle.min.js"></script>
 <script src="../js/script.js"></script>
-<script src="../js/theme.js"></script>
 <script>
     // Function to open PDF (catalog)
     function openPDF() {
@@ -345,34 +473,60 @@
         return false;
     });
 
-    function setLanguage(lang) {
-        const currentPath = window.location.pathname;
-        let filename = currentPath.substring(currentPath.lastIndexOf('/') + 1);
-        if (filename === '' || filename === 'en' || filename === 'it') {
-            filename = 'landingPage.html';
-        }
-
-        const newPath = lang === 'it'
-            ? `/Alice-a-Bruxelles/it/${filename}`
-            : `/Alice-a-Bruxelles/en/${filename}`;
-
-        window.location.href = newPath;
-    }
+//    function setLanguage(lang) {
+//        const currentPath = window.location.pathname;
+//        let filename = currentPath.substring(currentPath.lastIndexOf('/') + 1);
+//        if (filename === '' || filename === 'en' || filename === 'it') {
+//            filename = 'landingPage.html';
+//        }
+//
+//        const newPath = lang === 'it'
+//            ? `/Alice-a-Bruxelles/it/${filename}`
+//            : `/Alice-a-Bruxelles/en/${filename}`;
+//
+//        window.location.href = newPath;
+//    }
+    
+         function setLanguage(lang) {
+    document.getElementById('currentLanguageFlag').src = lang==='it'
+      ? '../assets/img/it.svg'
+      : '../assets/img/en.svg';
+    window.location.href = lang==='it' ? '../it/about-us.html' : '../en/about-us.html';
+  }
     // Modal logic for exhibit poster
     function openPosterModal() {
-        document.getElementById('poster-modal').style.display = 'flex';
-        document.body.style.overflow = 'hidden';
+      document.getElementById('poster-modal').style.display = 'flex';
+      document.body.style.overflow = 'hidden';
     }
     function closePosterModal() {
-        document.getElementById('poster-modal').style.display = 'none';
-        document.body.style.overflow = '';
+      document.getElementById('poster-modal').style.display = 'none';
+      document.body.style.overflow = '';
     }
-    // Optional: close modal when clicking outside the image
+    function showCreditsModal() {
+      document.getElementById('credits-modal').style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeCreditsModal() {
+      document.getElementById('credits-modal').style.display = 'none';
+      document.body.style.overflow = '';
+    }
+
+    // Updated click outside logic - unified for both modals
     document.addEventListener('DOMContentLoaded', function() {
+        // Handle poster modal
         var posterModal = document.getElementById('poster-modal');
         if (posterModal) {
             posterModal.addEventListener('click', function(e) {
                 if (e.target === posterModal) closePosterModal();
+            });
+        }
+
+        // Handle credits modal - same pattern as poster modal
+        var creditsModal = document.getElementById('credits-modal');
+        if (creditsModal) {
+            creditsModal.addEventListener('click', function(e) {
+                if (e.target === creditsModal) closeCreditsModal();
             });
         }
     });

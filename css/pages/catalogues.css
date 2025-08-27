@@ -1,46 +1,189 @@
-/* 5. CATALOGUES SECTION */
+:root {
+  --bottle-green-primary: #093624;
+  --bottle-green-dark: #051D13;
+  --bottle-green-medium: #0F4B2E;
+  --bottle-green-light: #226248;
+  --bottle-green-accent: #35785D;
+}
+
+body {
+  background: linear-gradient(135deg, 
+  var(--bottle-green-dark) 80%,
+  var(--bottle-green-primary) 30%,
+  var(--bottle-green-primary) 30%,
+  var(--bottle-green-medium) 30%,
+  var(--bottle-green-primary) 30%) !important;
+  min-height: 100vh;
+  background-attachment: fixed;
+}
+
+/* Catalogues section styling */
 #catalogues {
-  background-color: #fff;   
+  background-color: transparent;
   padding: 4rem 0;
-  color: #212529;            
+  min-height: calc(100vh - 80px);
+}
+
+/* Main container with white background */
+#catalogues .container {
+  background-color: transparent;
+  border-radius: 15px;
+  margin-top: 2rem;
+}
+
+/* Titles styling */
+#catalogues h1 {
+  color: (255, 255, 255);
+  font-weight: 500;
+  margin-bottom: 2rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+#catalogues h2 {
+  color: var(--bottle-green-medium);
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  text-align: center;
 }
 
 /* Two-col flex layout */
 #catalogues .d-flex {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 3rem;
 }
+
 @media (min-width: 768px) {
   #catalogues .d-flex {
     flex-direction: row;
+    gap: 2rem;
   }
 }
 
-/* PDF cards */
+/* PDF container cards */
+#catalogues .row {
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(34, 98, 72, 0.2);
+  width: 100%;
+}
+
+/* PDF viewer styling */
 #catalogues .flex-fill {
   background-color: #ffffff;
   border-radius: 8px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
   height: 600px;
-  overflow: auto;
-  display: flex;
-  flex-direction: column;
+  overflow: hidden;
+  border: 2px solid rgba(34, 98, 72, 0.2);
 }
 
-/* Titles above each PDF */
-#catalogues h5 {
-  margin: 1rem 0;
-  color: #212529;
-  font-size: 1.25rem;
-  font-weight: 500;
-  text-align: center;
-}
-
-/* Make the iframe fill its card */
+/* Make the iframe fill its container */
 #catalogues iframe {
-    flex-grow: 1;
-    width: 100%;
-    height: 100%;
-    border: none;
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 8px;
+}
+
+/* Footer styling to match theme */
+#footer {
+    border-top: 3px solid var( --bottle-green-accent);
+    color: var(--light-sage);
+    background: transparent !important;
+    margin-bottom: 0 !important;
+}
+
+#footer .container {
+  background: transparent;
+  border-radius: 15px;
+
+}
+
+#footer p {
+  color: 255,255,255;
+  margin: 0;
+}
+/* Navbar enhancement for green theme
+.nav.container-fluid {
+  background: linear-gradient(135deg, 
+    var(--bottle-green-dark) 0%,
+    var(--bottle-green-primary) 100%) !important;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+} */
+
+/* Back to top button styling */
+.back-to-top {
+    transition: transform 0.4s;
+    background: linear-gradient(135deg, var(--bottle-green-accent), var(--sage-green));
+    border: 2px solid rgba(171, 210, 194, 0.5);
+    box-shadow: 0 4px 15px rgba(9, 54, 36, 0.3);
+    position: fixed;
+    right: 1.5rem;
+    bottom: 1.5rem;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 1000;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.back-to-top:hover {
+    transform: scale(1.1);
+    background: linear-gradient(135deg, var(--sage-green), var(--mint-green));
+    box-shadow: 0 8px 20px rgba(9, 54, 36, 0.4);
+}
+
+/* Dropdown menu styling */
+.dropdown-menu {
+  background-color: rgba(9, 54, 36, 0.95);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.dropdown-item {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.dropdown-item:hover {
+  background-color: var(--bottle-green-medium);
+  color: white;
+}
+
+/* Social media links in footer */
+#footer .list-unstyled a {
+  color: var(--bottle-green-medium);
+  transition: color 0.3s ease;
+}
+
+#footer .list-unstyled a:hover {
+  color: var(--bottle-green-dark);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  #catalogues .container {
+    padding: 2rem 1.5rem;
+    margin: 1rem;
+  }
+  
+  #catalogues h1 {
+    font-size: 1.75rem;
+  }
+  
+  #catalogues h2 {
+    font-size: 1.25rem;
+  }
+  
+  #catalogues .row {
+    padding: 1rem;
+  }
 }

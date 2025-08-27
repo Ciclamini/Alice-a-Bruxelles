@@ -1,26 +1,80 @@
+/* Professional Green Color Palette */
+:root {
+  --bottle-green-primary: #093624;
+  --bottle-green-dark: #051D13;
+  --bottle-green-medium: #0F4B2E;
+  --bottle-green-light: #226248;
+  --bottle-green-accent: #35785D;
+  --sage-green: #68A58D;
+  --mint-green: #87BBA7;
+  --light-sage: #ABD2C2;
+  --very-light-green: #D3E8E0;
+}
+
 /*───────────────────────────────────────────────────────────────────────────────
     1. GLOBAL HOVER/TRANSITION FOR BACK-TO-TOP BUTTON
 ───────────────────────────────────────────────────────────────────────────────*/
 .back-to-top {
     transition: transform 0.4s;
+    background: linear-gradient(135deg, var(--bottle-green-accent), var(--sage-green));
+    border: 2px solid rgba(171, 210, 194, 0.5);
+    box-shadow: 0 4px 15px rgba(9, 54, 36, 0.3);
+    position: fixed;
+    right: 1.5rem;
+    bottom: 1.5rem;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 1000;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .back-to-top:hover {
     transform: scale(1.1);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(135deg, var(--sage-green), var(--mint-green));
+    box-shadow: 0 8px 20px rgba(9, 54, 36, 0.4);
 }
 
 /*───────────────────────────────────────────────────────────────────────────────
     2. LANDING SECTION (HERO)
 ───────────────────────────────────────────────────────────────────────────────*/
 
+.text-overlay {
+  position: absolute;
+  top: 50%; /* center vertically */
+  left: 50%; /* center horizontally */
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  font-size: 2em;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+  z-index: 10;
+  background: linear-gradient(135deg, 
+    rgba(9, 54, 36, 0.6), 
+    rgba(53, 120, 93, 0.5));
+  backdrop-filter: blur(5px);
+  padding: 20px 30px;
+  border-radius: 15px;
+  border: 2px solid rgba(171, 210, 194, 0.2);
+  box-shadow: 0 4px 20px rgba(9, 54, 36, 0.4);
+}
+
 /* Root landing-section */
 .landing {
   display: flex;
   flex-direction: column;
   height: 100vh;
-  background: #f8f9fa;
-  color: #212529;
-  border-bottom: 1px solid #e9ecef;
+  background: linear-gradient(145deg, 
+    #f8f9fa 0%, 
+    rgba(211, 232, 224, 0.1) 50%, 
+    #f8f9fa 100%);
+  color: var(--bottle-green-primary);
+  border-bottom: 1px solid var(--light-sage);
 }
 
 /* Banner */
@@ -47,7 +101,12 @@
   font-size: 3rem;
   font-weight: 700;
   line-height: 1.2;
-  color: #000;
+  background: linear-gradient(135deg, 
+    var(--bottle-green-primary), 
+    var(--bottle-green-accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 /* ==== Two-column text + video ==== */
@@ -62,13 +121,18 @@
   border-radius: 0.5rem;
 }
 .landing__card {
-  background: #fff;
-  border-radius: 0.5rem;
+  background: linear-gradient(145deg, 
+    rgba(255, 255, 255, 0.95), 
+    rgba(211, 232, 224, 0.1));
+  border: 2px solid rgba(104, 165, 141, 0.1);
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(9, 54, 36, 0.1);
 }
 .landing__video-wrapper {
   height: 100%;
-  border-radius: 0.5rem;
+  border-radius: 15px;
   overflow: hidden;
+  box-shadow: 0 10px 30px rgba(9, 54, 36, 0.2);
 }
 .landing__video-iframe {
   width: 100%;
@@ -82,13 +146,15 @@
   width: 100%;
   height: 100%;
   cursor: pointer;
-  border-radius: 0.5rem;
+  border-radius: 15px;
   overflow: hidden;
   transition: transform 0.3s ease;
+  box-shadow: 0 10px 30px rgba(9, 54, 36, 0.2);
 }
 
 .video-thumbnail-overlay:hover {
   transform: scale(1.02);
+  box-shadow: 0 15px 40px rgba(9, 54, 36, 0.3);
 }
 
 .video-thumbnail-img {
@@ -104,7 +170,9 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.4);
+  background: linear-gradient(135deg, 
+    rgba(9, 54, 36, 0.6), 
+    rgba(53, 120, 93, 0.4));
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -118,6 +186,7 @@
   color: white;
   margin-bottom: 1rem;
   transition: transform 0.3s ease;
+  text-shadow: 2px 2px 8px rgba(9, 54, 36, 0.7);
 }
 
 .video-thumbnail-overlay:hover .play-button {
@@ -129,12 +198,13 @@
   font-size: 1.5rem;
   font-weight: 600;
   margin: 0;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  text-shadow: 2px 2px 4px rgba(9, 54, 36, 0.8);
   line-height: 1.3;
 }
 .landing__card p {
   font-size: 1.4rem;
   line-height: 1.5;
+  color: var(--bottle-green-primary);
 }
 
 /*───────────────────────────────────────────────────────────────────────────────
@@ -152,7 +222,7 @@
   .scroll-down .chevron {
     display: block;
     font-size: 2rem;
-    color: rgba(0,0,0,0.5);
+    color: var(--bottle-green-accent);
     animation: scroll-bounce 2s infinite;
   }
   
@@ -162,23 +232,119 @@
     60%                  { transform: translateY(4px) translateX(-50%); }
   }  
 
+/*───────────────────────────────────────────────────────────────────────────────
+    2.5. MID SECTION ENHANCEMENTS
+───────────────────────────────────────────────────────────────────────────────*/
+#about-section {
+  background: linear-gradient(145deg, 
+    #ffffff 0%, 
+    rgba(211, 232, 224, 0.1) 50%, 
+    #ffffff 100%) !important;
+}
+
+/* Enhanced section title */
+h2.text-center {
+ background: linear-gradient(135deg, 
+    var(--bottle-green-primary) 50%,
+    var(--bottle-green-medium) 80%,
+    var(--bottle-green-primary) 80%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+}
 
 /*───────────────────────────────────────────────────────────────────────────────
-    3. “CHOOSE YOUR VIEW” CARDS
+    3. "CHOOSE YOUR VIEW" CARDS WITH ENHANCED STYLING
 ───────────────────────────────────────────────────────────────────────────────*/
 #choose-view {
   scroll-margin-top: 3rem;
-}
-.view-card {
+  background: linear-gradient(135deg, 
+    var(--bottle-green-dark) 80%,
+    var(--bottle-green-primary) 30%,
+    var(--bottle-green-primary) 30%,
+    var(--bottle-green-medium) 30%,
+    var(--bottle-green-primary) 30%) !important;
+  box-shadow: 0 20px 60px rgba(5, 29, 19, 0.6) !important;
   position: relative;
   overflow: hidden;
-  border-radius: 8px;
-  transition: transform 0.3s, box-shadow 0.3s;
+  margin: 0 !important;
+  padding: 80px 0 0 0 !important;
 }
+
+/* Add decorative elements */
+#choose-view::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at 30% 70%, rgba(255,255,255,0.05) 0%, transparent 50%),
+              radial-gradient(circle at 70% 30%, rgba(255,255,255,0.02) 0%, transparent 50%);
+  animation: float 20s ease-in-out infinite;
+  pointer-events: none;
+}
+
+#choose-view::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.3));
+  pointer-events: none;
+}
+
+@keyframes float {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  50% { transform: translate(-10px, -10px) rotate(1deg); }
+}
+
+/* Enhanced section title */
+#choose-view h1 {
+  font-size: 3.5rem;
+  font-weight: 500;
+  text-shadow: 3px 3px 12px rgba(0,0,0,0.6);
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+#choose-view h1::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.6), transparent);
+  border-radius: 2px;
+}
+
+.view-card {
+  background: linear-gradient(145deg, 
+    rgba(255, 255, 255, 0.1), 
+    rgba(171, 210, 194, 0.05)) !important;
+  border: 3px solid rgba(171, 210, 194, 0.3) !important;
+  box-shadow: 0 10px 30px rgba(9, 54, 36, 0.2) !important;
+  backdrop-filter: blur(5px);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px !important;
+}
+
 .view-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  transform: translateY(-20px) scale(1.05) !important;
+  border-color: var(--light-sage) !important;
+  box-shadow: 0 30px 60px rgba(9, 54, 36, 0.4),
+              0 0 40px rgba(135, 187, 167, 0.3) !important;
+  background: linear-gradient(145deg, 
+    rgba(255, 255, 255, 0.15), 
+    rgba(171, 210, 194, 0.1)) !important;
 }
+
 .view-card img {
   width: 100%;
   height: auto;
@@ -190,19 +356,16 @@
   object-fit: cover;
 }
 
-/*───────────────────────────────────────────────────────────────────────────────
-   Static “By Components” card image + overlaid thumbs
-───────────────────────────────────────────────────────────────────────────────*/
 
-.view-card {
-  position: relative;
-}
+/*───────────────────────────────────────────────────────────────────────────────
+   Static "By Components" card image + overlaid thumbs
+───────────────────────────────────────────────────────────────────────────────*/
 
 /* stack context for image+thumbs */
 .view-card .image-stack {
   position: relative;
   width: 100%;
-  height: 450px;      /* match your other cards' image height */
+  height: 320px;      /* match your other cards' image height */
   overflow: hidden;
 }
 
@@ -214,7 +377,7 @@
   display: block;
 }
 
-/* thumbnail strip, overlaid */
+/* thumbnail strip, overlaid - ENHANCED */
 .view-card .static-thumbs {
   position: absolute;
   bottom: 8px;        /* how far up from the bottom edge */
@@ -223,8 +386,12 @@
   display: flex;
   gap: 0.5rem;
   padding: 0.25rem;
-  background: rgba(0,0,0,0.4);
-  border-radius: 4px;
+  background: linear-gradient(135deg, 
+    rgba(9, 54, 36, 0.8), 
+    rgba(53, 120, 93, 0.7));
+  border: 1px solid rgba(171, 210, 194, 0.3);
+  backdrop-filter: blur(10px);
+  border-radius: 8px;
 }
 
 /* each little thumb */
@@ -232,8 +399,8 @@
   width: 60px;
   height: 45px;        /* keeps same aspect ratio block */
   object-fit: cover;
-  border: 2px solid white;
-  border-radius: 2px;
+  border: 2px solid rgba(255,255,255,0.8);
+  border-radius: 3px;
   cursor: pointer;
   transition: transform 0.2s, opacity 0.2s;
 }
@@ -242,34 +409,89 @@
   transform: scale(1.1);
 }
 
-
 /*───────────────────────────────────────────────────────────────────────────────
-    4. FOOTER
+    4. FOOTER ENHANCEMENT
 ───────────────────────────────────────────────────────────────────────────────*/
 #footer {
-    margin-top: 4rem;
-    color: #6c757d;
+    border-top: 3px solid var( --bottle-green-accent);
+    color: var(--light-sage);
+    background: transparent !important;
+
+    margin-bottom: 0 !important;
 }
 #footer p {
     margin-bottom: 0;
+    font-weight: 500;
 }
 #footer ul li a {
-    color: inherit;
+    color: #ffffff;
     transition: color 0.2s;
 }
 #footer ul li a:hover {
-    color: #000;
+    color: var(--bottle-green-accent);
 }
 
 /*───────────────────────────────────────────────────────────────────────────────
-    5. BACK-TO-TOP POSITIONING
+    5. FADE-IN ANIMATIONS
 ───────────────────────────────────────────────────────────────────────────────*/
-#back-to-top {
-    position: fixed;
-    right: 1.5rem;
-    bottom: 1.5rem;
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}  
+
+#footer ul li a {
+  color: var(--bottle-green-primary);
+  transition: color 0.2s;
+}
+
+#footer ul li a:hover {
+  color: var(--bottle-green-accent);
+}
+
+/*───────────────────────────────────────────────────────────────────────────────
+    6. FADE-IN ANIMATIONS
+───────────────────────────────────────────────────────────────────────────────*/
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/*───────────────────────────────────────────────────────────────────────────────
+    7. RESPONSIVE DESIGN IMPROVEMENTS
+───────────────────────────────────────────────────────────────────────────────*/
+@media (max-width: 768px) {
+  #choose-view h1 {
+    font-size: 2.5rem;
+  }
+  
+  .view-card:hover {
+    transform: translateY(-15px) scale(1.02) !important;
+  }
+  
+  .view-card .card-title {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  #choose-view {
+    padding: 60px 0 80px 0 !important;
+  }
+  
+  #choose-view h1 {
     font-size: 2rem;
-    cursor: pointer;
-    z-index: 1000;
-    color: #20c997;
+    margin-bottom: 2rem;
+  }
 }

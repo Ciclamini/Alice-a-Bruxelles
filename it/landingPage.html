@@ -9,14 +9,51 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
 </head>
 <body>
-
+    <!-- ===== Opening Video Section (at the very top) ===== -->
+  <div class="container-fluid position-relative fade-in" id="opening-video-section" style="background-color: #222; padding-top: 0; padding-bottom: 0;">
+    <video
+      autoplay
+      muted
+      loop
+      playsinline
+      poster=""
+      style="width: 100vw; height: 1000px; object-fit: cover; display: block; border-radius: 0; margin: 0;"
+    >
+      <source src="../assets/Opening_page_moving_photo2.mp4" type="video/mp4">
+    </video>
+<!-- Overlay text over the video -->
+    <div class="position-absolute text-center w-100" style="z-index: 10; bottom: 50%; left: 50%; transform: translateX(-50%);">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8 col-xl-6">
+            <div class="card border-0" style="background-color: rgba(0, 0, 0, 0.3); backdrop-filter: blur(1px); border-radius: 15px;">
+              <div class="card-body px-3 py-4 px-md-4">
+                <h1 class="display-4 fw-bold text-white mb-3" style="font-family: 'Times New Roman', serif; text-shadow: 2px 2px 8px rgba(0,0,0,0.7); line-height: 1.2; letter-spacing: 1.5 px;">
+                  ALICE A BRUXELLES
+                </h1>
+                <div class="px-2 px-md-3">
+                  <p class="lead text-white fs-5 mb-0" style="font-family: 'Times New Roman', serif; text-shadow: 1px 1px 4px rgba(0,0,0,0.8); line-height: 1.5; font-weight: 300; letter-spacing: 1 px;">
+                    Le scuole Hallgarten-Franchetti all’Esposizione Universale del 1910<br>
+                    <span class="d-block mt-1" style="font-family: 'Times New Roman', serif; font-style: italic; font-size: 0.85em;">
+                      Dalle origini a Maria Montessori
+                    </span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 <!-- ===== Navbar ===== -->
 <div class="nav container-fluid fixed-top">
   <div class="container">
     <nav class="navbar navbar-expand-lg">
       <a class="navbar-brand" href="landingPage.html">
         <img src="../assets/img/website-icon.png" alt="Logo" width="30" height="24">
-        ALICE IN BRUSSELS
+        ALICE A BRUXELLES
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar"
               aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -24,33 +61,33 @@
       </button>
       <div class="collapse navbar-collapse" id="navbar">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="landingPage.html#landing-section">HOME</a></li>
-          <li class="nav-item"><a class="nav-link" href="3d-exhibition.html">EXHIBITION IN 3D</a></li>
+          <li class="nav-item"><a class="nav-link" href="landingPage.html#choose-view">HOME</a></li>
+          <li class="nav-item"><a class="nav-link" href="3d-exhibition.html">MOSTRA IN 3D</a></li>
           <!-- Exhibition by Components dropdown -->
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">EXHIBITION BY COMPONENTS</a>
+            <a class="nav-link" href="by-components.html">MOSTRA PER SEZIONI<span class="dropdown-toggle ms-1" data-bs-toggle="dropdown" aria-expanded="false"></span></a>
             <ul class="dropdown-menu dropdown-menu-end">
-              <li><a class="dropdown-item" href="by-components.html?panel=0">The History of the Schools in 2 Videos</a></li>
-              <li><a class="dropdown-item" href="by-components.html?panel=1">La Montesca School: A Story of Women</a></li>
-              <li><a class="dropdown-item" href="by-components.html?panel=2">Photos and Alice’s Letters to Maria Pasqui</a></li>
-              <li><a class="dropdown-item" href="by-components.html?panel=3">Montessori and International Teaching Materials</a></li>
-              <li><a class="dropdown-item" href="by-components.html?panel=4">The 1910 World Fair Exhibition</a></li>
-              <li><a class="dropdown-item" href="by-components.html?panel=5">The Reconstruction of the Schools’ Stand</a></li>
-              <li><a class="dropdown-item" href="by-components.html?panel=6">Exhibition Project; Visitors’ Guide, Credits</a></li>
+              <li><a class="dropdown-item" href="by-components.html?panel=0">La storia delle scuole in due video</a></li>
+              <li><a class="dropdown-item" href="by-components.html?panel=1">La scuola della Montesca: una storia di donne</a></li>
+              <li><a class="dropdown-item" href="by-components.html?panel=2">Foto e lettere di Alice a Maria Pasqui</a></li>
+              <li><a class="dropdown-item" href="by-components.html?panel=3">Materiale Montessori e materiale didattico Internazionale</a></li>
+              <li><a class="dropdown-item" href="by-components.html?panel=4">L’Esposizione Universale del 1910</a></li>
+              <li><a class="dropdown-item" href="by-components.html?panel=5">Ricostruzione dello stand delle scuole</a></li>
+              <li><a class="dropdown-item" href="by-components.html?panel=6">Progetto della mostra; Guida per i visitatori; Crediti</a></li>
             </ul>
           </li>
           <!-- Videos dropdown -->
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">VIDEOS</a>
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">VIDEO</a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="landingPage.html?autoplayVideo=1">Alice in Brussels: An Introduction to the Exhibit</a></li>
-              <li><a class="dropdown-item" href="by-components.html?panel=0#video">The Baroness and the Barefoot Children</a></li>
-              <li><a class="dropdown-item" href="by-components.html?panel=0#video">The Montesca Schools at the 1910 World Fair</a></li>
-              <li><a class="dropdown-item" href="#">Symposium – Excerpts</a></li>
+              <li><a class="dropdown-item" href="landingPage.html?autoplayVideo=1">Alice a Bruxelles: un’introduzione alla mostra</a></li>
+              <li><a class="dropdown-item" href="by-components.html?panel=0#video">Una baronessa tra i bambini scalz</a></li>
+              <li><a class="dropdown-item" href="by-components.html?panel=0#video">Le scuole della Montesca all’Esposizione Universale del 1910</a></li>
+              <li><a class="dropdown-item" href="#">Simposio – Estratti</a></li>
             </ul>
           </li>
-          <li class="nav-item"><a class="nav-link" href="catalogues.html">CATALOGUES</a></li>
-          <li class="nav-item"><a class="nav-link" href="../en/about-us.html">ABOUT US</a></li>
+          <li class="nav-item"><a class="nav-link" href="catalogues.html">CATALOGHI</a></li>
+          <li class="nav-item"><a class="nav-link" href="../it/about-us.html">CHI SIAMO</a></li>
           <!-- Language -->
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
@@ -58,10 +95,10 @@
             </a>
             <ul class="dropdown-menu dropdown-menu-end">
               <li><a class="dropdown-item" href="#" onclick="setLanguage('en')">
-                <img src="/Alice-a-Bruxelles/assets/img/en.svg" width="20" class="me-2">English
+                <img src="../assets/img/en.svg" width="20" class="me-2">English
               </a></li>
               <li><a class="dropdown-item" href="#" onclick="setLanguage('it')">
-                <img src="/Alice-a-Bruxelles/assets/img/it.svg" width="20" class="me-2">Italiano
+                <img src="../assets/img/it.svg" width="20" class="me-2">Italiano
               </a></li>
             </ul>
           </li>
@@ -71,159 +108,166 @@
   </div>
 </div>
 
-<!-- ===== Landing Section ===== -->
-<section id="landing" class="landing">
-  <!-- 1) Banner with centered overlay title -->
-  <div class="landing__banner">
-    <img
-            src="../assets/img/AB2_2.jpg"
-            alt="Alice in Brussels Banner"
-            class="landing__banner-img"
-    >
-    <h1 class="landing__banner-title">
-      The Schools of Montesca and Rovigliano<br>
-      at the Universal Exposition of 1910
-    </h1>
+<!-- ===== Mid White Section ===== -->
+<div class="container-fluid py-5 position-relative fade-in" id="about-section" style="background-color: white;">
+  <!-- Overlay image with low opacity -->
+  <div style="
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    z-index: 1;
+    background: url('../assets/img/ceiling-4f.png') center center / cover no-repeat;
+    opacity: 0.11;
+    pointer-events: none;">
   </div>
-
-  <!-- 2) Two-column layout: description on the left, YouTube video on the right -->
-  <div class="landing__content container my-4">
-    <div class="row g-4 h-100">
-
-      <!-- Description card -->
-      <div class="col-md-6">
-        <div class="landing__card shadow-sm p-4">
-          <p class="mb-3">
-            In 1910, the rural schools of Montesca and Rovigliano, founded by Alice Hallgarten-Franchetti,
-            presented their innovative educational work at the Universal and International Exposition in Brussels.
-          </p>
-          <p class="mb-0">
-            The 2024 exhibition “Alice in Brussels” celebrates their award-winning, progressive model of rural education.
-          </p>
+  <div class="container position-relative" style="z-index: 2;">
+    <h2 class="mb-4 text-center" style="color: #222; font-weight: 700; font-size: 30px; padding-bottom: 30px;">
+      Mostre delle Scuole di Montesca e Rovigliano <br> Bruxelles 1910 — Città di Castello 2024 <br>
+    </h2>
+    
+    <!-- First Section: Image Left, Text Right -->
+    <div class="row justify-content-center align-items-stretch g-0 mt-5" style="padding-bottom: 40px;">
+        <div class="col-md-6 d-flex flex-column justify-content-center" style="padding-right: 1rem;">
+            <img src="../assets/img/1910-exibition.jpg" alt="Exhibition Introduction" class="img-fluid rounded-3"
+                 style="width: 100%; height: 400px; object-fit: cover;">
+            <span style="font-size: 0.85rem; color: #000; margin-top: 10px; display: block; text-align: center; width: 100%;">
+                <em>
+                  Stand espositivi allestiti dalle scuole italiane all'Esposizione Internazionale e Universale del 1910 a Bruxelles. (Cr. Biblioteca Ariostea, FE)
+                </em>
+             </span>
         </div>
-      </div>
-
-      <!-- YouTube embed with thumbnail -->
-
-      <!-- Anchor for scroll target -->
-      <div id="intro-video" class="col-md-6">
-        <div class="landing__video-wrapper">
-          <!-- Thumbnail overlay -->
-          <div id="video-thumbnail" class="video-thumbnail-overlay">
-            <img
-                    src="../assets/img/LandingPageThumbnail.jpeg"
-                    alt="Alice in Brussels: Introduction to the Exhibition"
-                    class="video-thumbnail-img"
-            >
-            <div class="video-thumbnail-overlay-content">
-              <div class="play-button">
-                <i class="bi bi-play-circle-fill"></i>
-              </div>
-              <h3 class="video-title">Alice in Brussels: Introduction to the Exhibition</h3>
+        <div class="col-md-6 d-flex flex-column justify-content-center" style="padding-left: 1rem;">
+            <div style="padding: 20px;">
+                <p class="mb-3" style="color: #000; font-size: 1.30rem; text-align: justify; line-height: 1.6;">
+                    Nel 1910, le scuole rurali di Montesca e Rovigliano, fondate da Alice Hallgarten-Franchetti, 
+                    presentarono il loro innovativo lavoro pedagogico all'Esposizione Universale e Internazionale di Bruxelles, 
+                    mostrando il loro approccio educativo innovativo a un pubblico globale. Questa iniziativa, nata dalla visione pionieristica di Alice Hallgarten Franchetti,
+                    mirava a suscitare interesse internazionale per un progetto educativo complesso e lungimirante progettato per i figli di contadini umbri per lo più analfabeti.
+                </p>
             </div>
-          </div>
-          <!-- YouTube iframe (hidden initially) -->
-          <iframe
-                  id="video-iframe"
-                  src="https://www.youtube.com/embed/bvgiVHAeGOc?autoplay=1&mute=1"
-                  title="Alice in Brussels: Introduction to the Exhibition"
-                  allow="autoplay; encrypted-media; picture-in-picture"
-                  allowfullscreen
-                  class="landing__video-iframe"
-                  style="display: none;"
-          ></iframe>
         </div>
-      </div>
-
     </div>
 
-    <!-- 3) Scroll-down cue -->
-    <div class="scroll-down">
-      <span class="chevron">⌄</span>
+    <!-- Second Section: Text Left, Video Right -->
+    <div class="row justify-content-center align-items-stretch g-0 mt-5" style="padding-bottom: 40px;">
+        <div class="col-md-6 d-flex flex-column justify-content-center" style="padding-right: 1rem;">
+            <div style="padding: 20px;">
+                <p class="mb-3" style="color: #000; font-size: 1.30rem; text-align: justify; line-height: 1.6;">
+                    La mostra del 2024 <em>Alice a Bruxelles</em> celebra questo modello premiato di educazione rurale progressiva, che catturò l'attenzione di figure di spicco nel
+                    campo — tra cui Maria Montessori che, nel 1909, dedicò il suo <em>Metodo</em> ad Alice e Leopoldo Franchetti, e Giuseppe Lombardo Radice,
+                    che introdusse diverse innovazioni sviluppate nelle scuole di Alice nell'educazione elementare in tutto il Regno d'Italia.
+                </p>
+            </div>
+        </div>
+        <div class="col-md-6 d-flex align-items-center justify-content-center flex-column" style="padding-left: 1rem;">
+            <iframe src="https://www.youtube.com/embed/bvgiVHAeGOc?autoplay=1&mute=1" 
+                    class="rounded-3" 
+                    style="width: 100%; height: 400px;" 
+                    frameborder="0" 
+                    allowfullscreen>
+            </iframe>
+        </div>
     </div>
   </div>
-</section>
+</div>
 
 
 
 <!-- ===== Choose Your View ===== -->
-<div id="choose-view" class="container text-center my-5">
+<div id="choose-view" class="container-fluid text-center my-5">    
+<div class="container" style="border-radius: 20px;">  
+    <h1 class="mb-5 text-white">Visita la Mostra</h1>
+    <div class="row g-4">
 
-  <h1 class="mb-5 text-white">Visit the Exhibition</h1>
-  <div class="row g-4">
+      <!-- 3D Exhibition -->
+      <div class="col-sm-4">
+        <a href="3d-exhibition.html"
+          class="card view-card h-100 text-decoration-none position-relative overflow-hidden" 
+          style="border: 4px solid rgba(255,255,255,0.3); border-radius: 15px; transition: all 0.3s ease;">
+          <img src="../assets/img/slider-1.jpeg"
+              class="card-img-top"
+              style="object-fit: cover;"
+              alt="3D Exhibition Thumbnail">
+          <div class="card-body bg-transparent text-center">
+            <h5 class="card-title text-white">ENTRA NELLA</h5>
+            <h5 class="card-title text-white">SALA VIRTUALE</h5>
+            <!-- <h6 class="card-title text-white"> <i>(Italian only)</i></h6> -->
+          </div>
+        </a>
+      </div>
 
-    <!-- By Components Static Card -->
-    <div class="col-sm-4">
-      <a href="by-components.html"
-         class="card view-card h-100 p-0 overflow-hidden text-decoration-none">
-
-        <!-- image container -->
-        <div class="image-stack">
-          <!-- Main image, full 450px tall -->
-          <img
-                  src="../assets/img/slider-7.jpeg"
-                  class="main-image"
-                  alt="Explore the Components"
-          >
-
-          <!-- Thumbnails overlaid on bottom of the main image -->
-          <div class="static-thumbs">
-            <img src="../assets/img/slider-7.jpeg" class="thumb" alt="">
-            <img src="../assets/img/slider-1.jpeg" class="thumb" alt="">
-            <img src="../assets/img/ceiling.jpg" class="thumb" alt="">
-            <img src="../assets/img/display.jpg"   class="thumb" alt="">
+      <!-- By Components Static Card -->
+        <div class="col-sm-4">
+        <a href="by-components.html" 
+           class="card view-card h-100 text-decoration-none position-relative overflow-hidden"
+           style="border: 4px solid rgba(255,255,255,0.3); border-radius: 15px; transition: all 0.3s ease;">
+        <!-- Image container with relative positioning -->
+        <div class="position-relative" style="height: 450px; overflow: hidden;">
+          <img src="../assets/img/slider-7.jpeg" 
+              class="w-100 h-100" 
+              
+              alt="Explore the Components">
+          
+          <!-- Thumbnail strip overlay - positioned inside the image container -->
+          <div class="position-absolute bottom-0 start-50 translate-middle-x" style="margin-bottom: 10px;">
+            <div class="d-flex gap-1 p-1" style="background-color: rgba(9, 54, 36, 0.7); border-radius: 8px;">
+              <img src="../assets/img/slider-7.jpeg" style="width: 90px; height: 60px; object-fit: cover; border: 2px solid white; border-radius: 3px;" alt="">
+              <img src="../assets/img/slider-1.jpeg" style="width: 90px; height: 60px; object-fit: cover; border: 2px solid white; border-radius: 3px;" alt="">
+              <img src="../assets/img/ceiling.jpg" style="width: 90px; height: 60px; object-fit: cover; border: 2px solid white; border-radius: 3px;" alt="">
+              <img src="../assets/img/display.jpg" style="width: 90px; height: 60px; object-fit: cover; border: 2px solid white; border-radius: 3px;" alt="">
+            </div>
           </div>
         </div>
-
-        <!-- Caption -->
+      
         <div class="card-body bg-transparent text-center">
-          <h5 class="card-title text-white">EXPLORE</h5>
-          <h5 class="card-title text-white">THE COMPONENTS</h5>
-        </div>
-
-      </a>
-    </div>
-
-    <!-- 3D Exhibition -->
-    <div class="col-sm-4">
-      <a href="3d-exhibition.html"
-         class="card view-card h-100 text-decoration-none position-relative overflow-hidden">
-        <img src="../assets/img/slider-1.jpeg"
-             class="card-img-top"
-             alt="3D Exhibition Thumbnail">
-        <div class="card-body bg-transparent text-center">
-          <h5 class="card-title text-white">STEP INSIDE</h5>
-          <h5 class="card-title text-white">THE VIRTUAL EXPERIENCE</h5>
+          <h5 class="card-title text-white mb-0">ESPLORA</h5>
+          <h5 class="card-title text-white">PER SEZIONI</h5>
         </div>
       </a>
     </div>
 
-    <!-- Catalogues -->
-    <div class="col-sm-4">
-      <a href="catalogues.html"
-         class="card view-card h-100 text-decoration-none position-relative overflow-hidden"
-      >
-        <img src="../assets/img/catalogue.jpg"
-             class="card-img-top"
-             alt="3D Exhibition Thumbnail">
-        <div class="card-body bg-transparent text-center">
-          <h5 class="card-title text-white">BROWSE</h5>
-          <h5 class="card-title text-white">THE CATALOGUES</h5>
-        </div>
-      </a>
-    </div>
-
+      <!-- Catalogues -->
+      <div class="col-sm-4">
+        <a href="catalogues.html"
+          class="card view-card h-100 text-decoration-none position-relative overflow-hidden"
+          style="border: 4px solid rgba(255,255,255,0.3); border-radius: 15px; transition: all 0.3s ease;"
+        >
+          <img src="../assets/img/catalogue.jpg"
+              class="card-img-top"
+              style="object-fit: cover;"
+              alt="3D Exhibition Thumbnail">
+          <div class="card-body bg-transparent text-center">
+            <h5 class="card-title text-white">SFOGLIA</h5>
+            <h5 class="card-title text-white">I CATALOGHI</h5>
+          </div>
+        </a>
+      </div>
+    </div>  
   </div>
-</div>
+
+
+<style>
+  .view-card:hover {
+    transform: translateY(-15px) scale(1.05);
+    border-color: rgba(255,255,255,0.8) !important;
+    box-shadow: 0 20px 40px rgba(9, 54, 36, 0.6);
+  }
+  
+  .view-card {
+    transition: all 0.3s ease;
+  }
+</style>
+
 
 <!-- ===== Footer ===== -->
-<div id="footer" class="container text-center my-5">
+<div id="footer" class="container text-center my-5 fade-in">
+  <div class="container"> 
   <footer class="py-5 border-top">
     <div class="d-flex flex-column flex-sm-row justify-content-between">
-      <p>&copy; 2024 Company, Inc. All rights reserved.</p>
+      <p>&copy; 2024 Company, Inc. Tutti i diritti riservati.</p>
     </div>
   </footer>
-</div>
+  </div>
+
 
 <!-- ===== Back to Top ===== -->
 <div id="back-to-top" class="back-to-top">&#8679;</div>
@@ -232,47 +276,22 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="../js/bootstrap.bundle.min.js"></script>
 <script src="../js/imageMapResizer.min.js"></script>
-<!-- <script src="../js/theme.js"></script> -->
-
 <script>
-  // Language switcher
   function setLanguage(lang) {
-    const currentPath = window.location.pathname;
-
-    // Get the filename, default to landingPage.html if empty
-    let filename = currentPath.substring(currentPath.lastIndexOf('/') + 1);
-    if (filename === '' || filename === 'en' || filename === 'it') {
-      filename = 'landingPage.html';
-    }
-
-    // Build new path
-    const newPath = lang === 'it'
-            ? `../it/${filename}`
-            : `../en/${filename}`;
-
-    // Update flag
-    document.getElementById('currentLanguageFlag').src =
-            lang === 'it' ? '/Alice-a-Bruxelles/assets/img/it.svg' : '/Alice-a-Bruxelles/assets/img/en.svg';
-
-    // Redirect
-    window.location.href = newPath;
+    document.getElementById('currentLanguageFlag').src = lang==='it'
+      ? '../assets/img/it.svg'
+      : '../assets/img/en.svg';
+    window.location.href = lang==='it' ? '../it/landingPage.html' : '../en/landingPage.html';
   }
-
-
-  // Open PDF in new tab
   function openPDF() {
-    window.open('../assets/document/CATALOGUE.pdf', '_blank');
+    window.open('../assets/document/CATALOGUE.pdf','_blank');
   }
-
-  // Back-to-top smooth scroll
-  document.getElementById('back-to-top')?.addEventListener('click', () => {
+  document.getElementById('back-to-top').addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
-
-  // Smooth scroll for in-page anchor links
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', e => {
-      const target = document.querySelector(anchor.getAttribute('href'));
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const target = document.querySelector(a.getAttribute('href'));
       if (target) {
         e.preventDefault();
         target.scrollIntoView({ behavior: 'smooth' });
@@ -280,53 +299,28 @@
     });
   });
 
-  // Video thumbnail click handler (manual interaction)
-  const videoThumbnail = document.getElementById('video-thumbnail');
-  const videoIframe = document.getElementById('video-iframe');
-
-  if (videoThumbnail && videoIframe) {
-    videoThumbnail.addEventListener('click', function () {
-      videoThumbnail.style.display = 'none';
-      videoIframe.style.display = 'block';
-
-      // Add autoplay if not already there
-      if (!videoIframe.src.includes('autoplay=1')) {
-        videoIframe.src += '&autoplay=1';
+  // Fade-in animation on scroll (show when in viewport, hide when out)
+  function revealOnScroll() {
+    document.querySelectorAll('.fade-in').forEach(function(el) {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 60 && rect.bottom > 60) {
+        el.classList.add('visible');
+      } else {
+        el.classList.remove('visible');
       }
     });
   }
+  window.addEventListener('scroll', revealOnScroll);
+  window.addEventListener('DOMContentLoaded', revealOnScroll);
 
-  // Hide landing text when video plays (optional elements)
-  const vid = document.getElementById('landing-video');
-  const txt = document.getElementById('landing-text');
-  if (vid && txt) {
-    vid.addEventListener('play', () => txt.style.display = 'none');
-    vid.addEventListener('pause', () => txt.style.display = '');
-    vid.addEventListener('ended', () => txt.style.display = '');
-  }
-
-  // Handle autoplay if ?autoplayVideo=1 in URL
-  document.addEventListener('DOMContentLoaded', () => {
-    const params = new URLSearchParams(window.location.search);
-    const autoplay = params.get('autoplayVideo');
-    if (autoplay === '1' && videoThumbnail && videoIframe) {
-      const videoSection = document.getElementById('intro-video');
-      if (videoSection) {
-        videoSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-
-        // Delay for scroll animation before autoplay trigger
-        setTimeout(() => {
-          videoThumbnail.style.display = 'none';
-          videoIframe.style.display = 'block';
-
-          if (!videoIframe.src.includes('autoplay=1')) {
-            videoIframe.src += '&autoplay=1';
-          }
-        }, 600);
-      }
-    }
+  // Fade out the intro overlay after 1.5 seconds
+  window.addEventListener('DOMContentLoaded', function() {
+    setTimeout(function() {
+      const overlay = document.getElementById('intro-overlay');
+      overlay.style.opacity = '0';
+      setTimeout(() => overlay.style.display = 'none', 600); // changed from 1200
+    }, 1500);
   });
 </script>
-
 </body>
 </html>

@@ -613,11 +613,153 @@ function showEnlargedFrame(frameNumber) {
 function closePopup(popupId) {
   console.log(`Closing popup: ${popupId}`);
   const popup = document.getElementById(popupId);
-  if (popup) {
-    popup.style.display = 'none';
-    document.body.classList.remove('modal-open'); // Show hotspots
-    document.body.style.overflow = '';
+  
+  if (!popup) {
+    console.error(`Popup with ID ${popupId} not found`);
+    return;
   }
+  
+  // Add closing animation
+  popup.classList.remove('show');
+  
+  setTimeout(() => {
+    popup.style.display = 'none';
+    document.body.classList.remove('modal-open');
+    document.body.style.overflow = '';
+    
+    // Only reset flip state for frames that have flip functionality (7-11)
+    const frameNumber = parseInt(popupId.replace('popup-frame', ''));
+    if (frameNumber >= 7 && frameNumber <= 11) {
+      const flipContainer = popup.querySelector('.popup-flip-container');
+      if (flipContainer) {
+        flipContainer.classList.remove('flipped');
+        
+        // Reset button text
+        const flipBtn = popup.querySelector('.popup-flip-btn');
+        if (flipBtn) {
+          flipBtn.textContent = 'Show Info';
+        }
+      }
+    }
+  }, 150);
+}
+
+function togglePopupFlip(popupId) {
+  const popup = document.getElementById(popupId);
+  if (!popup) {
+    console.error(`Popup with ID ${popupId} not found`);
+    return;
+  }
+  
+  // Extract frame number from popup ID
+  const frameNumber = parseInt(popupId.replace('popup-frame', ''));
+  
+  // Now allow flipping for frames 6-11 (Frame 6 added)
+  if (frameNumber < 6 || frameNumber > 11) {
+    console.log(`Frame ${frameNumber} does not have flip functionality`);
+    return;
+  }
+  
+  const flipContainer = popup.querySelector('.popup-flip-container');
+  if (flipContainer) {
+    flipContainer.classList.toggle('flipped');
+    
+    // Update button text based on flip state
+    const flipBtn = popup.querySelector('.popup-flip-btn');
+    if (flipBtn) {
+      const isFlipped = flipContainer.classList.contains('flipped');
+      flipBtn.textContent = isFlipped ? 'Show Image' : 'Show Info';
+    }
+    
+    // Add haptic feedback if available
+    if (navigator.vibrate) {
+      navigator.vibrate(50);
+    }
+  }
+}
+
+// Updated showPopup function to handle Frame 6
+function showPopup(id) {
+  console.log(`Opening popup: ${id}`);
+  const popup = document.getElementById(id);
+  
+  if (!popup) {
+    console.error(`Popup with ID ${id} not found`);
+    return;
+  }
+  
+  // Extract frame number from popup ID
+  const frameNumber = parseInt(id.replace('popup-frame', ''));
+  
+  // Reset flip state when opening popup (now for frames 6-11)
+  if (frameNumber >= 6 && frameNumber <= 11) {
+    const flipContainer = popup.querySelector('.popup-flip-container');
+    if (flipContainer) {
+      flipContainer.classList.remove('flipped');
+      
+      // Reset button text
+      const flipBtn = popup.querySelector('.popup-flip-btn');
+      if (flipBtn) {
+        flipBtn.textContent = 'Show Info';
+      }
+    }
+  }
+  
+  // Show the popup
+  popup.style.display = 'flex';
+  popup.classList.add('show');
+  document.body.classList.add('modal-open');
+  document.body.style.overflow = 'hidden';
+  
+  // Focus management for accessibility
+  if (frameNumber >= 6 && frameNumber <= 11) {
+    // For flip-enabled frames, focus the flip button
+    const flipBtn = popup.querySelector('.popup-flip-btn');
+    if (flipBtn) {
+      setTimeout(() => flipBtn.focus(), 100);
+    }
+  } else {
+    // For simple frames (1-5), focus the close button
+    const closeBtn = popup.querySelector('.close');
+    if (closeBtn) {
+      setTimeout(() => closeBtn.focus(), 100);
+    }
+  }
+}
+
+// Updated closePopup function to handle Frame 6
+function closePopup(popupId) {
+  console.log(`Closing popup: ${popupId}`);
+  const popup = document.getElementById(popupId);
+  
+  if (!popup) {
+    console.error(`Popup with ID ${popupId} not found`);
+    return;
+  }
+  
+  // Add closing animation
+  popup.classList.remove('show');
+  
+  setTimeout(() => {
+    popup.style.display = 'none';
+    document.body.classList.remove('modal-open');
+    document.body.style.overflow = '';
+    
+    // Only reset flip state for frames that have flip functionality (6-11)
+    const frameNumber = parseInt(popupId.replace('popup-frame', ''));
+    if (frameNumber >= 6 && frameNumber <= 11) {
+      const flipContainer = popup.querySelector('.popup-flip-container');
+      if (flipContainer) {
+        flipContainer.classList.remove('flipped');
+        
+        // Reset button text
+        const flipBtn = popup.querySelector('.popup-flip-btn');
+        if (flipBtn) {
+          flipBtn.textContent = 'Show Info';
+        }
+      }
+    }
+  }, 150);
 }
 
 // Close when clicking outside popup content
@@ -633,6 +775,8 @@ function closePopup(popupId) {
       document.body.style.overflow = '';
     }
   });
+
+
 
 // UTILITY FUNCTIONS
 function openPDF() {
@@ -696,7 +840,10 @@ function triggerVideosPanel() {
   if (panel) panel.click();
 }
 
-// Popup open/close
+//Stand back section 6
+
+
+// Replace this function:
 function showPopup(id) {
   console.log(`Opening popup: ${id}`);
   const popup = document.getElementById(id);
@@ -704,6 +851,55 @@ function showPopup(id) {
     popup.style.display = 'flex';
     document.body.classList.add('modal-open'); // Hide hotspots
     document.body.style.overflow = 'hidden';
+  }
+}
+
+// With this enhanced version:
+function showPopup(id) {
+  console.log(`Opening popup: ${id}`);
+  const popup = document.getElementById(id);
+  
+  if (!popup) {
+    console.error(`Popup with ID ${id} not found`);
+    return;
+  }
+  
+  // Extract frame number from popup ID
+  const frameNumber = parseInt(id.replace('popup-frame', ''));
+  
+  // Only reset flip state for frames that have flip functionality (7-11)
+  if (frameNumber >= 7 && frameNumber <= 11) {
+    const flipContainer = popup.querySelector('.popup-flip-container');
+    if (flipContainer) {
+      flipContainer.classList.remove('flipped');
+      
+      // Reset button text
+      const flipBtn = popup.querySelector('.popup-flip-btn');
+      if (flipBtn) {
+        flipBtn.textContent = 'Show Info';
+      }
+    }
+  }
+  
+  // Show the popup
+  popup.style.display = 'flex';
+  popup.classList.add('show');
+  document.body.classList.add('modal-open');
+  document.body.style.overflow = 'hidden';
+  
+  // Focus management for accessibility
+  if (frameNumber >= 7 && frameNumber <= 11) {
+    // For flip-enabled frames, focus the flip button
+    const flipBtn = popup.querySelector('.popup-flip-btn');
+    if (flipBtn) {
+      setTimeout(() => flipBtn.focus(), 100);
+    }
+  } else {
+    // For simple frames (1-6), focus the close button
+    const closeBtn = popup.querySelector('.close');
+    if (closeBtn) {
+      setTimeout(() => closeBtn.focus(), 100);
+    }
   }
 }
 
@@ -765,7 +961,7 @@ function initBackWallHotspots() {
   const imgOffsetX = imgRect.left - containerRect.left;
   const imgOffsetY = imgRect.top - containerRect.top;
 
-  // Frame coordinates (your exact coordinates from the map)
+  // Frame coordinates
   const frameCoords = [
     [484,499,750,499,755,732,479,735], // Frame 1
     [538,248,701,246,696,474,538,471], // Frame 2
@@ -817,7 +1013,6 @@ function initBackWallHotspots() {
     // Create hotspot element
     const hotspot = document.createElement('div');
     hotspot.className = 'frame-hotspot';
-    hotspot.setAttribute('data-frame', `Frame ${index + 1}`);
     hotspot.style.position = 'absolute';
     hotspot.style.left = `${imgOffsetX + scaled.x}px`;
     hotspot.style.top = `${imgOffsetY + scaled.y}px`;
@@ -834,7 +1029,6 @@ function initBackWallHotspots() {
     hotspot.style.backgroundPosition = `${backgroundPosX}px ${backgroundPosY}px`;
     hotspot.style.backgroundSize = `${backgroundSizeW}px ${backgroundSizeH}px`;
     
-    // Add click handler - uses your existing showPopup function
     hotspot.addEventListener('click', (e) => {
       e.preventDefault();
       e.stopPropagation();

@@ -1,3 +1,15 @@
+:root {
+  --bottle-green-primary: #093624;
+  --bottle-green-dark: #051D13;
+  --bottle-green-medium: #0F4B2E;
+  --bottle-green-light: #226248;
+  --bottle-green-accent: #35785D;
+  --sage-green: #68A58D;
+  --mint-green: #87BBA7;
+  --light-sage: #ABD2C2;
+  --very-light-green: #D3E8E0;
+}
+
 /*───────────────────────────────────────────────────────────────────────────────
   1. GLOBAL TRANSITIONS & POINTER‐EVENTS
 ───────────────────────────────────────────────────────────────────────────────*/
@@ -37,22 +49,29 @@ map area:hover {
 ───────────────────────────────────────────────────────────────────────────────*/
 
 #explore-by-components {
-    min-height: 100vh;
+    min-height: 90vh;
     box-sizing: border-box;
     border-bottom: 1px solid #e9ecef;
-    color: #fff;
+    
+    background: linear-gradient(135deg, 
+    var(--bottle-green-primary) 20%,
+    var(--bottle-green-medium) 10%, 
+    var(--bottle-green-primary) 60%,
+    var(--bottle-green-primary) 60%,
+    var(--bottle-green-dark) 90%) !important;
 }
 
 #slider-section {
     margin: 30px auto;
     max-width: 1500px;
     border-radius: 10px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+
+    
 }
 
 #slider-section .accordion {
-    height: 550px;
-    max-width: 80%;
+    height: 600px;
+    max-width: 85%;
     width: 100%;
     margin: 0 auto;
     background-color: transparent;
@@ -99,7 +118,7 @@ map area:hover {
     background-color: rgba(0, 0, 0, 0.6);
     color: #fff;
     padding: 8px 16px;
-    font-size: 14px;
+    font-size: 17px;
     text-align: center;
     opacity: 0;
     transition: opacity 0.3s;
@@ -370,10 +389,21 @@ map area:hover {
 #right-wall {
     display: none;
     transition: opacity 0.3s ease;
+
+    background: linear-gradient(135deg, 
+    var(--bottle-green-dark) 80%,
+    var(--bottle-green-primary) 30%,
+    var(--bottle-green-primary) 30%,
+    var(--bottle-green-medium) 30%,
+    var(--bottle-green-primary) 30%) !important;
+
+    margin-bottom: 0 !important;
+
 }
 
 #video .container {
     max-width: 90%;
+    background: transparent !important;
 }
 
 #video .row {
@@ -423,7 +453,6 @@ map area:hover {
 
 #video .ratio {
   position: relative !important;
-  padding-bottom: 0 !important;
   width: 70%;
   max-width: 750px;
   margin: 0 auto 2rem;
@@ -844,6 +873,10 @@ map area:hover {
  11. POPUP OVERLAY FOR ANY “ENLARGED” IMAGES (BACK‐WALL/CEILING, ETC.)
 ───────────────────────────────────────────────────────────────────────────────*/
 
+/*───────────────────────────────────────────────────────────────────────────────
+ PROFESSIONAL POPUP OVERLAY - CONSISTENT DESIGN
+───────────────────────────────────────────────────────────────────────────────*/
+
 .popup {
     display: none;
     position: fixed;
@@ -855,7 +888,7 @@ map area:hover {
     background-color: rgba(0, 0, 0, 0.85);
     align-items: center;
     justify-content: center;
-    padding-top: 40px;
+    padding: 20px;
     box-sizing: border-box;
 }
 
@@ -870,32 +903,355 @@ map area:hover {
     justify-content: center;
 }
 
-.popup-image {
+/* ===== FLIP CONTAINER FOR FRAMES 7-11 ===== */
+.popup-flip-container {
+    position: relative;
+    width: 80vw;
+    max-width: 800px;
+    height: 70vh;
+    max-height: 600px;
+    perspective: 1000px;
+    margin-bottom: 20px;
+}
+
+.popup-flip-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: transform 0.6s ease;
+    transform-style: preserve-3d;
+}
+
+.popup-flip-container.flipped .popup-flip-inner {
+    transform: rotateY(180deg);
+}
+
+.popup-flip-front,
+.popup-flip-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.popup-flip-front img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.popup-flip-back {
+    transform: rotateY(180deg);
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    color: #ecf0f1;
+    padding: 40px;
+    overflow-y: auto;
+}
+
+/* ===== DESCRIPTION CONTENT STYLING ===== */
+.popup-description {
+    text-align: center;
+    max-width: 100%;
+    line-height: 1.5;
+}
+
+.popup-description h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #ecf0f1;
+    font-weight: 600;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    border-bottom: 2px solid #7f8c8d;
+    padding-bottom: 10px;
+}
+
+.popup-description p {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #bdc3c7;
+    text-align: justify;
+}
+
+.popup-description .artwork-details {
+    background: rgba(52, 73, 94, 0.4);
+    border: 1px solid rgba(127, 140, 141, 0.3);
+    padding: 20px;
+    border-radius: 6px;
+    margin-top: 25px;
+    backdrop-filter: blur(5px);
+}
+
+.popup-description .artwork-details h4 {
+    color: #95a5a6;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid rgba(149, 165, 166, 0.3);
+    padding-bottom: 8px;
+}
+
+.popup-description .artwork-details ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.popup-description .artwork-details li {
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+    color: #bdc3c7;
+    font-size: 0.95rem;
+}
+
+.popup-description .artwork-details li::before {
+    content: "▪";
+    color: #7f8c8d;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+/* ===== SIMPLE POPUP STYLING (FRAMES 1-6) ===== */
+.popup-content .popup-image {
     width: auto;
     height: auto;
-    max-width: 100%;
-    max-height: calc(100vh - 80px);
+    max-width: 90vw;
+    max-height: calc(90vh - 80px);
     object-fit: contain;
-    border-radius: 6px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+    border-radius: 8px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
 }
 
-.close {
+/* ===== BUTTON STYLING ===== */
+.popup-controls {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
     margin-top: 10px;
-    margin-bottom: 20px;
-    background-color: white;
-    color: black;
-    border: none;
-    font-size: 1rem;
-    padding: 0.2rem 0.6rem;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
 }
 
-.close:hover {
-    background-color: #eee;
+.popup-flip-btn {
+    padding: 12px 24px;
+    background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
+    color: #ecf0f1;
+    border: 1px solid #7f8c8d;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
+
+.popup-flip-btn:hover {
+    background: linear-gradient(135deg, #3e5366 0%, #34495e 100%);
+    border-color: #95a5a6;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.popup-close,
+.popup-content .close {
+    background: linear-gradient(135deg, #7f8c8d 0%, #95a5a6 100%);
+    color: #2c3e50;
+    border: 1px solid #bdc3c7;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 12px 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.popup-close:hover,
+.popup-content .close:hover {
+    background: linear-gradient(135deg, #95a5a6 0%, #bdc3c7 100%);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Remove emoji icons for professional appearance */
+.popup-flip-btn::before,
+.popup-close::before {
+    display: none;
+}
+
+/* Simple close button specific styling */
+.popup-content .close {
+    margin-top: 15px;
+    margin-bottom: 0;
+    position: relative;
+    z-index: 10001;
+    min-width: 80px;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+    .popup-flip-container {
+        width: 95vw;
+        height: 60vh;
+        max-height: 500px;
+        margin-bottom: 15px;
+    }
+    
+    .popup-flip-back {
+        padding: 25px;
+    }
+    
+    .popup-description h3 {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+    }
+    
+    .popup-description p {
+        font-size: 0.95rem;
+        margin-bottom: 15px;
+    }
+    
+    .popup-description .artwork-details {
+        padding: 15px;
+        margin-top: 20px;
+    }
+    
+    .popup-controls {
+        gap: 10px;
+    }
+    
+    .popup-flip-btn,
+    .popup-close,
+    .popup-content .close {
+        padding: 10px 18px;
+        font-size: 13px;
+    }
+    
+    .popup-content .popup-image {
+        max-width: 95vw;
+        max-height: calc(85vh - 70px);
+    }
+}
+
+@media (max-width: 480px) {
+    .popup-flip-container {
+        height: 55vh;
+        max-height: 450px;
+    }
+    
+    .popup-flip-back {
+        padding: 20px;
+    }
+    
+    .popup-description h3 {
+        font-size: 1.3rem;
+        margin-bottom: 12px;
+    }
+    
+    .popup-description p {
+        font-size: 0.9rem;
+        margin-bottom: 12px;
+    }
+    
+    .popup-description .artwork-details {
+        padding: 12px;
+        margin-top: 15px;
+    }
+    
+    .popup-description .artwork-details h4 {
+        font-size: 1.1rem;
+    }
+    
+    .popup-description .artwork-details li {
+        font-size: 0.9rem;
+        margin-bottom: 8px;
+    }
+    
+    .popup-content .popup-image {
+        max-width: 98vw;
+        max-height: calc(80vh - 60px);
+    }
+    
+    .popup-content .close {
+        margin-top: 12px;
+        padding: 8px 16px;
+        font-size: 12px;
+    }
+}
+
+/* ===== SMOOTH ANIMATIONS ===== */
+.popup.show {
+    animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* ===== LOADING STATE ===== */
+.popup-flip-front img[src=""] {
+    background: repeating-linear-gradient(
+        45deg,
+        #ecf0f1,
+        #ecf0f1 10px,
+        #bdc3c7 10px,
+        #bdc3c7 20px
+    );
+    animation: loading 1.5s linear infinite;
+}
+
+@keyframes loading {
+    0% { background-position: 0 0; }
+    100% { background-position: 28px 28px; }
+}
+
+/* ===== ACCESSIBILITY IMPROVEMENTS ===== */
+.popup-flip-btn:focus,
+.popup-close:focus,
+.popup-content .close:focus {
+    outline: 2px solid #7f8c8d;
+    outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .popup-flip-back {
+        background: #000;
+        color: #fff;
+    }
+    
+    .popup-description .artwork-details {
+        background: rgba(255, 255, 255, 0.1);
+        border-color: #fff;
+    }
+    
+    .popup-flip-btn,
+    .popup-close,
+    .popup-content .close {
+        border-width: 2px;
+    }
+}
+
 
 /*───────────────────────────────────────────────────────────────────────────────
  12. MISCELLANEOUS / HELPERS
@@ -918,6 +1274,14 @@ map area:hover {
 #back-wall,
 #right-wall {
     padding: 3rem ;
+    background: linear-gradient(135deg, 
+    var(--bottle-green-dark) 80%,
+    var(--bottle-green-primary) 30%,
+    var(--bottle-green-primary) 30%,
+    var(--bottle-green-medium) 30%,
+    var(--bottle-green-primary) 30%) !important;
+
+    margin-bottom: 0 !important;
 }
 
 
@@ -951,6 +1315,7 @@ map area:hover {
 .image-map-container {
     position: relative;
     overflow: visible;
+    background: transparent;
 }
 
 /* Interactive Frame Hotspots */
@@ -959,7 +1324,7 @@ map area:hover {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    border: 2px solid rgba(255, 255, 255, 0.8);
+    border: 2px solid transparent;
     border-radius: 8px;
     cursor: pointer;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -988,8 +1353,8 @@ map area:hover {
 .frame-hotspot:hover {
     transform: scale(1.1);
     z-index: 101;
-    border-color: #00ff88;
-    box-shadow: 0 8px 30px rgba(0, 255, 136, 0.3);
+    border-color: #ffffff;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
 }
 
 .frame-hotspot:hover::before {

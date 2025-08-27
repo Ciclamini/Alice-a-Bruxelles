@@ -1,11 +1,12 @@
 <!doctype html>
-<html lang="en" data-bs-theme="light">
+<html lang="en" data-bs-theme="dark">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>3D Walkthrough | Alice in Brussels</title>
   <link href="../css/theme.css" rel="stylesheet">
   <link href="../css/pages/videos.css" rel="stylesheet">
+  <link href="../css/pages/3d-exhibition.css" rel="stylesheet">
 </head>
 <body>
 
@@ -23,18 +24,18 @@
         </button>
         <div class="collapse navbar-collapse" id="navbar">
           <ul class="navbar-nav ms-auto">
-            <li class="nav-item"><a class="nav-link" href="landingPage.html#landing-section">HOME</a></li>
+            <li class="nav-item"><a class="nav-link" href="landingPage.html#choose-view">HOME</a></li>
             <li class="nav-item"><a class="nav-link" href="3d-exhibition.html">EXHIBITION IN 3D</a></li>
             <!-- Exhibition by Components dropdown -->
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">EXHIBITION BY COMPONENTS</a>
+              <a class="nav-link" href="by-components.html">EXHIBITION BY COMPONENTS<span class="dropdown-toggle ms-1" data-bs-toggle="dropdown" aria-expanded="false"></span></a>
               <ul class="dropdown-menu dropdown-menu-end">
                 <li><a class="dropdown-item" href="by-components.html?panel=0">The History of the Schools in 2 Videos</a></li>
                 <li><a class="dropdown-item" href="by-components.html?panel=1">La Montesca School: A Story of Women</a></li>
                 <li><a class="dropdown-item" href="by-components.html?panel=2">Photos and Alice’s Letters to Maria Pasqui</a></li>
                 <li><a class="dropdown-item" href="by-components.html?panel=3">Montessori and International Teaching Materials</a></li>
                 <li><a class="dropdown-item" href="by-components.html?panel=4">The 1910 World Fair Exhibition</a></li>
-                <li><a class="dropdown-item" href="by-components.html?panel=5">The Reconstruction of the Schools’ Stand</a></li>
+                <li><a class="dropdown-item" href="by-components.html?panel=5">Reconstruction of the Schools’ Stand</a></li>
                 <li><a class="dropdown-item" href="by-components.html?panel=6">Exhibition Project; Visitors’ Guide, Credits</a></li>
               </ul>
             </li>
@@ -53,19 +54,15 @@
             <!-- Language -->
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
-                <img id="currentLanguageFlag" src="/Alice-a-Bruxelles/assets/img/en.svg" width="20" alt="Language Flag">
+                <img id="currentLanguageFlag" src="../assets/img/en.svg" width="20" alt="">
               </a>
               <ul class="dropdown-menu dropdown-menu-end">
-                <li>
-                  <a class="dropdown-item" href="#" onclick="setLanguage('en')">
-                    <img src="/Alice-a-Bruxelles/assets/img/en.svg" width="20" class="me-2">English
-                  </a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="#" onclick="setLanguage('it')">
-                    <img src="/Alice-a-Bruxelles/assets/img/it.svg" width="20" class="me-2">Italiano
-                  </a>
-                </li>
+                <li><a class="dropdown-item" href="#" onclick="setLanguage('en')">
+                  <img src="../assets/img/en.svg" width="20" class="me-2">English
+                </a></li>
+                <li><a class="dropdown-item" href="#" onclick="setLanguage('it')">
+                  <img src="../assets/img/it.svg" width="20" class="me-2">Italiano
+                </a></li>
               </ul>
             </li>
           </ul>
@@ -92,30 +89,14 @@
     </div>
   </div>
 
-  <!-- ===== Footer Section ===== -->
-  <div class="container" id="footer">
-    <footer class="py-5">
-      <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
-        <p>&copy; 2024 Company, Inc. All rights reserved.</p>
-        <ul class="list-unstyled d-flex">
-          <li class="ms-3">
-            <a class="link-body-emphasis" href="#">
-              <svg class="bi" width="24" height="24"><use xlink:href="#twitter"/></svg>
-            </a>
-          </li>
-          <li class="ms-3">
-            <a class="link-body-emphasis" href="#">
-              <svg class="bi" width="24" height="24"><use xlink:href="#instagram"/></svg>
-            </a>
-          </li>
-          <li class="ms-3">
-            <a class="link-body-emphasis" href="#">
-              <svg class="bi" width="24" height="24"><use xlink:href="#facebook"/></svg>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </footer>
+<!-- ===== Footer ===== -->
+<div id="footer" class="container text-center my-5 fade-in" >
+  <div class="container" style="padding-bottom: 0 !important; margin: 0 !important;"> 
+  <footer class="py-5 border-top">
+    <div class="d-flex flex-column flex-sm-row justify-content-between">
+      <p>&copy; 2024 Company, Inc. All rights reserved.</p>
+    </div>
+  </footer>
   </div>
 
   <!-- ===== Back to Top Button ===== -->
@@ -126,7 +107,6 @@
   <script src="../js/bootstrap.bundle.min.js"></script>
   <script src="../js/imageMapResizer.min.js"></script>
   <script src="../js/script.js"></script>
-  <script src="../js/theme.js"></script>
 
   <script>
     document.addEventListener("DOMContentLoaded", function () {

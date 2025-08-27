@@ -1,91 +1,156 @@
 <!doctype html>
-<html lang="it" data-bs-theme="light">
+<html lang="it" data-bs-theme="dark">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>3D Walkthrough | Alice in Brussels</title>
   <link href="../css/theme.css" rel="stylesheet">
   <link href="../css/pages/videos.css" rel="stylesheet">
+  <link href="../css/pages/3d-exhibition.css" rel="stylesheet">
 </head>
 <body>
 
-  <!-- ===== Navbar ===== -->
-  <div class="nav container-fluid fixed-top">
-    <div class="container">
-      <nav class="navbar navbar-expand-lg">
-        <a class="navbar-brand" href="landingPage.html">
-          <img src="../assets/img/website-icon.png" alt="Logo" width="30" height="24">
-          ALICE IN BRUSSELS
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar"
-                aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbar">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item"><a class="nav-link" href="landingPage.html#landing-section">HOME</a></li>
-            <li class="nav-item"><a class="nav-link" href="3d-exhibition.html">EXHIBITION IN 3D</a></li>
-            <!-- Exhibition by Components dropdown -->
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">EXHIBITION BY COMPONENTS</a>
-              <ul class="dropdown-menu dropdown-menu-end">
-                <li><a class="dropdown-item" href="by-components.html?panel=0">The History of the Schools in 2 Videos</a></li>
-                <li><a class="dropdown-item" href="by-components.html?panel=1">La Montesca School: A Story of Women</a></li>
-                <li><a class="dropdown-item" href="by-components.html?panel=2">Photos and Alice’s Letters to Maria Pasqui</a></li>
-                <li><a class="dropdown-item" href="by-components.html?panel=3">Montessori and International Teaching Materials</a></li>
-                <li><a class="dropdown-item" href="by-components.html?panel=4">The 1910 World Fair Exhibition</a></li>
-                <li><a class="dropdown-item" href="by-components.html?panel=5">The Reconstruction of the Schools’ Stand</a></li>
-                <li><a class="dropdown-item" href="by-components.html?panel=6">Exhibition Project; Visitors’ Guide, Credits</a></li>
-              </ul>
-            </li>
-            <!-- Videos dropdown -->
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">VIDEOS</a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="landingPage.html?autoplayVideo=1">Alice in Brussels: An Introduction to the Exhibit</a></li>
-                <li><a class="dropdown-item" href="by-components.html?panel=0#video">The Baroness and the Barefoot Children</a></li>
-                <li><a class="dropdown-item" href="by-components.html?panel=0#video">The Montesca Schools at the 1910 World Fair</a></li>
-                <li><a class="dropdown-item" href="#">Symposium – Excerpts</a></li>
-              </ul>
-            </li>
-            <li class="nav-item"><a class="nav-link" href="catalogues.html">CATALOGUES</a></li>
-            <li class="nav-item"><a class="nav-link" href="../en/about-us.html">ABOUT US</a></li>
-            <!-- Language -->
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
-                <img id="currentLanguageFlag" src="/Alice-a-Bruxelles/assets/img/it.svg" width="20" alt="Language Flag">
-              </a>
-              <ul class="dropdown-menu dropdown-menu-end">
-                <li>
-                  <a class="dropdown-item" href="#" onclick="setLanguage('en')">
-                    <img src="/Alice-a-Bruxelles/assets/img/en.svg" width="20" class="me-2">English
-                  </a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="#" onclick="setLanguage('it')">
-                    <img src="/Alice-a-Bruxelles/assets/img/it.svg" width="20" class="me-2">Italiano
-                  </a>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-      </nav>
-    </div>
+ <!-- ===== Navbar ===== -->
+<!--
+<div class="nav container-fluid fixed-top">
+  <div class="container">
+    <nav class="navbar navbar-expand-lg">
+      <a class="navbar-brand" href="landingPage.html">
+        <img src="../assets/img/website-icon.png" alt="Logo" width="30" height="24">
+        ALICE A BRUXELLES
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar"
+              aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="landingPage.html#landing-section">HOME</a></li>
+          <li class="nav-item"><a class="nav-link" href="3d-exhibition.html">MOSTRA IN 3D</a></li>
+-->
+          <!-- Exhibition by Components dropdown -->
+<!--
+          <li class="nav-item dropdown">
+            <a class="nav-link" href="by-components.html">MOSTRA PER COMPONENTI<span class="dropdown-toggle ms-1" data-bs-toggle="dropdown" aria-expanded="false"></span></a>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li><a class="dropdown-item" href="by-components.html?panel=0">La storia delle scuole in due video</a></li>
+              <li><a class="dropdown-item" href="by-components.html?panel=1">La scuola della Montesca: una storia di donne</a></li>
+              <li><a class="dropdown-item" href="by-components.html?panel=2">Foto e lettere di Alice a Maria Pasqui</a></li>
+              <li><a class="dropdown-item" href="by-components.html?panel=3">Materiale Montessori e materiale didattico Internazionale</a></li>
+              <li><a class="dropdown-item" href="by-components.html?panel=4">L’Esposizione Universale del 1910</a></li>
+              <li><a class="dropdown-item" href="by-components.html?panel=5">Ricostruzione dello stand delle scuole</a></li>
+              <li><a class="dropdown-item" href="by-components.html?panel=6">Progetto della mostra; Guida per i visitatori; Crediti</a></li>
+            </ul>
+          </li>
+-->
+          <!-- Videos dropdown -->
+<!--
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">VIDEO</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="landingPage.html?autoplayVideo=1">Alice a Bruxelles: un’introduzione alla mostra</a></li>
+              <li><a class="dropdown-item" href="by-components.html?panel=0#video">Una baronessa tra i bambini scalz</a></li>
+              <li><a class="dropdown-item" href="by-components.html?panel=0#video">Le scuole della Montesca all’Esposizione Universale del 1910</a></li>
+              <li><a class="dropdown-item" href="#">Simposio – Estratti</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="catalogues.html">CATALOGHI</a></li>
+          <li class="nav-item"><a class="nav-link" href="../it/about-us.html">CHI SIAMO</a></li>
+-->
+          <!-- Language -->
+<!--
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+              <img id="currentLanguageFlag" src="../assets/img/it.svg" width="20" alt="">
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li><a class="dropdown-item" href="#" onclick="setLanguage('en')">
+                <img src="../assets/img/en.svg" width="20" class="me-2">English
+              </a></li>
+              <li><a class="dropdown-item" href="#" onclick="setLanguage('it')">
+                <img src="../assets/img/it.svg" width="20" class="me-2">Italiano
+              </a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
   </div>
+</div>
+-->
+    
+    <div class="nav container-fluid fixed-top">
+  <div class="container">
+    <nav class="navbar navbar-expand-lg">
+      <a class="navbar-brand" href="landingPage.html">
+        <img src="../assets/img/website-icon.png" alt="Logo" width="30" height="24">
+        ALICE A BRUXELLES
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar"
+              aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="landingPage.html#choose-view">HOME</a></li>
+          <li class="nav-item"><a class="nav-link" href="3d-exhibition.html">MOSTRA IN 3D</a></li>
+          <!-- Exhibition by Components dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link" href="by-components.html">MOSTRA PER SEZIONI<span class="dropdown-toggle ms-1" data-bs-toggle="dropdown" aria-expanded="false"></span></a>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li><a class="dropdown-item" href="by-components.html?panel=0">La storia delle scuole in due video</a></li>
+              <li><a class="dropdown-item" href="by-components.html?panel=1">La scuola della Montesca: una storia di donne</a></li>
+              <li><a class="dropdown-item" href="by-components.html?panel=2">Foto e lettere di Alice a Maria Pasqui</a></li>
+              <li><a class="dropdown-item" href="by-components.html?panel=3">Materiale Montessori e materiale didattico Internazionale</a></li>
+              <li><a class="dropdown-item" href="by-components.html?panel=4">L’Esposizione Universale del 1910</a></li>
+              <li><a class="dropdown-item" href="by-components.html?panel=5">Ricostruzione dello stand delle scuole</a></li>
+              <li><a class="dropdown-item" href="by-components.html?panel=6">Progetto della mostra; Guida per i visitatori; Crediti</a></li>
+            </ul>
+          </li>
+          <!-- Videos dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">VIDEO</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="landingPage.html?autoplayVideo=1">Alice a Bruxelles: un’introduzione alla mostra</a></li>
+              <li><a class="dropdown-item" href="by-components.html?panel=0#video">Una baronessa tra i bambini scalz</a></li>
+              <li><a class="dropdown-item" href="by-components.html?panel=0#video">Le scuole della Montesca all’Esposizione Universale del 1910</a></li>
+              <li><a class="dropdown-item" href="#">Simposio – Estratti</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="catalogues.html">CATALOGHI</a></li>
+          <li class="nav-item"><a class="nav-link" href="../it/about-us.html">CHI SIAMO</a></li>
+          <!-- Language -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+              <img id="currentLanguageFlag" src="../assets/img/it.svg" width="20" alt="">
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li><a class="dropdown-item" href="#" onclick="setLanguage('en')">
+                <img src="../assets/img/en.svg" width="20" class="me-2">English
+              </a></li>
+              <li><a class="dropdown-item" href="#" onclick="setLanguage('it')">
+                <img src="../assets/img/it.svg" width="20" class="me-2">Italiano
+              </a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</div>
   
   <!-- ==== 3D Section ====-->
   <div id="environment-3d-pane" style="padding-top:6rem;">
     <div class="container text-center">
-      <h1 class="mb-4">Explore the 3D Exhibition</h1>
+      <h1 class="mb-4">Visita la mostra in 3D</h1>
       <div class="environment-container position-relative" id="env-preview">
         <img src="../assets/img/slider-1.jpeg" alt="3D Preview" class="w-100 rounded">
         <div class="overlay">
-          <button class="btn explore-btn" onclick="showUnity()">Explore 3D Environment</button>
+          <button class="btn explore-btn" onclick="showUnity()">Esplora l’Ambiente 3D</button>
         </div>
       </div>
       <div id="unityContainer" style="display:none; margin-top:2rem;">
-        <button class="btn btn-outline-secondary mb-2" onclick="hideUnity()">✖ Close</button>
+        <button class="btn btn-outline-secondary mb-2" onclick="hideUnity()">✖ Chiudi</button>
         <iframe src="../WebGLBuild/index.html"
                 width="960" height="720" frameborder="0" allowfullscreen></iframe>
       </div>
@@ -96,7 +161,7 @@
   <div class="container" id="footer">
     <footer class="py-5">
       <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
-        <p>&copy; 2024 Company, Inc. All rights reserved.</p>
+        <p>&copy; 2024 Company, Inc. Tutti i diritti riservati.</p>
         <ul class="list-unstyled d-flex">
           <li class="ms-3">
             <a class="link-body-emphasis" href="#">
@@ -126,7 +191,7 @@
   <script src="../js/bootstrap.bundle.min.js"></script>
   <script src="../js/imageMapResizer.min.js"></script>
   <script src="../js/script.js"></script>
-  <script src="../js/theme.js"></script>
+
 
   <script>
     document.addEventListener("DOMContentLoaded", function () {
