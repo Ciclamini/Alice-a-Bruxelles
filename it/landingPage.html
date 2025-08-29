@@ -9,6 +9,55 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
 </head>
 <body>
+  <!-- ===== Consent Banner ===== -->
+ <div class="cc-banner" id="consent-banner">
+      <div>
+        <button class="close-btn" id="close-btn">&times;</button>
+        <h2 id="c-title" class="c-title" style="font-size: 20px;">Rispettiamo la tua privacy </h2>
+        <p id="c-desc" class="c-text" style="font-size: 14px;">
+          Questo sito mostra video incorporati da YouTube. Cliccando su un video, acconsenti all’informativa sulla privacy di YouTube e all’uso di cookie, che possono raccogliere e trattare dati sulla tua attività.
+        <a href="#" class="cc-link" id="open-modal" style="color: darkgreen;">[Maggiori informazioni] </a>
+        </p>
+      </div>
+  </div>
+  <!-- ===== Consent Modal ===== -->
+<div id="moreInfo" class="cc-modal">
+  <div class="modal-content">
+    <button class="cc-close" id="close-modal">&times;</button>
+    <h2>📑 Informativa sulla Privacy – Video incorporati da YouTube  </h2>
+
+      <h4>Utilizzo di video incorporati da YouTube </h4> 
+      <p>
+        Il nostro sito web integra video ospitati sulla piattaforma YouTube, gestita da Google Ireland Limited, Gordon House, Barrow Street, Dublino 4, Irlanda. YouTube è una società controllata da Google LLC, con sede negli Stati Uniti. 
+        Quando visiti una pagina del nostro sito che contiene un segnaposto per un video YouTube, nessun dato viene trasmesso a YouTube. La connessione ai server di YouTube avviene solo quando clicchi sul video per avviarne la riproduzione. In quel momento, YouTube riceve informazioni come il tuo indirizzo IP, la pagina visitata e informazioni tecniche sul tuo dispositivo/browser. 
+        Dopo l’avvio del video, YouTube può installare cookie o tecnologie simili sul tuo dispositivo. Questi possono essere utilizzati per: 
+        <li>memorizzare le tue preferenze di riproduzione, </li>
+        <li>analizzare il comportamento di visualizzazione, </li> 
+        <li>personalizzare i contenuti consigliati, </li> 
+        <li>fornire pubblicità mirata.</li> 
+        Ciò può comportare anche il trasferimento di dati verso server situati al di fuori dell’Unione Europea, in particolare negli Stati Uniti.</p>
+      <br>
+
+      <h4>Base giuridica </h4> 
+      <p>La base giuridica per l’utilizzo di video incorporati da YouTube è il tuo consenso, ai sensi dell’art. 6, par. 1, lett. (a) GDPR. Il consenso viene fornito quando clicchi sul video per avviarne la riproduzione. </p>
+      <br>
+
+      <h4>Revoca del consenso</h4> 
+      <p>
+        Puoi revocare il tuo consenso in qualsiasi momento con effetto per il futuro: 
+        <li>eliminando o bloccando i cookie nelle impostazioni del tuo browser, oppure </li>
+        <li>modificando le tue preferenze sui cookie tramite il nostro banner (se disponibile).</li>
+        Si precisa che la revoca non pregiudica la liceità del trattamento effettuato prima della revoca stessa. 
+      </p>
+      <br>
+
+      <h4>Ulteriori informazioni </h4>
+      <p>Per maggiori dettagli sul trattamento dei dati personali da parte di YouTube e Google, ti invitiamo a consultare:</p>
+      <li>Informativa sulla Privacy di Google </li> 
+      <li><a href="https://www.youtube.com/t/terms" target="_blank">Termini di servizio di YouTube </a></li>
+
+  </div>
+</div>
     <!-- ===== Opening Video Section (at the very top) ===== -->
   <div class="container-fluid position-relative fade-in" id="opening-video-section" style="background-color: #222; padding-top: 0; padding-bottom: 0;">
     <video
@@ -320,6 +369,40 @@
       overlay.style.opacity = '0';
       setTimeout(() => overlay.style.display = 'none', 600); // changed from 1200
     }, 1500);
+  });
+</script>
+
+<!-- ===== Consent Banner ===== -->
+<script>
+  const banner = document.getElementById('consent-banner');
+  const closeBanner = document.getElementById('close-btn');
+  const openModalLink = document.getElementById('open-modal');
+  const modal = document.getElementById('moreInfo');
+  const closeModal = document.getElementById('close-modal');
+
+  // Close banner
+  closeBanner.addEventListener('click', () => {
+    banner.style.display = 'none';
+  });
+
+  // Open modal when clicking link
+  openModalLink.addEventListener('click', (e) => {
+    e.preventDefault(); // stop the page from jumping to top
+    modal.classList.add('show');
+    document.body.style.overflow = 'hidden';
+  });
+
+  // Close modal
+  function hideModal() {
+    modal.classList.remove('show');
+    document.body.style.overflow = '';
+  }
+  closeModal.addEventListener('click', hideModal);
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) hideModal();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('show')) hideModal();
   });
 </script>
 </body>
