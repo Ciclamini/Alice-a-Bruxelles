@@ -230,7 +230,8 @@
   bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
-  pointer-events: none;
+  cursor: pointer;
+  z-index: 20;
 }
 
 .scroll-down .chevron {
@@ -239,22 +240,12 @@
   color: var(--bottle-green-accent);
   animation: scroll-bounce 2s infinite;
 }
-
-@keyframes scroll-bounce {
-  0%,
-  20%,
-  50%,
-  80%,
-  100% {
-    transform: translateY(0) translateX(-50%);
-  }
-  40% {
-    transform: translateY(8px) translateX(-50%);
-  }
-  60% {
-    transform: translateY(4px) translateX(-50%);
-  }
-}
+  
+  @keyframes scroll-bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
+    40%                  { transform: translateY(8px) translateX(-50%); }
+    60%                  { transform: translateY(4px) translateX(-50%); }
+  }  
 
 /*───────────────────────────────────────────────────────────────────────────────
     2.5. MID SECTION ENHANCEMENTS

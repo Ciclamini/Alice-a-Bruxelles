@@ -77,7 +77,7 @@
     >
       <source src="/Alice-a-Bruxelles/assets/Opening_page_moving_photo2.mp4" type="video/mp4">
     </video>
-<!-- Overlay text over the video -->
+    <!-- Overlay text over the video -->
     <div class="position-absolute text-center w-100" style="z-index: 10; bottom: 40%; left: 50%; transform: translateX(-50%);">
       <div class="container">
         <div class="row justify-content-center">
@@ -88,9 +88,9 @@
                   ALICE IN BRUSSELS
                 </h1>
                 <div class="px-2 px-md-3">
-                  <p class="lead text-white fs-5 mb-0" style="font-family: 'Times New Roman', serif; text-shadow: 1px 1px 4px rgba(0,0,0,0.8); line-height: 1.5; font-weight: 300; letter-spacing: 1 px;">
+                  <p class="lead text-white fs-5 mb-0" style="font-family: 'Times New Roman', serif; font-size: 1.30em !important; text-shadow: 1px 1px 4px rgba(0,0,0,0.8); line-height: 1.5; font-weight: 300; letter-spacing: 1 px;">
                     The Hallgarten-Franchetti Schools at the 1910 World Fair<br>
-                    <span class="d-block mt-1" style="font-family: 'Times New Roman', serif; font-style: italic; font-size: 0.85em;">
+                    <span class="d-block mt-1" style="font-family: 'Times New Roman', serif; font-style: italic; font-size: 0.90em;">
                       From Their Origins to Maria Montessori
                     </span>
                   </p>
@@ -100,6 +100,9 @@
           </div>
         </div>
       </div>
+    </div>
+    <div class="scroll-down">
+      <a href="#about-section"><i class="bi bi-chevron-double-down chevron"></i></a>
     </div>
   </div>
 </div>
@@ -123,13 +126,13 @@
             <li class="nav-item dropdown">
               <a class="nav-link" href="by-components.html">EXHIBITION BY COMPONENTS<span class="dropdown-toggle ms-1" data-bs-toggle="dropdown" aria-expanded="false"></span></a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#" data-panel-index="0">The History of the Schools in 2 Videos</a></li>
-                <li><a class="dropdown-item" href="#" data-panel-index="1">La Montesca School: A Story of Women</a></li>
-                <li><a class="dropdown-item" href="#" data-panel-index="2">Photos and Alice’s Letters to Maria Pasqui</a></li>
-                <li><a class="dropdown-item" href="#" data-panel-index="3">Montessori and International Teaching Materials</a></li>
-                <li><a class="dropdown-item" href="#" data-panel-index="4">The 1910 World Fair Exhibition</a></li>
-                <li><a class="dropdown-item" href="#" data-panel-index="5">The Reconstruction of the Schools’ Stand</a></li>
-                <li><a class="dropdown-item" href="#" data-panel-index="6">Exhibition Project; Visitors’ Guide, Credits</a></li>
+                <li><a class="dropdown-item" href="by-components.html?panel=0" data-panel-index="0">The History of the Schools in 2 Videos</a></li>
+                <li><a class="dropdown-item" href= "by-components.html?panel=1" data-panel-index="1">La Montesca School: A Story of Women</a></li>
+                <li><a class="dropdown-item" href= "by-components.html?panel=2" data-panel-index="2">Photos and Alice’s Letters to Maria Pasqui</a></li>
+                <li><a class="dropdown-item" href= "by-components.html?panel=3" data-panel-index="3">Montessori and International Teaching Materials</a></li>
+                <li><a class="dropdown-item" href= "by-components.html?panel=4" data-panel-index="4">The 1910 World Fair Exhibition</a></li>
+                <li><a class="dropdown-item" href= "by-components.html?panel=5" data-panel-index="5">The Reconstruction of the Schools’ Stand</a></li>
+                <li><a class="dropdown-item" href= "by-components.html?panel=6" data-panel-index="6">Exhibition Project; Visitors’ Guide, Credits</a></li>
               </ul>
             </li>
             <li class="nav-item dropdown">
@@ -143,18 +146,23 @@
             </li>
             <li class="nav-item"><a class="nav-link" href="catalogues.html">CATALOGUES</a></li>
             <li class="nav-item"><a class="nav-link" href="../en/about-us.html">CREDITS</a></li>
-            <li class="nav-item dropdown">
+            <!-- Language -->
+                  <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
                 <img id="currentLanguageFlag" src="../assets/img/en.svg" width="20" alt="English">
+                   <span id="currentLanguageCode" class="ms-1">EN</span>
               </a>
               <ul class="dropdown-menu dropdown-menu-end">
                 <li><a class="dropdown-item" href="#" onclick="setLanguage('en')">
+                    
                   <img src="../assets/img/en.svg" width="20" class="me-2">English
                 </a></li>
+                  
                 <li><a class="dropdown-item" href="#" onclick="setLanguage('it')">
                   <img src="../assets/img/it.svg" width="20" class="me-2">Italiano
                 </a></li>
               </ul>
+                
             </li>
           </ul>
         </div>
