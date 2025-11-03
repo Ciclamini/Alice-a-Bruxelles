@@ -836,8 +836,6 @@
                 <polygon points="32,25 60,40 32,55" fill="white"/>
               </svg>
             </div>
-
-
         </div>
       </div>
     </div>
@@ -884,16 +882,22 @@
   </div>
 
   <div id="popup-right-1" class="popup">
-    <div class="popup-content">
-      <img src="../assets/img/panel-1-engRev.jpg" class="popup-image" alt="Introduction Panel Enlarged" />
-      <button class="close" onclick="closePopup('popup-right-1')">✖</button>
+    <div class="popup-content" style=" overflow-y: scroll; overflow-x: hidden; display: flex;
+    flex-direction: column; align-items: flex-start; justify-content: flex-start; overflow-y: auto; overflow-x: hidden;
+    max-height: 90vh; padding: 0; box-sizing: border-box;">
+      <img src="../assets/img/panel-1-engRev.jpg" class="popup-image" alt="Introduction Panel Enlarged" 
+      style="display: block; height: 100%; max-height: none; height: auto;" />
+      <button class="close" onclick="closePopup('popup-right-1')" style="position:absolute; right:30px;">✖</button>
     </div>
   </div>
   
   <div id="popup-right-2" class="popup">
-    <div class="popup-content">
-      <img src="../assets/img/Panel-2-EngRev.jpg" class="popup-image" alt="Visitor Guide Panel Enlarged" />
-      <button class="close" onclick="closePopup('popup-right-2')">✖</button>
+    <div class="popup-content" style=" overflow-y: scroll; overflow-x: hidden; display: flex;
+    flex-direction: column; align-items: flex-start; justify-content: flex-start; overflow-y: auto; overflow-x: hidden;
+    max-height: 90vh; padding: 0; box-sizing: border-box;">
+      <img src="../assets/img/Panel-2-EngRev.jpg" class="popup-image" alt="Visitor Guide Panel Enlarged"
+      style="display: block; height: 100%; max-height: none; height: auto;"/>
+      <button class="close" onclick="closePopup('popup-right-2')" style="position:absolute; right:30px;">✖</button>
     </div>
   </div>
 

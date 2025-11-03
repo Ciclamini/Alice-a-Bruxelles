@@ -607,6 +607,8 @@ function showEnlargedFrame(frameNumber) {
     if (popup) {
         popup.style.display = 'flex';
         document.body.style.overflow = 'hidden';
+        document.body.style.overflow = "hidden";
+        document.documentElement.style.overflow = "hidden";
     }
 }
 

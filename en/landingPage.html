@@ -109,7 +109,7 @@
 
   <!-- ===== Navbar ===== -->
   <div class="nav container-fluid fixed-top">
-    <div class="container" style="margin-left: 1rem !important; margin-right: 0 !important;">
+    <div class="container">
       <nav class="navbar navbar-expand-lg">
         <a class="navbar-brand" href="#">
           <img src="../assets/img/website-icon.png" alt="Logo" width="30" height="24">
@@ -124,8 +124,11 @@
             <li class="nav-item"><a class="nav-link" href="landingPage.html#choose-view">HOME</a></li>
             <li class="nav-item"><a class="nav-link" href="3d-exhibition.html">EXHIBITION IN 3D</a></li>
             <li class="nav-item dropdown">
-              <a class="nav-link" href="by-components.html">EXHIBITION BY COMPONENTS<span class="dropdown-toggle ms-1" data-bs-toggle="dropdown" aria-expanded="false"></span></a>
-              <ul class="dropdown-menu">
+              <a class="nav-link dropdown-toggle" href="#" id="componentsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                EXHIBITION BY COMPONENTS
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="componentsDropdown">
+                <li><a class="dropdown-item" href="by-components.html">Overview</a></li>
                 <li><a class="dropdown-item" href="by-components.html?panel=0" data-panel-index="0">The History of the Schools in 2 Videos</a></li>
                 <li><a class="dropdown-item" href= "by-components.html?panel=1" data-panel-index="1">La Montesca School: A Story of Women</a></li>
                 <li><a class="dropdown-item" href= "by-components.html?panel=2" data-panel-index="2">Photos and Alice’s Letters to Maria Pasqui</a></li>
@@ -322,7 +325,7 @@
   <div class="container"> 
   <footer class="py-5 border-top">
     <div class="d-flex flex-column flex-sm-row justify-content-between">
-      <p>&copy; 2024 Company, Inc. All rights reserved.</p>
+      <p>&copy; Creative Commons Attribution 4.0 International</p>
     </div>
   </footer>
   </div>

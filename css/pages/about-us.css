@@ -1,0 +1,243 @@
+:root {
+  --bottle-green-primary: #093624;
+  --bottle-green-dark: #051d13;
+  --bottle-green-medium: #0f4b2e;
+  --bottle-green-light: #226248;
+  --bottle-green-accent: #35785d;
+}
+
+body {
+  background: linear-gradient(
+    135deg,
+    var(--bottle-green-dark) 80%,
+    var(--bottle-green-primary) 30%,
+    var(--bottle-green-primary) 30%,
+    var(--bottle-green-medium) 30%,
+    var(--bottle-green-primary) 30%
+  ) !important;
+  min-height: 100vh;
+  background-attachment: fixed;
+}
+/******************************************************
+* CARD CONTAINER
+* Everything sits inside this narrower "card" with
+* a white background, slight shadow, etc.
+******************************************************/
+.about-card {
+  max-width: 1100px; /* <== CHANGE THIS to make the card narrower/wider */
+  margin: 80px auto 30px auto; /* centers horizontally, with top margin for navbar */
+  padding: 30px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  box-shadow: 0px 0px 19px 10px #cccccc7a;
+}
+
+.second-about-card {
+  max-width: 1100px; /* <== CHANGE THIS to make the card narrower/wider */
+  margin: 30px auto; /* centers horizontally, with top margin for navbar */
+  padding: 30px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  box-shadow: 0px 0px 10px 10px #cccccc7a;
+}
+
+/******************************************************
+* TITLES
+******************************************************/
+.about-title {
+  font-size: 2.2rem; /* <== Title size, adjust as needed */
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: black;
+}
+.about-subtitle {
+  font-size: 1.8rem; /* <== Subtitle size, adjust as needed */
+  font-weight: bold;
+  font-style: italic;
+  text-align: center;
+  white-space: pre-line; /* allows multi-line if needed */
+  color: black;
+}
+.about-description {
+  font-size: 1.4rem; /* <== Description size, adjust as needed */
+  font-style: italic;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: black;
+}
+
+/******************************************************
+* IMAGES (All in one row, center is bigger, truly centered)
+******************************************************/
+.image-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: nowrap;
+  margin-bottom: 40px;
+}
+
+/* Left & right images share 25% of the row each and shrink as needed */
+.img-side {
+  max-width: 325px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+.img-center {
+  height: 500px; /* <== EDIT center image height here */
+  width: auto;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/******************************************************
+* TEXT STYLING
+******************************************************/
+.about-text {
+  /* This part is left-justified but inside the card */
+  text-align: left;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+.about-text p {
+  color: black;
+}
+.about-text p strong {
+  color: black;
+}
+
+/******************************************************
+* LOGOS
+* Each logo has its own size class so you can change
+* them separately.
+******************************************************/
+.logos-row {
+  margin-top: 3rem; /* space above logos */
+  display: flex;
+  justify-content: flex-start; /* left aligned (or "center" if you prefer) */
+  gap: 40px;
+}
+.logo-western {
+  height: 80px; /* <== EDIT Western's logo size here */
+  width: auto;
+}
+.logo-dida {
+  height: 120px; /* <== EDIT DIDA's logo size here */
+  width: auto;
+}
+.credits-logos {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  gap: 3rem;
+  margin: 2rem 0 2rem;
+}
+.logo-sshrc {
+  width: 500px;
+}
+.logo-montesca {
+  height: 50px;
+}
+.credits-button {
+  padding: 14px 32px; /* Bigger button */
+  font-size: 1.1rem; /* Slightly larger text */
+  text-transform: uppercase; /* Optional for consistent styling */
+  border-radius: 0; /* Sharp edges */
+  border-width: 2px; /* Thicker border */
+  width: 400px; /* or use 100% for full width, or adjust to your liking */
+  text-align: center;
+}
+
+/******************************************************
+* CREDITS IMAGE
+******************************************************/
+.credits-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+}
+.credits-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+@media (max-width: 768px) {
+  .credits-image-container {
+    margin-top: 20px;
+  }
+}
+
+/******************************************************
+* ZOOM ICON AND MODAL
+******************************************************/
+.zoom-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  z-index: 2;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+.zoom-icon:hover {
+  opacity: 1;
+}
+.zoom-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Credits Modal */
+#credits-modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 200%;
+  height: auto;
+  background: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+}
+.credits-modal-content {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  padding: 50px;
+}
+.credits-modal-close {
+  position: absolute;
+  top: 30px;
+  right: 50px;
+  color: white;
+  font-size: 3rem;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 10001;
+  transition: color 0.3s ease;
+}
+.credits-modal-close:hover {
+  color: #ccc;
+}
+.credits-modal-image {
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: 10px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.7);
+}
