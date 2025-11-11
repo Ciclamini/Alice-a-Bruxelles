@@ -250,3 +250,10 @@
         letter-spacing: 1px;
     }
 }
+
+#unity-container, #unity-canvas {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  border: none;
+}
