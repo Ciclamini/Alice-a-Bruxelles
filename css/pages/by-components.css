@@ -1025,10 +1025,8 @@ map area:hover {
 
 /* ===== SIMPLE POPUP STYLING (FRAMES 1-6) ===== */
 .popup-content .popup-image {
-    width: auto;
+    width: 120vh;
     height: auto;
-    max-width: 90vw;
-    max-height: calc(90vh - 80px);
     object-fit: contain;
     border-radius: 8px;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);

@@ -94,41 +94,6 @@
         <h5>CLICCA SU UN’IMMAGINE PER VEDERE LA SEZIONE CORRISPONDENTE</h5>
       </div>
     </div>
-<!--
-
-    <div id="slider-section" class="container-fluid">
-      <div class="accordion">
-        <div id="videos-panel" class="panel">
-          <img src="../assets/img/slider-7.jpeg" alt="Videos">
-          <div class="panel-caption">La Storia delle Scuole in 2 Video</div>
-        </div>
-        <div class="panel">
-          <img src="../assets/img/slider-1.jpeg" alt="Silhouettes">
-          <div class="panel-caption">La Scuola di Montesca: Una Storia di Donne</div>
-        </div>
-        <div class="panel">
-          <img src="../assets/img/ceiling.jpg" alt="Photos & Letters">
-          <div class="panel-caption">Foto e Lettere di Alice a Maria Pasqui</div>
-        </div>
-        <div class="panel">
-          <img src="../assets/img/display.jpg" alt="Montessori Materials">
-          <div class="panel-caption">Materiale Montessori e Didattica Internazionale</div>
-        </div>
-        <div class="panel">
-          <img src="../assets/img/slider-3.jpeg" alt="Front Wall">
-          <div class="panel-caption">L’Esposizione Universale del 1910</div>
-        </div>
-        <div class="panel">
-          <img src="../assets/img/edited_title_stand.png" alt="Back Wall">
-          <div class="panel-caption">Lo Stand Ricostruito delle Scuole</div>
-        </div>
-        <div class="panel">
-          <img src="../assets/img/slider-5.jpeg" alt="Visitors' Guide">
-          <div class="panel-caption">Progetto della Mostra; Guida per i Visitatori, Crediti</div>
-        </div>
-      </div>
-    </div>
--->
           <div id="slider-section" class="container-fluid">
       <div class="accordion">
         <div id="videos-panel" class="panel">
@@ -748,16 +713,7 @@
           class="d-block w-100 rounded shadow front-media"
           alt="Front Wall"
         >
-        <!--
-        <div class="mb-0">
-          <h1 class="text-center mb-4">1910 Catalogue</h1>
-          <iframe
-            src="../assets/document/catalogueOLD.pdf#toolbar=0&navpanes=0&scrollbar=1"
-            class="d-block w-100 rounded shadow"
-            style="border: none; border-radius: 15px; height: 600px;"
-            allowfullscreen
-          ></iframe>
-        </div> -->
+
       </div> 
     </div>
 
@@ -881,7 +837,7 @@
         <div class="panel" data-index="4"><img src="../assets/img/silhouette-only-4.png" alt="Silhouette 4"><div class="panel-name">Alice Hallgarten</div></div>
         <div class="panel" data-index="5"><img src="../assets/img/silhouette-only-5.png" alt="Silhouette 5"><div class="panel-name">Maria Montessori</div></div>
         <div class="panel" data-index="6"><img src="../assets/img/silhouette-only-6.png" alt="Silhouette 6"><div class="panel-name">Maria Pasqui</div></div>
-        <div class="panel" data-index="7"><img src="../assets/img/silhouette-only-7.png" alt="Silhouette 7"><div class="panel-name">Agricoltore locale</div></div>
+        <div class="panel last-panel" data-index="7"><img src="../assets/img/silhouette-only-7.png" alt="Silhouette 7"><div class="panel-name">Agricoltore locale</div></div>
       </div>
     </div>
 
@@ -942,20 +898,6 @@
   <!-- <script src="../js/theme.js"></script> -->
 
   <script>
-//    function setLanguage(lang) {
-//      const currentPath = window.location.pathname;
-//      let filename = currentPath.substring(currentPath.lastIndpOf('/') + 1);
-//      if (filename === '' || filename === 'en' || filename === 'it') {
-//        filename = 'landingPage.html';
-//      }
-//
-//      const newPath = lang === 'en'
-//              ? `../it/${filename}`
-//              : `../en/${filename}`;
-//
-//      window.location.href = newPath;
-//    }
-      
         function setLanguage(lang) {
     document.getElementById('currentLanguageFlag').src = lang==='it'
       ? '../assets/img/it.svg'
@@ -1139,8 +1081,24 @@
       if (targetPanel) targetPanel.click();
     }
   });
+</script>
 
-  </script>
+<!-- Prevent external page scrolling when a popup is open -->
+<style>html.popup-open, body.popup-open{overflow:hidden;height:100%;}</style>
+<script>
+  (function(){
+    const isVisible = () => Array.from(document.querySelectorAll('.popup')).some(p => getComputedStyle(p).display !== 'none');
+    const update = () => {
+      const show = isVisible();
+      document.documentElement.classList.toggle('popup-open', show);
+      document.body.classList.toggle('popup-open', show);
+    };
+    const obs = new MutationObserver(update);
+    obs.observe(document.body, { subtree: true, attributes: true, attributeFilter: ['style','class'] });
+    window.addEventListener('load', update);
+    document.addEventListener('DOMContentLoaded', update);
+  })();
+</script>
 
 </body>
 </html>

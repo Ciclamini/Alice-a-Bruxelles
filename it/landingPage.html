@@ -229,10 +229,10 @@
     <div class="row g-4">
 
       <!-- 3D Exhibition -->
-      <div class="col-sm-4">
+      <div class="col-sm-4" style="display: flex; justify-content: center;">
         <a href="3d-exhibition.html"
           class="card view-card h-100 text-decoration-none position-relative overflow-hidden" 
-          style="border: 4px solid rgba(255,255,255,0.3); border-radius: 15px; transition: all 0.3s ease;">
+          style="border: 4px solid rgba(255,255,255,0.3); border-radius: 15px; transition: all 0.3s ease; transform: scale(0.85); transform-origin: center;">
           <img src="../assets/img/slider-1.jpeg"
               class="card-img-top"
               style="object-fit: cover;"
@@ -248,7 +248,7 @@
       <!-- By Components Static Card -->
         <div class="col-sm-4">
         <a href="by-components.html" 
-           class="card view-card h-100 text-decoration-none position-relative overflow-hidden"
+           class="card view-card byComp-card text-decoration-none position-relative overflow-hidden"
            style="border: 4px solid rgba(255,255,255,0.3); border-radius: 15px; transition: all 0.3s ease;">
         <!-- Image container with relative positioning -->
         <div class="position-relative" style="height: 450px; overflow: hidden;">
@@ -276,10 +276,10 @@
     </div>
 
       <!-- Catalogues -->
-      <div class="col-sm-4">
+      <div class="col-sm-4" style="display: flex; justify-content: center;">
         <a href="catalogues.html"
           class="card view-card h-100 text-decoration-none position-relative overflow-hidden"
-          style="border: 4px solid rgba(255,255,255,0.3); border-radius: 15px; transition: all 0.3s ease;"
+          style="border: 4px solid rgba(255,255,255,0.3); border-radius: 15px; transition: all 0.3s ease; transform: scale(0.85); transform-origin: center;"
         >
           <img src="../assets/img/catalogue.jpg"
               class="card-img-top"
@@ -297,7 +297,7 @@
 
 <style>
   .view-card:hover {
-    transform: translateY(-15px) scale(1.05);
+    transform: translateY(-15px) scale(.85);
     border-color: rgba(255,255,255,0.8) !important;
     box-shadow: 0 20px 40px rgba(9, 54, 36, 0.6);
   }
@@ -391,12 +391,14 @@
     e.preventDefault(); // stop the page from jumping to top
     modal.classList.add('show');
     document.body.style.overflow = 'hidden';
+    document.documentElement.style.overflow = 'hidden';
   });
 
   // Close modal
   function hideModal() {
     modal.classList.remove('show');
     document.body.style.overflow = '';
+    document.documentElement.style.overflow = '';
   }
   closeModal.addEventListener('click', hideModal);
   modal.addEventListener('click', (e) => {

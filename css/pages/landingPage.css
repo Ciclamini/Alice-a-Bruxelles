@@ -377,7 +377,7 @@ h2.text-center {
 }
 
 .view-card:hover {
-  transform: translateY(-20px) scale(1.05) !important;
+  transform: translateY(-20px) scale(0.85) !important;
   border-color: var(--light-sage) !important;
   box-shadow: 0 30px 60px rgba(9, 54, 36, 0.4),
     0 0 40px rgba(135, 187, 167, 0.3) !important;
@@ -386,6 +386,14 @@ h2.text-center {
     rgba(255, 255, 255, 0.15),
     rgba(171, 210, 194, 0.1)
   ) !important;
+}
+
+/* Specific override for the By Components card to reduce zoom on hover */
+.view-card.byComp-card:hover {
+  transform: translateY(-20px) scale(1.05) !important;
+  border-color: var(--light-sage) !important;
+  box-shadow: 0 30px 60px rgba(9, 54, 36, 0.4), 0 0 40px rgba(135, 187, 167, 0.3) !important;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.15), rgba(171, 210, 194, 0.1)) !important;
 }
 
 .view-card img {
@@ -548,7 +556,7 @@ h2.text-center {
   width: 90%;
   bottom: 3%;
   left: 5%;
-  border-radius: 10px;
+  border-radius: 12px;
   background: rgba(255, 255, 255, 0.893);
   border: 2px solid #abd2c24d;
   color: #0f3c2e;
@@ -597,7 +605,6 @@ h2.text-center {
   background: #fff;
   color: #111;
   padding: 1.5rem;
-  border-radius: 12px;
   max-width: 560px;
   width: 90%;
   position: relative;
