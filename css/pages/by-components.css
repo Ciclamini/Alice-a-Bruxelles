@@ -212,9 +212,10 @@ map area:hover {
 
 /* ensure each img inside scales down to fit that max-height */
 #right-wall .right-wall-photos img {
-    max-height: 100%;
+    max-height: calc(100vh - 6rem);
     width: auto;
     object-fit: contain;
+    cursor: pointer;
 }
 
 #right-wall .container > .row:first-of-type {
@@ -602,7 +603,7 @@ map area:hover {
 }
 .last-panel:hover,
 .last-panel.active {
-  flex: 5.5 !important;
+  flex: 6.5 !important;
 }
 
 /*───────────────────────────────────────────────────────────────────────────────
@@ -629,13 +630,13 @@ map area:hover {
 }
 
 .ceiling-panel.tall {
-    width: 450px;
-    height: 450px;
+    width: 400px;
+    height: 400px;
 }
 
 .ceiling-panel.short {
-    width: 450px;
-    height: 315px;
+    width: 400px;
+    height: 265px;
 }
 
 /* The panel flips in place when user clicks */
@@ -837,7 +838,7 @@ map area:hover {
 /* Flip button in modal */
 .modal-flip-btn {
     position: absolute;
-    bottom: 70px; 
+    bottom: 40px; 
     left: 50%;
     transform: translateX(-50%);
     padding: 10px 20px;
@@ -909,7 +910,7 @@ map area:hover {
     position: relative;
     width: 80vw;
     max-width: 800px;
-    height: 70vh;
+    height: 80vh;
     max-height: 600px;
     perspective: 1000px;
     margin-bottom: 20px;
@@ -1025,14 +1026,14 @@ map area:hover {
 
 /* ===== SIMPLE POPUP STYLING (FRAMES 1-6) ===== */
 .popup-content .popup-image {
-    width: auto;
+    width: 80vh;
     height: auto;
-    max-width: 90vw;
-    max-height: calc(90vh - 80px);
     object-fit: contain;
     border-radius: 8px;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
 }
+
+
 
 /* ===== BUTTON STYLING ===== */
 .popup-controls {
@@ -1041,7 +1042,7 @@ map area:hover {
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    margin-top: 10px;
+    margin-top: 15px;
 }
 
 .popup-flip-btn {
