@@ -15,7 +15,7 @@
     1. GLOBAL HOVER/TRANSITION FOR BACK-TO-TOP BUTTON
 ───────────────────────────────────────────────────────────────────────────────*/
 .back-to-top {
-  transition: transform 0.4s;
+  transition: opacity 0.3s ease, transform 0.4s ease;
   box-shadow: 0 4px 15px rgba(9, 54, 36, 0.3);
   position: fixed;
   right: 1.5rem;
@@ -27,6 +27,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+}
+.back-to-top.show {
+  opacity: 1;
+  pointer-events: auto;
 }
 .back-to-top:hover {
   transform: scale(1.1);

@@ -376,7 +376,26 @@
   function openPDF() {
     window.open('../assets/document/CATALOGUE.pdf','_blank');
   }
-  document.getElementById('back-to-top').addEventListener('click', () => {
+  // Back to top button - show only after scrolling past opening video section
+  const backToTopBtn = document.getElementById('back-to-top');
+  const openingVideoSection = document.getElementById('opening-video-section');
+  
+  function updateBackToTopVisibility() {
+    if (openingVideoSection) {
+      const rect = openingVideoSection.getBoundingClientRect();
+      // Show button when opening video section is completely scrolled past
+      if (rect.bottom < 0) {
+        backToTopBtn.classList.add('show');
+      } else {
+        backToTopBtn.classList.remove('show');
+      }
+    }
+  }
+  
+  window.addEventListener('scroll', updateBackToTopVisibility);
+  updateBackToTopVisibility(); // Check on page load
+  
+  backToTopBtn.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
   document.querySelectorAll('a[href^="#"]').forEach(a => {
@@ -393,7 +412,7 @@
   function revealOnScroll() {
     document.querySelectorAll('.fade-in').forEach(function(el) {
       const rect = el.getBoundingClientRect();
-      if (rect.top < window.innerHeight - 60 && rect.bottom > 60) {
+      if (rect.top < window.innerHeight - 70 && rect.bottom > 70) {
         el.classList.add('visible');
       } else {
         el.classList.remove('visible');
