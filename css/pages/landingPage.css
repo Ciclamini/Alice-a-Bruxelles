@@ -629,19 +629,22 @@ h2.text-center {
     cursor: pointer;
   }
 
-
-
 /* =========================
    MOBILE TOPBAR (WHITE)
 ========================= */
 
 /* Desktop default */
-.mobile-topbar { display: none; }
+.mobile-topbar {
+  display: none;
+}
 
 /* PHONE VIEW ONLY */
 @media (max-width: 768px) {
-  /* hide desktop navbar */
-  .nav.container-fluid.fixed-top { display: none; }
+
+  /* hide desktop navbar on phone */
+  .nav.container-fluid.fixed-top {
+    display: none !important;
+  }
 
   /* show mobile bar */
   .mobile-topbar {
@@ -651,16 +654,16 @@ h2.text-center {
 
     position: fixed;
     top: 0; left: 0; right: 0;
-
     padding: 10px 12px;
-    padding-top: max(10px, env(safe-area-inset-top)); /* notch-safe */
 
-    background: #fff; /* WHITE */
-    border-bottom: 1px solid rgba(0,0,0,0.12);
+    background: #fff;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
     z-index: 10000;
   }
 
-  body { padding-top: 56px; }
+  body {
+    padding-top: 56px;
+  }
 
   .mobile-left {
     display: flex;
@@ -668,35 +671,51 @@ h2.text-center {
     gap: 10px;
   }
 
-  .mobile-logo { width: 28px; height: auto; }
+  .mobile-logo {
+    width: 28px;
+    height: auto;
+  }
 
   .mobile-title {
     color: #111;
     font-size: 15px;
     font-weight: 600;
     white-space: nowrap;
-
-    /* prevents title pushing buttons off screen */
-    max-width: 160px;
-    overflow: hidden;
-    text-overflow: ellipsis;
   }
 
   .mobile-menu-btn {
     background: none;
     border: none;
     font-size: 28px;
+    line-height: 1;
+    padding: 4px 8px;
     color: #111;
+  }
+
+  .mobile-lang {
+    display: flex;
+    gap: 8px;
   }
 
   .mobile-lang-btn {
-    border: 1px solid rgba(0,0,0,0.2);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+
+    border: 1px solid rgba(0, 0, 0, 0.2);
     background: #fff;
     color: #111;
-    padding: 5px 8px;
-    border-radius: 20px;
+
+    padding: 6px 10px;
+    border-radius: 999px;
     font-size: 14px;
   }
 
-  .mobile-lang-btn.active { font-weight: 700; }
+  .mobile-lang-btn.active {
+    font-weight: 700;
+    border-color: rgba(0, 0, 0, 0.4);
+  }
 }
+
+/* Consent modal should stay above everything */
+.cc-modal { z-index: 20000; }
