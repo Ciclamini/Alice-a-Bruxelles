@@ -629,20 +629,40 @@ h2.text-center {
     cursor: pointer;
   }
   
-  
   /* =========================
    MOBILE TOPBAR (NO LOGO)
 ========================= */
 
+/* Desktop default */
 .mobile-topbar {
   display: none;
 }
 
+/* PHONE VIEW ONLY */
 @media (max-width: 768px) {
 
-  /* hide desktop navbar */
+  /* show the navbar UNDER the mobile topbar (do NOT hide it) */
   .nav.container-fluid.fixed-top {
-    display: none !important;
+    display: block !important;
+    position: fixed;
+    top: 56px; /* sits under mobile topbar */
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    background: #fff;
+    border-bottom: 1px solid rgba(0,0,0,0.12);
+  }
+
+  /* make navbar text visible on white */
+  .nav .nav-link,
+  .nav .navbar-brand,
+  .nav .dropdown-item {
+    color: #111 !important;
+  }
+
+  /* optional spacing */
+  .nav .navbar {
+    padding: 8px 0;
   }
 
   /* show white mobile bar */
