@@ -628,3 +628,67 @@ h2.text-center {
     font-size: 2rem;
     cursor: pointer;
   }
+
+
+
+  /* Hide mobile topbar on desktop */
+.mobile-topbar { display: none; }
+
+/* PHONE ONLY */
+@media (max-width: 768px) {
+  .mobile-topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    position: fixed;
+    top: 0; left: 0; right: 0;
+
+    padding: 10px 12px;
+    z-index: 10000;
+
+    background: rgba(9, 54, 36, 0.92); /* bottle green */
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(171, 210, 194, 0.25);
+  }
+
+  body { padding-top: 56px; }
+
+  .mobile-menu-btn {
+    border: none;
+    background: transparent;
+    font-size: 28px;
+    line-height: 1;
+    padding: 4px 8px;
+    color: #fff;
+  }
+
+  .mobile-lang { display: flex; gap: 8px; }
+
+  .mobile-lang-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+
+    border: 1px solid rgba(171, 210, 194, 0.35);
+    background: rgba(255,255,255,0.08);
+    border-radius: 999px;
+
+    padding: 6px 10px;
+    font-size: 14px;
+    color: #fff;
+  }
+
+  .mobile-lang-btn.active {
+    background: rgba(255,255,255,0.18);
+    border-color: rgba(171, 210, 194, 0.7);
+    font-weight: 700;
+  }
+}
+
+
+/* keep navbar above video overlay */
+.nav.container-fluid.fixed-top { z-index: 9999; }
+
+/* ensure consent modal sits above the mobile topbar */
+.cc-modal { z-index: 20000; }
