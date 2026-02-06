@@ -628,36 +628,39 @@ h2.text-center {
     font-size: 2rem;
     cursor: pointer;
   }
-
-/* =========================
-   MOBILE TOPBAR (WHITE)
+  
+  
+  /* =========================
+   MOBILE TOPBAR (NO LOGO)
 ========================= */
 
-/* Desktop default */
 .mobile-topbar {
   display: none;
 }
 
-/* PHONE VIEW ONLY */
 @media (max-width: 768px) {
 
-  /* hide desktop navbar on phone */
+  /* hide desktop navbar */
   .nav.container-fluid.fixed-top {
     display: none !important;
   }
 
-  /* show mobile bar */
+  /* show white mobile bar */
   .mobile-topbar {
     display: flex;
     align-items: center;
     justify-content: space-between;
 
     position: fixed;
-    top: 0; left: 0; right: 0;
-    padding: 10px 12px;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    height: 56px;
+    padding: 0 12px;
 
     background: #fff;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+    border-bottom: 1px solid rgba(0,0,0,0.15);
     z-index: 10000;
   }
 
@@ -665,57 +668,55 @@ h2.text-center {
     padding-top: 56px;
   }
 
+  /* left: title only */
   .mobile-left {
     display: flex;
     align-items: center;
     gap: 10px;
   }
 
-  .mobile-logo {
-    width: 28px;
-    height: auto;
-  }
-
   .mobile-title {
     color: #111;
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 600;
     white-space: nowrap;
   }
 
+  /* hamburger */
   .mobile-menu-btn {
     background: none;
     border: none;
     font-size: 28px;
-    line-height: 1;
-    padding: 4px 8px;
     color: #111;
+    line-height: 1;
   }
 
+  /* language buttons */
   .mobile-lang {
     display: flex;
-    gap: 8px;
+    gap: 6px;
   }
 
   .mobile-lang-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-
-    border: 1px solid rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(0,0,0,0.2);
     background: #fff;
     color: #111;
-
-    padding: 6px 10px;
-    border-radius: 999px;
-    font-size: 14px;
+    padding: 4px 8px;
+    border-radius: 18px;
+    font-size: 13px;
   }
 
   .mobile-lang-btn.active {
     font-weight: 700;
-    border-color: rgba(0, 0, 0, 0.4);
+  }
+
+  /* hide logo completely for now */
+  .mobile-logo {
+    display: none !important;
   }
 }
 
-/* Consent modal should stay above everything */
-.cc-modal { z-index: 20000; }
+/* keep consent modal above everything */
+.cc-modal {
+  z-index: 20000;
+}
