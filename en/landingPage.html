@@ -11,29 +11,37 @@
 
 <body>
 
-  <!-- ===== Mobile Top Bar (PHONE ONLY) ===== -->
+<!-- ===== Mobile Top Bar (PHONE ONLY) ===== -->
 <div class="mobile-topbar">
-  <button class="mobile-menu-btn"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbar"
-          aria-controls="navbar"
-          aria-expanded="false"
-          aria-label="Open menu">
-    <i class="bi bi-list"></i>
-  </button>
 
-  <div class="mobile-lang">
-    <button class="mobile-lang-btn active" type="button" onclick="setLanguage('en')">
-      <img src="../assets/img/en.svg" width="18" alt="EN">
-      <span>EN</span>
+  <!-- Left: menu + logo + name -->
+  <div class="mobile-left">
+    <button class="mobile-menu-btn"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbar"
+            aria-label="Open menu">
+      <i class="bi bi-list"></i>
     </button>
 
-    <button class="mobile-lang-btn" type="button" onclick="setLanguage('it')">
-      <img src="../assets/img/it.svg" width="18" alt="IT">
-      <span>IT</span>
+    <img src="../assets/img/website-icon.png" 
+         class="mobile-logo" 
+         alt="Logo">
+
+    <span class="mobile-title">ALICE A BRUXELLES</span>
+  </div>
+
+  <!-- Right: language -->
+  <div class="mobile-lang">
+    <button class="mobile-lang-btn" onclick="setLanguage('en')">
+      <img src="../assets/img/en.svg" width="18"> EN
+    </button>
+
+    <button class="mobile-lang-btn" onclick="setLanguage('it')">
+      <img src="../assets/img/it.svg" width="18"> IT
     </button>
   </div>
+
 </div>
 
 
