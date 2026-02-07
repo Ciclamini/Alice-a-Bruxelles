@@ -657,7 +657,7 @@ h2.text-center {
   .nav .nav-link,
   .nav .navbar-brand,
   .nav .dropdown-item {
-    color: #d3e8e0 !important;
+    color: #111!important;
   }
 
   /* optional spacing */
