@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+
+<html data-bs-theme="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="#20c997" name="theme-color"/>
+<meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"/>
+<meta content="#20c997" name="msapplication-navbutton-color"/>
+<link href="../css/theme.css" rel="stylesheet"/>
+<link href="../css/pages/home.css" rel="stylesheet"/>
+<title>Home | Alice a Bruxelles</title>
+</head>
+<body>
+<!-- Navbar Section -->
+<div class="nav container-fluid fixed-top">
+<div class="container">
+<nav class="navbar navbar-expand-lg">
+<a class="navbar-brand" href="#">
+<img alt="Logo" class="d-inline-block align-text-top" height="24" src="../assets/img/italy.svg" width="30"/>
+                        Alice a Bruxelles
+                    </a>
+<button aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#navbar" data-bs-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbar">
+<ul class="navbar-nav ms-auto">
+<li class="nav-item"><a aria-current="page" class="nav-link active" href="#hero" id="navhome">Home</a></li>
+<li class="nav-item"><a class="nav-link" href="#about" id="navabout">About</a></li>
+<li class="nav-item"><a class="nav-link" href="#contact" id="navcontact">Contact Us</a></li>
+<li class="nav-item dropdown">
+<a aria-expanded="false" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" id="more" role="button">
+                                    More
+                                </a>
+<ul class="dropdown-menu">
+<li class="nav-item"><a class="dropdown-item" href="index.html">Videos</a></li>
+<li class="nav-item"><a class="dropdown-item" href="#" onclick="openPDF()">Documents</a></li>
+<li><hr class="dropdown-divider"/></li>
+<li><a class="dropdown-item" href="./credits.html">Credits</a></li>
+</ul>
+</li>
+<li class="nav-item dropdown">
+<a aria-expanded="false" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" id="languageDropdown" role="button">
+<img alt="English" src="../assets/img/en.svg" width="20"/>
+</a>
+<ul aria-labelledby="languageDropdown" class="dropdown-menu">
+<li><a class="dropdown-item" href="#" onclick="setLanguage('en')">
+<img alt="English" src="../assets/img/en.svg" width="20"/> - English
+                                    </a></li>
+<li><a class="dropdown-item" href="../it/index1.html" onclick="setLanguage('it')">
+<img alt="Italian" src="../assets/img/it.svg" width="20"/> - Italiano
+                                    </a></li>
+</ul>
+</li>
+<li class="nav-item dropdown">
+<a aria-expanded="false" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">
+<i class="fa fa-gear"></i>
+</a>
+<ul class="dropdown-menu">
+<li class="dropdown-item d-flex justify-content-between align-items-center" id="darkmode">
+<span class="me-auto">Theme</span>
+<div class="form-check form-switch">
+<input class="form-check-input" id="switchTheme" role="switch" type="checkbox"/>
+<label class="form-check-label" for="switchTheme"></label>
+</div>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+</div>
+</div>
+<!-- Content Section -->
+<div class="content" data-bs-spy="scroll" data-bs-target=".navbar">
+<!-- Hero Section -->
+<div class="container-fluid d-flex align-items-center text-center" id="hero">
+<div class="content">
+<div class="spacer"></div>
+<h2 class="text-uppercase fw-semibold">The Hallgarten-Franchetti Schools at the 1910 Universal Exposition</h2>
+<h5 class="text-uppercase">From Their Origins to Maria Montessori</h5>
+<div class="spacer"></div>
+<a class="btn btn-primary btn-lg mt-4" href="#about">Explore</a>
+</div>
+</div>
+<!-- About Section -->
+<div class="container text-center" id="about">
+<div class="spacer"></div>
+<hr/>
+<h2>About</h2>
+<hr/>
+<div class="spacer-small"></div>
+<img alt="" src="../assets/img/gallery.png"/>
+<div class="spacer-small"></div>
+<p>Curator:  Cristina Caracchini (Ph.D. Université de Montréal), Associate Professor of Italian and Comparative Literature, Western University, Canada, has curated the Documentary ehibition Alice in Brussels. The Rural Schools of Montesca and Rovigliano at the 1910 World Fair. From the Origins to Maria Montessori, with the support of Lisa Viviani and Katarina Jovanovic. </p>
+<p>Design: Giacomo Pirazzoli (PhD Sapienza-Università di Roma), Architect and Professor of Architectural and Urban Design, Department of Architecture (DiDA) University of Firenze, has designed its installation with the collaboration of Gaia Bartoli.
+                </p>
+<div class="spacer-small"></div>
+<a class="btn btn-primary" href="index.html">Read More</a>
+<div class="spacer"></div>
+</div>
+<!-- Contact Section -->
+<div class="container-fluid" id="contact">
+<div class="container">
+<div class="spacer"></div>
+<div class="row">
+<div class="col d-none d-md-flex justify-content-center align-items-center">
+<i class="fa-duotone fa-solid fa-id-card fa-shake" style="color: #20c997; font-size: 250px;"></i>
+</div>
+<div class="col">
+<h2>Contact Us</h2>
+<div class="spacer-small"></div>
+<form>
+<div class="row g-2">
+<div class="col-md">
+<div class="form-floating">
+<input class="form-control" id="nameFirst" name="inputNameFirst" placeholder="Enter first name" type="text"/>
+<label for="nameFirst">First Name</label>
+</div>
+</div>
+<div class="col-md">
+<div class="form-floating">
+<input class="form-control" id="nameLast" name="inputNameLast" placeholder="Enter last name" type="text"/>
+<label for="nameLast">Last Name</label>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md">
+<div class="form-floating mt-2 mb-2">
+<input class="form-control" id="email" name="inputEmail" placeholder="Enter email" type="text"/>
+<label for="email">Email</label>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md">
+<div class="form-floating">
+<select aria-label="selectPurpose" class="form-select" id="purpose">
+<option selected=""></option>
+<option value="1">General Inquiry</option>
+<option value="2">Technical Issue</option>
+<option value="3">Feedback and Suggestions</option>
+</select>
+<label for="purpose">Purpose of Inquiry</label>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md">
+<div class="form-floating mt-2 mb-2">
+<textarea class="form-control" id="comment" name="text" placeholder="Comment" style="height: 12em"></textarea>
+<label for="comment">Comments</label>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col">
+<button class="btn btn-primary" id="submit-btn" type="submit">Submit</button>
+</div>
+</div>
+</form>
+</div>
+</div>
+<div class="spacer"></div>
+</div>
+</div>
+</div>
+<!-- Footer Section -->
+<div class="container" id="footer">
+<footer class="py-5">
+<div class="row">
+<div class="col-6 col-md-3 mb-3">
+<h5>Exhibition</h5>
+<ul class="nav flex-column">
+<li class="nav-item mb-2"><a class="nav-link p-0 text-body-secondary" href="#">Home</a></li>
+<li class="nav-item mb-2"><a class="nav-link p-0 text-body-secondary" href="#about">About</a></li>
+<li class="nav-item mb-2"><a class="nav-link p-0 text-body-secondary" href="index.html#silhouettes">Pictures</a></li>
+<li class="nav-item mb-2"><a class="nav-link p-0 text-body-secondary" href="index.html#video">Videos</a></li>
+<li class="nav-item mb-2"><a class="nav-link p-0 text-body-secondary" href="#" onclick="openPDF()">Documents</a></li>
+</ul>
+</div>
+<div class="col-6 col-md-3 mb-3">
+<h5>Miscellaneous</h5>
+<ul class="nav flex-column">
+<li class="nav-item mb-2"><a class="nav-link p-0 text-body-secondary" href="#">Donate</a></li>
+<li class="nav-item mb-2"><a class="nav-link p-0 text-body-secondary" href="#contact">Contact Us</a></li>
+<li class="nav-item mb-2"><a class="nav-link p-0 text-body-secondary" href="#contact">Technical Support</a></li>
+<li class="nav-item mb-2"><a class="nav-link p-0 text-body-secondary" href="#">FAQs</a></li>
+<li class="nav-item mb-2"><a class="nav-link p-0 text-body-secondary" href="#">Credits</a></li>
+</ul>
+</div>
+<div class="col-md-6 mb-3">
+<div class="spacer-small"></div>
+<form>
+<h5>Subscribe to our newsletter</h5>
+<p>Stay updated with our latest news and exciting events.</p>
+<div class="d-flex flex-column flex-sm-row w-100 gap-2" id="subscribe">
+<label class="visually-hidden" for="newsletter1">Email address</label>
+<input class="form-control" id="newsletter1" placeholder="Email address" type="text"/>
+<button class="btn btn-primary" type="button">Subscribe</button>
+</div>
+</form>
+</div>
+</div>
+<div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+<p>© 2024 University of Western Ontario and University of Florence. All rights reserved.</p>
+<ul class="list-unstyled d-flex">
+<li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" height="24" width="24"><use xlink:href="#twitter"></use></svg></a></li>
+<li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" height="24" width="24"><use xlink:href="#instagram"></use></svg></a></li>
+<li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" height="24" width="24"><use xlink:href="#facebook"></use></svg></a></li>
+</ul>
+</div>
+</footer>
+</div>
+<!-- Back to Top Button -->
+<div class="back-to-top" id="back-to-top">
+            ⇧
+        </div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="../js/bootstrap.bundle.min.js"></script>
+<script src="../js/script.js"></script>
+<script src="../js/theme.js"></script>
+</body>
+</html>

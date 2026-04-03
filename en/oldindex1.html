@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#20c997">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <meta name="msapplication-navbutton-color" content="#20c997">
+        <link href="../css/theme.css" rel="stylesheet">
+        <link href="../css/pages/home.css" rel="stylesheet">
+        <title>Home | Alice a Bruxelles</title>
+    </head>
+    <body>
+        <!-- Navbar Section -->
+        <div class="nav container-fluid fixed-top">
+            <div class="container">
+                <nav class="navbar navbar-expand-lg">
+                    <a class="navbar-brand" href="#">
+                        <img src="../assets/img/italy.svg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+                        Alice a Bruxelles
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbar">
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item"><a class="nav-link active" aria-current="page" href="#hero" id="navhome">Home</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#about" id="navabout">About</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#contact" id="navcontact">Contact Us</a></li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="more">
+                                    More
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li class="nav-item"><a class="dropdown-item" href="index.html">Videos</a></li>
+                                    <li class="nav-item"><a class="dropdown-item" href="#" onclick="openPDF()">Documents</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item" href="./credits.html">Credits</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" id="languageDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <img src="../assets/img/en.svg" alt="English" width="20">
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="languageDropdown">
+                                    <li><a class="dropdown-item" href="#" onclick="setLanguage('en')">
+                                        <img src="../assets/img/en.svg" alt="English" width="20"> - English
+                                    </a></li>
+                                    <li><a class="dropdown-item" href="../it/index1.html" onclick="setLanguage('it')">
+                                        <img src="../assets/img/it.svg" alt="Italian" width="20"> - Italiano
+                                    </a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="fa fa-gear"></i>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li class="dropdown-item d-flex justify-content-between align-items-center" id="darkmode">
+                                        <span class="me-auto">Theme</span>
+                                        <div class="form-check form-switch">
+                                            <input class="form-check-input" type="checkbox" role="switch" id="switchTheme">
+                                            <label class="form-check-label" for="switchTheme"></label>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <!-- Content Section -->
+        <div class="content" data-bs-spy="scroll" data-bs-target=".navbar">
+            <!-- Hero Section -->
+            <div id="hero" class="container-fluid d-flex align-items-center text-center">
+                <div class="content">
+                    <div class="spacer"></div>
+                    <h2 class="text-uppercase fw-semibold">The Hallgarten-Franchetti Schools at the 1910 Universal Exposition</h2>
+                    <h5 class="text-uppercase">From Their Origins to Maria Montessori</h5>
+                    <div class="spacer"></div>
+                    <a href="#about" class="btn btn-primary btn-lg mt-4">Explore</a>
+                </div>
+            </div>
+            <!-- About Section -->
+            <div id="about" class="container text-center" >
+                <div class="spacer"></div>
+                <hr>
+                <h2>About</h2>
+                <hr>
+                <div class="spacer-small"></div>
+                <img src="../assets/img/gallery.png" alt="">
+                <div class="spacer-small"></div>
+                <p>Curator:  Cristina Caracchini (Ph.D. Université de Montréal), Associate Professor of Italian and Comparative Literature, Western University, Canada, has curated the Documentary ehibition Alice in Brussels. The Rural Schools of Montesca and Rovigliano at the 1910 World Fair. From the Origins to Maria Montessori, with the support of Lisa Viviani and Katarina Jovanovic. </p>
+                <p>Design: Giacomo Pirazzoli (PhD Sapienza-Università di Roma), Architect and Professor of Architectural and Urban Design, Department of Architecture (DiDA) University of Firenze, has designed its installation with the collaboration of Gaia Bartoli.
+                </p>
+                <div class="spacer-small"></div>
+                <a href="index.html" class="btn btn-primary">Read More</a>
+                <div class="spacer"></div>
+            </div>
+            <!-- Contact Section -->
+            <div class="container-fluid" id="contact">
+                <div class="container">
+                    <div class="spacer"></div>
+                    <div class="row">
+                        <div class="col d-none d-md-flex justify-content-center align-items-center">
+                            <i class="fa-duotone fa-solid fa-id-card fa-shake" style="color: #20c997; font-size: 250px;"></i>
+                        </div>
+                        <div class="col">
+                            <h2>Contact Us</h2>
+                            <div class="spacer-small"></div>
+                            <form>
+                                <div class="row g-2">
+                                    <div class="col-md">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" id="nameFirst" placeholder="Enter first name" name="inputNameFirst">
+                                            <label for="nameFirst">First Name</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" id="nameLast" placeholder="Enter last name" name="inputNameLast">
+                                            <label for="nameLast">Last Name</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md">
+                                        <div class="form-floating mt-2 mb-2">
+                                            <input type="text" class="form-control" id="email" placeholder="Enter email" name="inputEmail">
+                                            <label for="email">Email</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md">
+                                        <div class="form-floating">
+                                            <select class="form-select" id="purpose" aria-label="selectPurpose">
+                                                <option selected></option>
+                                                <option value="1">General Inquiry</option>
+                                                <option value="2">Technical Issue</option>
+                                                <option value="3">Feedback and Suggestions</option>
+                                            </select>
+                                            <label for="purpose">Purpose of Inquiry</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md">
+                                        <div class="form-floating mt-2 mb-2">
+                                            <textarea class="form-control" id="comment" name="text" placeholder="Comment" style="height: 12em"></textarea>
+                                            <label for="comment">Comments</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <button class="btn btn-primary" id="submit-btn" type="submit">Submit</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="spacer"></div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer Section -->
+        <div class="container" id="footer">
+            <footer class="py-5">
+                <div class="row">
+                    <div class="col-6 col-md-3 mb-3">
+                        <h5>Exhibition</h5>
+                        <ul class="nav flex-column">
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
+                            <li class="nav-item mb-2"><a href="#about" class="nav-link p-0 text-body-secondary">About</a></li>
+                            <li class="nav-item mb-2"><a href="index.html#silhouettes" class="nav-link p-0 text-body-secondary">Pictures</a></li>
+                            <li class="nav-item mb-2"><a href="index.html#video" class="nav-link p-0 text-body-secondary">Videos</a></li>
+                            <li class="nav-item mb-2"><a href="#" onclick="openPDF()" class="nav-link p-0 text-body-secondary">Documents</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-6 col-md-3 mb-3">
+                        <h5>Miscellaneous</h5>
+                        <ul class="nav flex-column">
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Donate</a></li>
+                            <li class="nav-item mb-2"><a href="#contact" class="nav-link p-0 text-body-secondary">Contact Us</a></li>
+                            <li class="nav-item mb-2"><a href="#contact" class="nav-link p-0 text-body-secondary">Technical Support</a></li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Credits</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <div class="spacer-small"></div>
+                        <form>
+                            <h5>Subscribe to our newsletter</h5>
+                            <p>Stay updated with our latest news and exciting events.</p>
+                            <div class="d-flex flex-column flex-sm-row w-100 gap-2" id="subscribe">
+                                <label for="newsletter1" class="visually-hidden">Email address</label>
+                                <input id="newsletter1" type="text" class="form-control" placeholder="Email address">
+                                <button class="btn btn-primary" type="button">Subscribe</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+                    <p>© 2024 University of Western Ontario and University of Florence. All rights reserved.</p>
+                    <ul class="list-unstyled d-flex">
+                        <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"/></svg></a></li>
+                        <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"/></svg></a></li>
+                        <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"/></svg></a></li>
+                    </ul>
+                </div>
+            </footer>
+        </div>
+        <!-- Back to Top Button -->
+        <div id="back-to-top" class="back-to-top">
+            &#8679;
+        </div>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="../js/bootstrap.bundle.min.js"></script>
+        <script src="../js/script.js"></script>
+        <script src="../js/theme.js"></script>
+    </body>
+</html>
