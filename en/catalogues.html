@@ -1,6 +1,15 @@
 <!doctype html>
 <html lang="en" data-bs-theme="dark">
 <head>
+    <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-566P7ZN5VG"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-566P7ZN5VG');
+  </script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Exhibition Catalogues | Alice in Brussels</title>
@@ -85,9 +94,12 @@
       <div class="d-flex flex-column flex-md-row gap-5">
 
         <div class="row justify-content-center">
-          <h2 class="text-center mb-4">2024 Exhibition Catalogue</h2>
+          <h2 class="text-center mb-1">2024 Exhibition Catalogue</h2>
+          <a href="https://books.fupress.com/catalogue/alice-a-bruxelles/14131" target="_blank">
+            Download HERE
+          </a>
           <div class="flex-fill">
-            <iframe
+           <iframe
               src="../assets/document/CATALOGUE.pdf#toolbar=0&navpanes=0&scrollbar=1"
               width="100%"
               height="600"
@@ -163,11 +175,6 @@
 
       window.location.href = newPath;
     }
-  
-    // Open PDF
-    function openPDF() {
-      window.open('../assets/document/CATALOGUE.pdf', '_blank');
-    }
-  </script>   
+  </script>
 </body>
 </html>
