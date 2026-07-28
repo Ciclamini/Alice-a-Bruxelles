@@ -129,22 +129,6 @@ body {
 /* Back to top button styling */
 .back-to-top {
     transition: transform 0.4s;
-    background: linear-gradient(135deg, var(--bottle-green-accent), var(--sage-green));
-    border: 2px solid rgba(171, 210, 194, 0.5);
-    box-shadow: 0 4px 15px rgba(9, 54, 36, 0.3);
-    position: fixed;
-    right: 1.5rem;
-    bottom: 1.5rem;
-    font-size: 2rem;
-    cursor: pointer;
-    z-index: 1000;
-    color: white;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 .back-to-top:hover {
     transform: scale(1.1);
