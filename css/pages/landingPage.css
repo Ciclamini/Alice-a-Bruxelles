@@ -225,7 +225,6 @@
   position: absolute;
   bottom: 320px;
   left: 50%;
-  transform: translateX(-50%);
   cursor: pointer;
   z-index: 20;
 }
